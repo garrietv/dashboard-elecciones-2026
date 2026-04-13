@@ -26,7 +26,7 @@
   <meta name="description" content="Mapa interactivo con los resultados del conteo rápido de actas al 100% de Datum Internacional — Elecciones Generales Perú 2026, primera vuelta.">
 
   <!-- Open Graph (LinkedIn / Facebook) -->
-  <meta property="og:title" content="🗳️ Mapa Interactivo — Conteo Rápido Datum al 100% · Elecciones Perú 2026">
+  <meta property="og:title" content="Mapa Interactivo — Conteo Rápido Datum al 100% · Elecciones Perú 2026">
   <meta property="og:description" content="Explora los resultados completos por departamento. 7 candidatos en cada región. Haz clic y descubre cómo votó el Perú.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://renzonunezaf.github.io/Elecciones_2026/og-preview.png">
@@ -37,7 +37,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="🗳️ Mapa Interactivo — Conteo Rápido Datum al 100% · Elecciones Perú 2026">
+  <meta name="twitter:title" content="Mapa Interactivo — Conteo Rápido Datum al 100% · Elecciones Perú 2026">
   <meta name="twitter:description" content="Explora los resultados completos por departamento. 7 candidatos en cada región.">
   <meta name="twitter:image" content="https://renzonunezaf.github.io/Elecciones_2026/og-preview.png">
 
@@ -561,15 +561,25 @@
     }
 
     @media (max-width: 900px) {
-      .container { padding: 0 1rem; }
+      .container { padding: 0 0.75rem; }
+      .hero { padding: 1rem 0 0.75rem; margin-bottom: 0.5rem; }
       .hero__title { font-size: 1.6rem; }
-      .national { padding: 0.75rem 1rem; }
+      .national { padding: 0.75rem 1rem; margin-bottom: 0.5rem; }
       .modal { max-width: 95vw; max-height: 90vh; border-radius: 14px; }
       .modal__body { max-height: calc(90vh - 120px); }
       .modal__dept-name { font-size: 1.2rem; }
       .dept-grid__items { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
-      .map-card { padding: 0.75rem; }
       .extranjero-chip { padding: 10px 14px; }
+
+      /* Mapa: eliminar bordes y padding para maximizar área */
+      .map-section { margin-bottom: 0.5rem; }
+      .map-section__label { margin-left: 0.25rem; }
+      .map-section__hint { margin-left: 0.25rem; margin-bottom: 0.4rem; }
+      .map-card {
+        padding: 0.4rem 0.25rem;
+        border-radius: 10px;
+        border-left: none; border-right: none;
+      }
     }
 
     @media (max-width: 768px) {
@@ -577,20 +587,58 @@
     }
 
     @media (max-width: 480px) {
-      .hero__title { font-size: 1.3rem; }
-      .hero__subtitle { font-size: 0.78rem; }
-      .hero__meta { font-size: 0.68rem; gap: 0.6rem; }
-      .modal__header { padding: 1rem 1rem 0.75rem; }
-      .modal__body { padding: 0.75rem 1rem 1rem; }
-      .candidate-row { grid-template-columns: 22px 1fr auto; gap: 6px; padding: 7px 8px; }
+      /* Comprimir todo al máximo para que el mapa domine */
+      .container { padding: 0 0.5rem; }
+      .hero { padding: 0.75rem 0 0.5rem; margin-bottom: 0.4rem; }
+      .hero__badge { margin-bottom: 0.4rem; padding: 4px 10px; font-size: 0.6rem; }
+      .hero__title { font-size: 1.15rem; margin-bottom: 0.2rem; }
+      .hero__subtitle { font-size: 0.72rem; }
+      .hero__meta { font-size: 0.64rem; gap: 0.4rem; margin-top: 0.4rem; }
+
+      .national { padding: 0.5rem 0.75rem; margin-bottom: 0.4rem; }
+      .national__label { font-size: 0.58rem; margin-bottom: 0.4rem; }
+      .national__bar { height: 20px; margin-bottom: 0.6rem; }
+      .national__grid { grid-template-columns: repeat(2, 1fr); gap: 5px; }
+      .national__card { padding: 7px 8px; gap: 6px; }
+      .national__card-name { font-size: 0.68rem; }
+      .national__card-party { font-size: 0.56rem; }
+      .national__card-pct { font-size: 0.9rem; }
+      .national__card-color { width: 3px; height: 26px; }
+
+      /* Mapa full-bleed en móvil */
+      .map-section { margin: 0 -0.5rem 0.4rem; }
+      .map-section__label { margin-left: 0.75rem; font-size: 0.58rem; }
+      .map-section__hint { margin-left: 0.75rem; font-size: 0.66rem; margin-bottom: 0.3rem; }
+      .map-card {
+        padding: 0.2rem 0;
+        border-radius: 0;
+        border-left: none; border-right: none;
+        box-shadow: none;
+      }
+      .extranjero-chip {
+        width: calc(100% - 1.5rem); margin: 0.5rem 0.75rem 0;
+        justify-content: center;
+      }
+
+      /* Modal compacto */
+      .modal-overlay { padding: 0.5rem; }
+      .modal { border-radius: 12px; max-height: 92vh; }
+      .modal__header { padding: 0.75rem 1rem 0.6rem; }
+      .modal__dept-name { font-size: 1.1rem; }
+      .modal__body { padding: 0.6rem 0.75rem 1rem; max-height: calc(92vh - 110px); }
+      .candidate-row { grid-template-columns: 22px 1fr auto; gap: 6px; padding: 6px 6px; }
       .candidate-row__position { width: 22px; height: 22px; font-size: 0.6rem; }
-      .candidate-row__name { font-size: 0.72rem; }
-      .candidate-row__pct { font-size: 0.88rem; }
-      .candidate-row__bar { width: 50px; }
-      .dept-grid__items { grid-template-columns: 1fr; }
-      .national__bar { height: 22px; }
-      .national__grid { grid-template-columns: 1fr; }
-      .extranjero-chip { width: 100%; justify-content: center; }
+      .candidate-row__name { font-size: 0.7rem; }
+      .candidate-row__pct { font-size: 0.85rem; }
+      .candidate-row__bar { width: 45px; }
+
+      /* Grilla departamentos compacta */
+      .dept-grid { margin-bottom: 1rem; }
+      .dept-grid__items { grid-template-columns: 1fr; gap: 4px; }
+      .dept-chip { padding: 7px 10px; }
+
+      /* Footer compacto */
+      .footer { padding: 1rem 0; font-size: 0.62rem; }
     }
   </style>
 </head>
@@ -641,7 +689,7 @@
         <!-- Chip para el voto en el extranjero (no está en el mapa) -->
         <div style="text-align:center">
           <div class="extranjero-chip" id="extranjeroChip">
-            <span style="font-size:1.3rem">🌎</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E5BB8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             <div style="text-align:left">
               <div style="font-family:var(--font-display);font-size:.78rem;font-weight:700">Voto en el Extranjero</div>
               <div style="font-size:.68rem;color:var(--color-text-sec)">López Aliaga 28.2%</div>
@@ -936,12 +984,15 @@
       const features = topojson.feature(topo, topo.objects.per).features;
       const container = document.getElementById('map-container');
       const width = container.clientWidth;
-      const height = Math.max(500, width * 1.05);
+      const isMobile = width < 500;
+      const height = isMobile
+        ? Math.max(520, width * 1.25)   /* Móvil: grande, llena la pantalla */
+        : Math.max(380, width * 0.72);  /* Desktop: 70% más compacto */
 
-      /* Proyección centrada en el Perú */
+      /* Proyección centrada en el Perú — escala mayor en móvil */
       const projection = d3.geoMercator()
         .center([-75.5, -9.5])
-        .scale(width * 2.9)
+        .scale(isMobile ? width * 3.4 : width * 2.0)
         .translate([width / 2, height * 0.47]);
 
       const pathGenerator = d3.geoPath(projection);
@@ -1086,7 +1137,7 @@
         `<div class="modal__dept-name">${displayName}</div>` +
         `<div class="modal__dept-meta">Conteo rápido Datum al 100% · ${results.length} candidatos</div>` +
         `<div class="modal__winner-tag" style="background:${winnerColor}15;color:${winnerColor};border:1px solid ${winnerColor}30">` +
-          `🏆 ${getShortName(results[0][0])} — ${results[0][1]}%</div>`;
+          `<svg width="14" height="14" viewBox="0 0 24 24" fill="${winnerColor}" stroke="none"><path d="M6 9H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3M18 9h3a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-3M6 4h12v6a6 6 0 0 1-12 0V4zM9 20h6M12 16v4"/></svg> ${getShortName(results[0][0])} — ${results[0][1]}%</div>`;
 
       /* Lista de candidatos */
       let html = '<div class="modal__section-title">Todos los candidatos</div>';
@@ -1163,7 +1214,7 @@
         chip.innerHTML =
           `<div class="dept-chip__color" style="background:${color}"></div>` +
           `<div class="dept-chip__info">` +
-            `<div class="dept-chip__name">${deptKey === 'Extranjero' ? '🌎 ' : ''}${displayName}</div>` +
+            `<div class="dept-chip__name">${deptKey === 'Extranjero' ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:-1px;margin-right:3px"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>' : ''}${displayName}</div>` +
             `<div class="dept-chip__winner">${getShortName(results[0][0])} · ${CANDIDATES[results[0][0]]?.party || ''}</div>` +
           `</div>` +
           `<div class="dept-chip__pct" style="color:${color}">${results[0][1]}%</div>`;
