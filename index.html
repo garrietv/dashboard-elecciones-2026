@@ -591,6 +591,12 @@
       </div>
     </div>
 
+    <div class="card" style="margin-top:16px">
+      <div class="card-title">Lectura actual del modelo</div>
+      <div id="predictionSummary" style="font-size:14px;color:var(--tx1);line-height:1.5"></div>
+      <div style="font-size:12px;color:var(--tx2);margin-top:8px">Modelo recalculado con el último corte ONPE disponible.</div>
+    </div>
+
     <div class="grid" style="margin-top:16px">
       <div class="card">
         <div class="card-title">Escenarios más probables</div>
@@ -1862,19 +1868,19 @@ function computeLivePredictionsFromTracking() {
   });
 
   const scenarios = [
-    { probability: 45, ranking: [
+    { name: 'Escenario base', probability: 45, assumptions: ['Se mantiene la pendiente reciente del conteo', 'Sánchez conserva mejor tracción relativa que RLA'], ranking: [
       { candidate: 'Fujimori', pct: current.fujimori + 0.55 },
       { candidate: 'Sánchez', pct: current.sanchez + 1.20 },
       { candidate: 'López Aliaga', pct: current.rla - 0.90 },
       { candidate: 'Nieto', pct: current.nieto - 0.75 }
     ]},
-    { probability: 30, ranking: [
+    { name: 'Sánchez acelera en bastiones', probability: 30, assumptions: ['El pendiente rural pesa más en el tramo final', 'La ventaja relativa de Sánchez se expande'], ranking: [
       { candidate: 'Fujimori', pct: current.fujimori + 0.60 },
       { candidate: 'Sánchez', pct: current.sanchez + 1.55 },
       { candidate: 'López Aliaga', pct: current.rla - 1.00 },
       { candidate: 'Nieto', pct: current.nieto - 0.85 }
     ]},
-    { probability: 25, ranking: [
+    { name: 'RLA retiene el 2° lugar', probability: 25, assumptions: ['El tramo final converge al promedio nacional', 'Sánchez desacelera fuera de sus zonas más fuertes'], ranking: [
       { candidate: 'Fujimori', pct: current.fujimori + 0.50 },
       { candidate: 'López Aliaga', pct: current.rla - 0.55 },
       { candidate: 'Sánchez', pct: current.sanchez + 0.70 },
@@ -1895,9 +1901,9 @@ function computeLivePredictionsFromTracking() {
       { pos: 5, key: 'belm', candidate: 'Belmont', actual: current.belmont, projected: current.belmont + 0.10, delta: 0.10 }
     ],
     insights: [
-      probs.sanchez > probs.rla ? 'Las nuevas entradas fortalecen a Sánchez en la carrera por el 2° lugar.' : 'RLA conserva una ventaja estrecha en la carrera por el 2° lugar.',
-      `Pendiente reciente: Sánchez ${(((current.sanchez - prev.sanchez) / dp) || 0).toFixed(3)} vs RLA ${(((current.rla - prev.rla) / dp) || 0).toFixed(3)} puntos por punto de acta.`,
-      'Los insights cualitativos se recalculan junto con la nueva data, no solo la parte numérica.'
+      probs.sanchez > probs.rla ? 'Lectura principal: Sánchez pasa a ser favorito estrecho para el 2° lugar.' : 'Lectura principal: RLA mantiene una ventaja estrecha por ahora.',
+      `Señal cuantitativa: pendiente reciente Sánchez ${(((current.sanchez - prev.sanchez) / dp) || 0).toFixed(3)} vs RLA ${(((current.rla - prev.rla) / dp) || 0).toFixed(3)} puntos por punto de acta.`,
+      probs.sanchez > probs.rla ? 'Implicación: si este patrón continúa, el gap por el 2° lugar debería seguir cerrándose a favor de Sánchez.' : 'Implicación: si el patrón no cambia, RLA debería sostener el 2° lugar con poco margen.'
     ]
   };
 }
@@ -1940,13 +1946,25 @@ function applyPredictionsToUI(pred) {
 
   const scenarioList = document.getElementById('scenarioList');
   if (scenarioList) {
-    scenarioList.innerHTML = pred.scenarios.map(s => `
-      <div class="ref-card" style="margin-bottom:10px">
-        <strong>${s.name} · ${s.probability}%</strong>
-        <div style="margin:6px 0 8px 0">${s.ranking.map((r, i) => `${i+1}. ${r.candidate} ${r.pct.toFixed(2)}%`).join('<br>')}</div>
-        <div style="color:var(--tx2)">${(s.assumptions || []).map(a => '• ' + a).join('<br>')}</div>
-      </div>
-    `).join('');
+    scenarioList.innerHTML = pred.scenarios.map(s => {
+      const accent = /Sánchez/i.test(s.name || '') ? 'var(--c-sanch)' : /RLA|Aliaga/i.test(s.name || '') ? 'var(--c-rla)' : 'var(--tx2)';
+      return `
+        <div class="ref-card" style="margin-bottom:12px;border-left:4px solid ${accent}">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px">
+            <strong>${s.name || 'Escenario'}</strong>
+            <span class="tag ok">${s.probability}%</span>
+          </div>
+          <div style="margin:6px 0 10px 0">${s.ranking.map((r, i) => `${i+1}. ${r.candidate} ${r.pct.toFixed(2)}%`).join('<br>')}</div>
+          <div style="font-size:12px;color:var(--tx2)">${(s.assumptions || []).map(a => '• ' + a).join('<br>')}</div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  const summary = document.getElementById('predictionSummary');
+  if (summary) {
+    const main = (pred.insights || [])[0] || 'Sin lectura disponible.';
+    summary.textContent = main.replace(/^Lectura principal:\s*/,'');
   }
 
   const insightCards = document.getElementById('insightCards');
