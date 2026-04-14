@@ -468,33 +468,6 @@
       </div>
     </div>
 
-    <!-- Probability of passing to second round -->
-    <div class="prob-section">
-      <div class="prob-title">Probabilidad de pase a segunda vuelta</div>
-      <div class="prob-bars">
-        <div class="prob-item">
-          <div class="prob-name" style="color:var(--c-rla)">López Aliaga</div>
-          <div class="prob-track"><div class="prob-fill" style="width:0%;background:var(--c-rla)"></div></div>
-          <div class="prob-pct" style="color:var(--c-rla)"><span class="skel" style="width:30px;height:14px"></span></div>
-        </div>
-        <div class="prob-item">
-          <div class="prob-name" style="color:var(--c-nieto)">Nieto</div>
-          <div class="prob-track"><div class="prob-fill" style="width:0%;background:var(--c-nieto)"></div></div>
-          <div class="prob-pct" style="color:var(--c-nieto)"><span class="skel" style="width:30px;height:14px"></span></div>
-        </div>
-        <div class="prob-item">
-          <div class="prob-name" style="color:var(--c-sanch)">Sánchez</div>
-          <div class="prob-track"><div class="prob-fill" style="width:0%;background:var(--c-sanch)"></div></div>
-          <div class="prob-pct" style="color:var(--c-sanch)"><span class="skel" style="width:30px;height:14px"></span></div>
-        </div>
-        <div class="prob-item">
-          <div class="prob-name" style="color:var(--c-belm)">Belmont</div>
-          <div class="prob-track"><div class="prob-fill" style="width:0%;background:var(--c-belm)"></div></div>
-          <div class="prob-pct" style="color:var(--c-belm)"><span class="skel" style="width:30px;height:14px"></span></div>
-        </div>
-      </div>
-    </div>
-
     <!-- Legend -->
     <div class="legend">
       <div class="legend-item"><div class="legend-dot" style="background:var(--c-fuji)"></div>Fujimori</div>
@@ -541,32 +514,11 @@
           <div class="ctp-title" id="ctpTitle">Toca un punto del gráfico</div>
           <div class="ctp-body" id="ctpBody"></div>
         </div>
-        <!-- Projection summary inside chart card -->
-        <div class="proj-summary" id="projSummary">
-          <div class="proj-row proj-header">
-            <span class="proj-pos">Pos</span>
-            <span class="proj-name">Candidato</span>
-            <span class="proj-current">ONPE actual</span>
-            <span class="proj-arrow">→</span>
-            <span class="proj-final">Proyección 100%</span>
-            <span class="proj-diff">Δ vs anterior</span>
-          </div>
-          <div class="proj-row" id="proj1"><span class="proj-pos">1°</span><span class="proj-name">—</span><span class="proj-current"><span class="skel" style="width:45px;height:12px"></span></span><span class="proj-arrow">→</span><span class="proj-final"><span class="skel" style="width:45px;height:12px"></span></span><span class="proj-diff">—</span></div>
-          <div class="proj-row" id="proj2"><span class="proj-pos">2°</span><span class="proj-name">—</span><span class="proj-current"><span class="skel" style="width:45px;height:12px"></span></span><span class="proj-arrow">→</span><span class="proj-final"><span class="skel" style="width:45px;height:12px"></span></span><span class="proj-diff">—</span></div>
-          <div class="proj-row" id="proj3"><span class="proj-pos">3°</span><span class="proj-name">—</span><span class="proj-current"><span class="skel" style="width:45px;height:12px"></span></span><span class="proj-arrow">→</span><span class="proj-final"><span class="skel" style="width:45px;height:12px"></span></span><span class="proj-diff">—</span></div>
-          <div class="proj-row" id="proj4"><span class="proj-pos">4°</span><span class="proj-name">—</span><span class="proj-current"><span class="skel" style="width:45px;height:12px"></span></span><span class="proj-arrow">→</span><span class="proj-final"><span class="skel" style="width:45px;height:12px"></span></span><span class="proj-diff">—</span></div>
-          <div class="proj-row" id="proj5"><span class="proj-pos">5°</span><span class="proj-name">—</span><span class="proj-current"><span class="skel" style="width:45px;height:12px"></span></span><span class="proj-arrow">→</span><span class="proj-final"><span class="skel" style="width:45px;height:12px"></span></span><span class="proj-diff">—</span></div>
-        </div>
       </div>
     </div>
 
     <!-- Reference cards -->
     <div class="ref-cards">
-      <div class="ref-card">
-        <strong>Proyección 27 regiones</strong>
-        RLA 11.87% · Nieto 11.03%<br>Sánchez 10.71% · Belmont 9.81%
-        <div><span class="tag ok">Brecha 2°-5°: 2.06pp</span></div>
-      </div>
       <div class="ref-card">
         <strong>Datum CR 100%</strong>
         RLA 12.9% · Nieto 11.6%<br>Sánchez 9.4% · Belmont 10.1%
@@ -1766,14 +1718,6 @@ function updateProjectionUI(projection, probs) {
       `<span class="proj-diff" style="color:${diffColor}">${diffStr}</span>`;
   });
 
-  /* Update ref card */
-  const projCard = document.querySelector('.ref-card:first-child');
-  if (projCard) {
-    const top4 = sorted.filter(s => s.key !== 'fuji').slice(0, 4);
-    projCard.innerHTML = `<strong>Proyección dinámica</strong>
-      ${top4.map(c => labelMap[c.key] + ' ' + c.pct.toFixed(2) + '%').join(' · ')}
-      <div><span class="tag ok">Auto-calculado · ${new Date().toLocaleTimeString('es-PE')}</span></div>`;
-  }
 }
 
 /* ══════════════════════════════════════════════════════════
