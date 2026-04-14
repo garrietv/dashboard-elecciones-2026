@@ -584,14 +584,54 @@
        TAB 2: PREDICCIONES
   ══════════════════════════════════════════════ -->
   <div class="tab-content" id="tab-predicciones">
-    <div class="kpis">
-      <div class="kpi"><div class="kpi-label">Modelo</div><div class="kpi-val" style="font-size:14px">Hannah v1</div></div>
-      <div class="kpi"><div class="kpi-label">Sánchez 2°</div><div class="kpi-val red" id="predProbSanchez">52%</div></div>
-      <div class="kpi"><div class="kpi-label">RLA 2°</div><div class="kpi-val blue" id="predProbRla">42%</div></div>
-      <div class="kpi"><div class="kpi-label">Nieto 2°</div><div class="kpi-val green" id="predProbNieto">6%</div></div>
-      <div class="kpi"><div class="kpi-label">Corte ONPE</div><div class="kpi-val" id="predNationalPct">75.87%</div></div>
+    <div class="prob-section">
+      <div class="prob-title">Probabilidad de pase a segunda vuelta</div>
+      <div class="prob-bars" id="predProbBars">
+        <div class="prob-item">
+          <div class="prob-name" style="color:var(--c-rla)">López Aliaga</div>
+          <div class="prob-track"><div class="prob-fill" id="predBarRla" style="width:42%;background:var(--c-rla)"></div></div>
+          <div class="prob-pct" style="color:var(--c-rla)" id="predProbRla">42%</div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-name" style="color:var(--c-nieto)">Nieto</div>
+          <div class="prob-track"><div class="prob-fill" id="predBarNieto" style="width:6%;background:var(--c-nieto)"></div></div>
+          <div class="prob-pct" style="color:var(--c-nieto)" id="predProbNieto">6%</div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-name" style="color:var(--c-sanch)">Sánchez</div>
+          <div class="prob-track"><div class="prob-fill" id="predBarSanchez" style="width:52%;background:var(--c-sanch)"></div></div>
+          <div class="prob-pct" style="color:var(--c-sanch)" id="predProbSanchez">52%</div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-name" style="color:var(--c-belm)">Belmont</div>
+          <div class="prob-track"><div class="prob-fill" id="predBarBelmont" style="width:0%;background:var(--c-belm)"></div></div>
+          <div class="prob-pct" style="color:var(--c-belm)" id="predProbBelmont">0%</div>
+        </div>
+      </div>
+      <div class="legend" style="margin-top:14px">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--c-fuji)"></div>Fujimori</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--c-rla)"></div>López Aliaga</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--c-nieto)"></div>Nieto</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--c-belm)"></div>Belmont</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--c-sanch)"></div>Sánchez</div>
+      </div>
     </div>
-    <div class="grid">
+
+    <div class="card" style="margin-top:16px">
+      <div class="card-title">ONPE actual → Proyección 100%</div>
+      <div class="proj-summary" id="predProjectionTable">
+        <div class="proj-row proj-header">
+          <span class="proj-pos">Pos</span>
+          <span class="proj-name">Candidato</span>
+          <span class="proj-current">ONPE actual</span>
+          <span class="proj-arrow">→</span>
+          <span class="proj-final">Proyección 100%</span>
+          <span class="proj-diff">Δ vs actual</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:16px">
       <div class="card">
         <div class="card-title">Escenarios más probables</div>
         <div id="scenarioList"></div>
@@ -1789,10 +1829,26 @@ async function loadPredictionsLayer() {
     const resp = await fetch('./data/predictions.json?_=' + Date.now());
     const pred = await resp.json();
     const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-    set('predProbSanchez', (pred.secondRoundProbabilities.sanchez || 0) + '%');
-    set('predProbRla', (pred.secondRoundProbabilities.rla || 0) + '%');
-    set('predProbNieto', (pred.secondRoundProbabilities.nieto || 0) + '%');
-    set('predNationalPct', ((pred.nationalPct || 0).toFixed(2)) + '%');
+    const probs = pred.secondRoundProbabilities || {};
+    set('predProbSanchez', (probs.sanchez || 0) + '%');
+    set('predProbRla', (probs.rla || 0) + '%');
+    set('predProbNieto', (probs.nieto || 0) + '%');
+    set('predProbBelmont', (probs.belmont || 0) + '%');
+    const bar = (id, val) => { const el = document.getElementById(id); if (el) el.style.width = (val || 0) + '%'; };
+    bar('predBarSanchez', probs.sanchez || 0);
+    bar('predBarRla', probs.rla || 0);
+    bar('predBarNieto', probs.nieto || 0);
+    bar('predBarBelmont', probs.belmont || 0);
+
+    const projectionTable = document.getElementById('predProjectionTable');
+    if (projectionTable && pred.projectionTable) {
+      const colorMap = {fuji:'var(--c-fuji)', rla:'var(--c-rla)', nieto:'var(--c-nieto)', belm:'var(--c-belm)', sanch:'var(--c-sanch)'};
+      projectionTable.innerHTML = `<div class="proj-row proj-header"><span class="proj-pos">Pos</span><span class="proj-name">Candidato</span><span class="proj-current">ONPE actual</span><span class="proj-arrow">→</span><span class="proj-final">Proyección 100%</span><span class="proj-diff">Δ vs actual</span></div>` + pred.projectionTable.map(r => {
+        const diff = r.delta > 0 ? `▲ ${r.delta.toFixed(2)}` : r.delta < 0 ? `▼ ${Math.abs(r.delta).toFixed(2)}` : '—';
+        const diffColor = r.delta > 0 ? 'var(--c-nieto)' : r.delta < 0 ? 'var(--c-sanch)' : 'var(--tx3)';
+        return `<div class="proj-row"><span class="proj-pos">${r.pos}°</span><span class="proj-name" style="color:${colorMap[r.key]}">${r.candidate}</span><span class="proj-current">${r.actual.toFixed(2)}%</span><span class="proj-arrow">→</span><span class="proj-final" style="color:${colorMap[r.key]}">${r.projected.toFixed(2)}%</span><span class="proj-diff" style="color:${diffColor}">${diff}</span></div>`;
+      }).join('');
+    }
 
     const scenarioList = document.getElementById('scenarioList');
     if (scenarioList) {

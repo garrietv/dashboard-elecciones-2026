@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T22:15:00+02:00",
+  "generatedAt": "2026-04-14T22:35:00+02:00",
   "source": "Modelo Hannah v1 sobre tracking ONPE",
   "nationalPct": 75.87,
   "secondRoundProbabilities": {
@@ -8,6 +8,13 @@
     "sanchez": 52,
     "belmont": 0
   },
+  "projectionTable": [
+    {"pos": 1, "key": "fuji", "candidate": "Fujimori", "actual": 16.88, "projected": 17.76, "delta": 0.88},
+    {"pos": 2, "key": "sanch", "candidate": "Sánchez", "actual": 10.14, "projected": 11.52, "delta": 1.38},
+    {"pos": 3, "key": "rla", "candidate": "López Aliaga", "actual": 12.79, "projected": 11.21, "delta": -1.58},
+    {"pos": 4, "key": "nieto", "candidate": "Nieto", "actual": 11.84, "projected": 10.92, "delta": -0.92},
+    {"pos": 5, "key": "belm", "candidate": "Belmont", "actual": 10.01, "projected": 10.46, "delta": 0.45}
+  ],
   "scenarios": [
     {
       "id": "base",
@@ -19,7 +26,7 @@
         "López Aliaga conserva crecimiento bajo por concentración en Lima"
       ],
       "ranking": [
-        {"candidate": "Keiko Fujimori", "pct": 16.88},
+        {"candidate": "Keiko Fujimori", "pct": 17.76},
         {"candidate": "Roberto Sánchez", "pct": 11.52},
         {"candidate": "Rafael López Aliaga", "pct": 11.21},
         {"candidate": "Jorge Nieto", "pct": 10.92}
@@ -35,7 +42,7 @@
         "Sánchez convierte mejor el pendiente rural"
       ],
       "ranking": [
-        {"candidate": "Keiko Fujimori", "pct": 16.95},
+        {"candidate": "Keiko Fujimori", "pct": 17.95},
         {"candidate": "Roberto Sánchez", "pct": 12.05},
         {"candidate": "Rafael López Aliaga", "pct": 11.12},
         {"candidate": "Jorge Nieto", "pct": 10.85}
@@ -51,7 +58,7 @@
         "RLA mantiene su piso y evita mayor pérdida relativa"
       ],
       "ranking": [
-        {"candidate": "Keiko Fujimori", "pct": 16.90},
+        {"candidate": "Keiko Fujimori", "pct": 17.70},
         {"candidate": "Rafael López Aliaga", "pct": 11.45},
         {"candidate": "Roberto Sánchez", "pct": 10.98},
         {"candidate": "Jorge Nieto", "pct": 10.87}
