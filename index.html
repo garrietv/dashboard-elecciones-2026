@@ -618,6 +618,13 @@
     </div>
 
     <div class="card" style="margin-top:16px">
+      <div class="card-title">Evolución de la probabilidad de 2° lugar</div>
+      <div class="chart-container">
+        <canvas id="probabilityChart"></canvas>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
       <div class="card-title">ONPE actual → Proyección 100%</div>
       <div class="proj-summary" id="predProjectionTable">
         <div class="proj-row proj-header">
@@ -1824,6 +1831,74 @@ function updateJeeData(natData) {
 }
 
 /* Predictions layer */
+function buildProbabilityHistory(cuts) {
+  const structural = { rla: -0.25, nieto: -0.10, sanchez: 0.70, belmont: -0.55 };
+  const contenders = ['rla','nieto','sanchez','belmont'];
+  const out = { labels: [], rla: [], nieto: [], sanchez: [], belmont: [] };
+  for (let i = 2; i < cuts.length; i++) {
+    const cur = cuts[i];
+    const prev = cuts[i - 2];
+    const dp = Math.max(0.1, cur.pct - prev.pct);
+    const slopes = {};
+    contenders.forEach(k => slopes[k] = (cur[k] - prev[k]) / dp);
+    const scores = {};
+    contenders.forEach(k => {
+      scores[k] = (cur[k] * 1.2) + (slopes[k] * 18) + (structural[k] * 2.5) - ((k === 'rla' || k === 'nieto') ? 0.35 : 0);
+    });
+    const min = Math.min(...Object.values(scores));
+    const shifted = Object.fromEntries(contenders.map(k => [k, Math.max(0.05, scores[k] - min + 0.05)]));
+    const total = Object.values(shifted).reduce((a,b) => a + b, 0);
+    const probs = Object.fromEntries(contenders.map(k => [k, Math.round((shifted[k] / total) * 100)]));
+    if (probs.sanchez > 65) {
+      const excess = probs.sanchez - 65;
+      probs.sanchez = 65;
+      probs.rla += Math.round(excess * 0.75);
+      probs.nieto += Math.round(excess * 0.20);
+      probs.belmont += excess - Math.round(excess * 0.75) - Math.round(excess * 0.20);
+    }
+    if (probs.belmont > 8) {
+      const excess = probs.belmont - 8;
+      probs.belmont = 8;
+      probs.rla += Math.round(excess * 0.6);
+      probs.sanchez += excess - Math.round(excess * 0.6);
+    }
+    const diff = 100 - Object.values(probs).reduce((a,b) => a + b, 0);
+    const top = Object.keys(probs).sort((a,b) => probs[b] - probs[a])[0];
+    probs[top] += diff;
+    out.labels.push(cur.pct.toFixed(2) + '%');
+    contenders.forEach(k => out[k].push(probs[k]));
+  }
+  return out;
+}
+
+function renderProbabilityChart(cuts) {
+  const canvas = document.getElementById('probabilityChart');
+  if (!canvas || !window.Chart) return;
+  if (window._probabilityChart) window._probabilityChart.destroy();
+  const hist = buildProbabilityHistory(cuts);
+  window._probabilityChart = new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: hist.labels,
+      datasets: [
+        { label: 'López Aliaga', data: hist.rla, borderColor: '#2563eb', backgroundColor: '#2563eb', tension: 0.25 },
+        { label: 'Nieto', data: hist.nieto, borderColor: '#10b981', backgroundColor: '#10b981', tension: 0.25 },
+        { label: 'Sánchez', data: hist.sanchez, borderColor: '#dc2626', backgroundColor: '#dc2626', tension: 0.25 },
+        { label: 'Belmont', data: hist.belmont, borderColor: '#8b5cf6', backgroundColor: '#8b5cf6', tension: 0.25 }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' } },
+      scales: {
+        y: { min: 0, max: 100, ticks: { callback: v => v + '%' }, title: { display: true, text: 'Probabilidad de 2° lugar' } },
+        x: { title: { display: true, text: '% actas ONPE' } }
+      }
+    }
+  });
+}
+
 async function loadPredictionsLayer() {
   try {
     const resp = await fetch('./data/predictions.json?_=' + Date.now());
@@ -1865,6 +1940,7 @@ async function loadPredictionsLayer() {
     if (insightCards) {
       insightCards.innerHTML = pred.insights.map(i => `<div class="ref-card">${i}</div>`).join('');
     }
+    renderProbabilityChart(TRACKING.cuts || []);
   } catch (e) {
     console.error('Predictions layer error', e);
   }
