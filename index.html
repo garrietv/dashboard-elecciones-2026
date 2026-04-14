@@ -55,12 +55,26 @@
     .hero-center{text-align:center;flex:1}
     .hero-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--tx3);margin-bottom:-4px}
     .hero-pct{font-family:'DM Mono',monospace;font-size:72px;font-weight:700;
-      background:linear-gradient(135deg, var(--c-rla) 0%, var(--c-nieto) 100%);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
       line-height:1;letter-spacing:-3px;
       animation:countFadeIn 1s ease forwards}
     .hero-pct-sign{font-size:36px;letter-spacing:0}
+    /* Gradient text applied to inner elements */
+    .hero-pct-num, .hero-pct > :not(.hero-loading){
+      background:linear-gradient(135deg, var(--c-rla) 0%, var(--c-nieto) 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
     @keyframes countFadeIn{from{opacity:0;transform:translateY(10px);filter:blur(4px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+    /* Hero loading state */
+    .hero-loading{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .hero-loading-bar{width:180px;height:8px;border-radius:4px;background:var(--bg-alt);overflow:hidden;position:relative}
+    .hero-loading-bar::after{content:'';position:absolute;inset:0;border-radius:4px;
+      background:linear-gradient(90deg,transparent,var(--c-rla),var(--c-nieto),transparent);
+      animation:shimmer 1.5s ease-in-out infinite}
+    @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+    .hero-loading-text{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--tx3);font-weight:500;letter-spacing:.5px}
+    /* Count-up number reveal */
+    .hero-pct-num{display:inline;animation:countReveal .6s cubic-bezier(.34,1.56,.64,1) forwards}
+    @keyframes countReveal{from{opacity:0;transform:scale(.7) translateY(15px);filter:blur(6px)}to{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}}
     .hero-live{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:var(--tx3);margin-top:2px}
     .live-dot{width:7px;height:7px;border-radius:50%;background:var(--c-nieto);animation:livePulse 2s ease-in-out infinite}
     @keyframes livePulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(46,205,167,.5)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(46,205,167,0)}}
@@ -136,7 +150,16 @@
     /* ══════════════ 8. CHART ══════════════ */
     .chart-container{position:relative;width:100%;height:400px}
 
-    /* ══════════════ 8b. PROJECTION SUMMARY ══════════════ */
+    /* ══════════════ 8b. CHART TOOLTIP PANEL ══════════════ */
+    .chart-tooltip-panel{padding:8px 12px;border-top:1px solid var(--border);
+      background:rgba(255,255,255,.02);border-radius:0 0 8px 8px;min-height:32px;transition:all .2s}
+    .ctp-title{font-size:11px;font-weight:600;color:var(--tx2);margin-bottom:4px}
+    .ctp-body{display:flex;flex-wrap:wrap;gap:4px 12px}
+    .ctp-item{font-family:'DM Mono',monospace;font-size:11px;display:flex;align-items:center;gap:4px;white-space:nowrap}
+    .ctp-dot{width:6px;height:6px;border-radius:2px;flex-shrink:0}
+    .ctp-gap{font-size:10px;color:var(--tx3);width:100%;border-top:1px solid var(--border);padding-top:3px;margin-top:2px}
+
+    /* ══════════════ 8c. PROJECTION SUMMARY ══════════════ */
     .proj-summary{margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
     .proj-row{display:flex;align-items:center;gap:4px;padding:5px 0;font-size:12px;border-bottom:1px solid rgba(255,255,255,.03)}
     .proj-row:last-child{border-bottom:none}
@@ -314,10 +337,15 @@
     </div>
     <div class="hero-center">
       <div class="hero-label">ONPE · ACTAS CONTABILIZADAS</div>
-      <div class="hero-pct" id="heroPct">73.37<span class="hero-pct-sign">%</span></div>
+      <div class="hero-pct" id="heroPct">
+        <span class="hero-loading" id="heroLoader">
+          <span class="hero-loading-bar"></span>
+          <span class="hero-loading-text">Consultando ONPE</span>
+        </span>
+      </div>
       <div class="hero-live" id="heroLive">
         <span class="live-dot"></span>
-        <span id="lastUpdate">14/04 · 05:47 a.m. · 26 regiones + Extranjero</span>
+        <span id="lastUpdate">Consultando ONPE en vivo...</span>
       </div>
     </div>
     <div class="hero-right">
@@ -426,6 +454,11 @@
       <div class="card">
         <div class="card-title">Evolución del conteo + Proyección al 100%</div>
         <div class="chart-container"><canvas id="trackingChart"></canvas></div>
+        <!-- External tooltip panel (replaces hover tooltip on mobile) -->
+        <div class="chart-tooltip-panel" id="chartTooltipPanel">
+          <div class="ctp-title" id="ctpTitle">Toca un punto del gráfico</div>
+          <div class="ctp-body" id="ctpBody"></div>
+        </div>
         <!-- Projection summary inside chart card -->
         <div class="proj-summary" id="projSummary">
           <div class="proj-row proj-header">
@@ -649,6 +682,15 @@ function updateVoteCounters() {
   if (el2) el2.textContent = '~' + pend.toLocaleString('es-PE');
 }
 
+/* Show embedded data in hero when Worker isn't available */
+function showHeroFallback() {
+  const lastCut = TRACKING.cuts[TRACKING.cuts.length - 1];
+  const pct = lastCut ? lastCut.pct : 73.37;
+  const heroEl = document.getElementById('heroPct');
+  heroEl.innerHTML = `<span class="hero-pct-num">${pct.toFixed(2)}<span class="hero-pct-sign">%</span></span>`;
+  document.getElementById('lastUpdate').textContent = 'Data embebida · Actualiza para data en vivo';
+}
+
 (async function init() {
   /* 1. Render tracking chart first (no external deps) */
   try {
@@ -683,6 +725,9 @@ function updateVoteCounters() {
   /* 5. Auto-refresh if Worker is configured */
   if (WORKER_URL && !WORKER_URL.includes('TUSUBDOMINIO')) {
     setTimeout(() => refreshFromONPE(), 800); /* Slight delay so initial render is visible first */
+  } else {
+    /* No Worker — show embedded data immediately */
+    showHeroFallback();
   }
 })();
 function closeModal() { document.getElementById('modal').classList.remove('open'); }
@@ -1019,10 +1064,12 @@ function renderTrackingChart() {
       plugins:{
         legend:{display:false},
         tooltip:{
+          enabled: window.innerWidth > 700,
           backgroundColor:'#1e2230',titleColor:'#e8eaed',bodyColor:'#9aa0ab',
           borderColor:'rgba(255,255,255,.1)',borderWidth:1,padding:12,bodySpacing:4,
           titleFont:{family:'"DM Sans"',size:12,weight:600},
           bodyFont:{family:'"DM Mono"',size:11},cornerRadius:8,
+          position:'nearest',
           filter:item=>!item.dataset.label.includes('→'),
           callbacks:{
             title:items=> {
@@ -1030,23 +1077,51 @@ function renderTrackingChart() {
               const x = items[0].parsed.x;
               return x === 100 ? 'PROYECCIÓN AL 100%' : 'ONPE al ' + x.toFixed(1) + '% de actas';
             },
-            label:ctx2=> {
-              const name = ctx2.dataset.label;
-              const y = ctx2.parsed.y;
-              return '  ' + name + ':  ' + y.toFixed(3) + '%';
-            },
+            label:ctx2=> '  ' + ctx2.dataset.label + ':  ' + ctx2.parsed.y.toFixed(3) + '%',
             afterBody:items=> {
               if (!items.length) return [];
-              /* Show gap between RLA and Sánchez */
               const vals = {};
               items.forEach(it => { vals[it.dataset.label] = it.parsed.y; });
               const lines = [];
               if (vals['López Aliaga'] && vals['Nieto'])
-                lines.push('  ─ Brecha RLA→Nieto: ' + (vals['López Aliaga'] - vals['Nieto']).toFixed(3) + 'pp');
+                lines.push('  ─ RLA→Nieto: ' + (vals['López Aliaga'] - vals['Nieto']).toFixed(3) + 'pp');
               if (vals['López Aliaga'] && vals['Sánchez'])
-                lines.push('  ─ Brecha RLA→Sánchez: ' + (vals['López Aliaga'] - vals['Sánchez']).toFixed(3) + 'pp');
+                lines.push('  ─ RLA→Sánchez: ' + (vals['López Aliaga'] - vals['Sánchez']).toFixed(3) + 'pp');
               return lines;
             }
+          },
+          /* External handler: always update the panel below */
+          external: function(context) {
+            const panel = document.getElementById('chartTooltipPanel');
+            const titleEl = document.getElementById('ctpTitle');
+            const bodyEl = document.getElementById('ctpBody');
+            if (!panel || !context.tooltip.dataPoints || !context.tooltip.dataPoints.length) return;
+
+            const pts = context.tooltip.dataPoints.filter(p => !p.dataset.label.includes('→'));
+            if (!pts.length) return;
+
+            const x = pts[0].parsed.x;
+            titleEl.textContent = x === 100 ? 'PROYECCIÓN AL 100%' : 'ONPE al ' + x.toFixed(1) + '% actas';
+
+            const cColors = ['#E8943A','#4A90D9','#2ECDA7','#B07CD8','#E04848'];
+            const cLabels = ['Fujimori','L. Aliaga','Nieto','Belmont','Sánchez'];
+            let html = '';
+            pts.forEach((p, i) => {
+              const ci = Math.floor(p.datasetIndex / 2);
+              html += `<div class="ctp-item"><div class="ctp-dot" style="background:${cColors[ci]}"></div>${cLabels[ci]} <strong style="color:${cColors[ci]}">${p.parsed.y.toFixed(2)}%</strong></div>`;
+            });
+
+            /* Brechas */
+            const vals = {};
+            pts.forEach(p => { vals[p.dataset.label] = p.parsed.y; });
+            const gaps = [];
+            if (vals['López Aliaga'] && vals['Nieto'])
+              gaps.push('RLA→Nieto: ' + (vals['López Aliaga'] - vals['Nieto']).toFixed(2) + 'pp');
+            if (vals['López Aliaga'] && vals['Sánchez'])
+              gaps.push('RLA→Sánch: ' + (vals['López Aliaga'] - vals['Sánchez']).toFixed(2) + 'pp');
+            if (gaps.length) html += `<div class="ctp-gap">${gaps.join(' · ')}</div>`;
+
+            bodyEl.innerHTML = html;
           }
         }
       },
@@ -1223,7 +1298,30 @@ async function refreshFromONPE() {
     const probs = calcProbabilities(projection);
     updateProjectionUI(projection, probs);
 
-    /* 6. Re-render */
+    /* 6. Update hero FIRST (before heavy re-renders that might error) */
+    try {
+      const heroEl = document.getElementById('heroPct');
+      const target = natPct;
+      heroEl.innerHTML = `<span class="hero-pct-num">0.00<span class="hero-pct-sign">%</span></span>`;
+      const numNode = heroEl.querySelector('.hero-pct-num').firstChild;
+      const dur = 1200, t0 = performance.now();
+      (function tick(t) {
+        const p = Math.min((t - t0) / dur, 1);
+        numNode.textContent = (target * (1 - Math.pow(1 - p, 3))).toFixed(2);
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    } catch(e) { console.error('Hero update error:', e); }
+
+    /* 7. Update KPIs */
+    if (document.getElementById('kpiFuji')) document.getElementById('kpiFuji').textContent = (natCands.fuji||0).toFixed(2) + '%';
+    if (document.getElementById('kpiRla')) document.getElementById('kpiRla').textContent = (natCands.rla||0).toFixed(2) + '%';
+    if (document.getElementById('kpiNieto')) document.getElementById('kpiNieto').textContent = (natCands.nieto||0).toFixed(2) + '%';
+    if (document.getElementById('kpiSanch')) document.getElementById('kpiSanch').textContent = (natCands.sanch||0).toFixed(2) + '%';
+    if (document.getElementById('kpiBelm')) document.getElementById('kpiBelm').textContent = (natCands.belm||0).toFixed(2) + '%';
+    document.getElementById('lastUpdate').textContent =
+      new Date().toLocaleString('es-PE', {month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}) + ' · ' + newRegions.length + ' regiones · En vivo';
+
+    /* 8. Re-render map & chart */
     setStatus('Redibujando...', '');
     document.getElementById('mapOnpe').innerHTML = '';
     if (window._trackingChart) window._trackingChart.destroy();
@@ -1232,22 +1330,13 @@ async function refreshFromONPE() {
     updateExtranjero();
     updateVoteCounters();
 
-    /* Update UI */
-    document.getElementById('heroPct').innerHTML = natPct.toFixed(2) + '<span class="hero-pct-sign">%</span>';
-    if (document.getElementById('kpiFuji')) document.getElementById('kpiFuji').textContent = (natCands.fuji||0).toFixed(2) + '%';
-    if (document.getElementById('kpiRla')) document.getElementById('kpiRla').textContent = (natCands.rla||0).toFixed(2) + '%';
-    if (document.getElementById('kpiNieto')) document.getElementById('kpiNieto').textContent = (natCands.nieto||0).toFixed(2) + '%';
-    if (document.getElementById('kpiSanch')) document.getElementById('kpiSanch').textContent = (natCands.sanch||0).toFixed(2) + '%';
-    if (document.getElementById('kpiBelm')) document.getElementById('kpiBelm').textContent = (natCands.belm||0).toFixed(2) + '%';
-    const now = new Date();
-    document.getElementById('lastUpdate').textContent =
-      new Date().toLocaleString('es-PE', {month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}) + ' · ' + newRegions.length + ' regiones · En vivo';
-
     setStatus('✓ ONPE ' + natPct.toFixed(2) + '% · ' + newRegions.length + ' regiones · Proyección recalculada · Próximo refresh en 10 min', 'ok');
 
   } catch (err) {
     console.error('Refresh error:', err);
     setStatus('✗ ' + err.message + ' — mostrando data embebida', 'err');
+    /* Fallback: show embedded data in hero */
+    showHeroFallback();
   } finally {
     btn.classList.remove('loading'); btn.disabled = false;
   }
