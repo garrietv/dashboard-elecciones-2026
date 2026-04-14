@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T22:38:17+02:00",
+  "generatedAt": "2026-04-14T22:44:55+02:00",
   "source": "Modelo Hannah v2 automático sobre tracking ONPE",
   "nationalPct": 73.37,
   "secondRoundProbabilities": {
@@ -8,6 +8,48 @@
     "sanchez": 65,
     "belmont": 2
   },
+  "projectionTableRaw": [
+    {
+      "pos": 1,
+      "key": "fuji",
+      "candidate": "Fujimori",
+      "actual": 16.91,
+      "projected": 17.46,
+      "delta": 0.55
+    },
+    {
+      "pos": 2,
+      "key": "sanch",
+      "candidate": "Sánchez",
+      "actual": 9.83,
+      "projected": 11.63,
+      "delta": 1.8
+    },
+    {
+      "pos": 3,
+      "key": "rla",
+      "candidate": "López Aliaga",
+      "actual": 12.91,
+      "projected": 11.41,
+      "delta": -1.5
+    },
+    {
+      "pos": 4,
+      "key": "nieto",
+      "candidate": "Nieto",
+      "actual": 11.96,
+      "projected": 10.46,
+      "delta": -1.5
+    },
+    {
+      "pos": 5,
+      "key": "belm",
+      "candidate": "Belmont",
+      "actual": 9.98,
+      "projected": 10.1,
+      "delta": 0.12
+    }
+  ],
   "projectionTable": [
     {
       "pos": 1,
@@ -140,6 +182,64 @@
     "Sánchez pasa a liderar la carrera por el 2° lugar en el modelo por mejor pendiente reciente.",
     "La pendiente reciente favorece a Sánchez (0.113 pp por punto) sobre RLA (-0.071).",
     "Nieto sigue en la conversación, pero su probabilidad cae si no recorta más rápido en los siguientes cortes."
+  ],
+  "probabilityHistory": [
+    {
+      "pct": 56.85,
+      "rla": 40,
+      "nieto": 35,
+      "sanchez": 24,
+      "belmont": 1
+    },
+    {
+      "pct": 57.83,
+      "rla": 37,
+      "nieto": 34,
+      "sanchez": 28,
+      "belmont": 1
+    },
+    {
+      "pct": 59.32,
+      "rla": 36,
+      "nieto": 33,
+      "sanchez": 30,
+      "belmont": 1
+    },
+    {
+      "pct": 63.31,
+      "rla": 34,
+      "nieto": 33,
+      "sanchez": 32,
+      "belmont": 1
+    },
+    {
+      "pct": 65.62,
+      "rla": 33,
+      "nieto": 32,
+      "sanchez": 34,
+      "belmont": 1
+    },
+    {
+      "pct": 66.83,
+      "rla": 33,
+      "nieto": 29,
+      "sanchez": 38,
+      "belmont": 0
+    },
+    {
+      "pct": 68.56,
+      "rla": 29,
+      "nieto": 24,
+      "sanchez": 47,
+      "belmont": 0
+    },
+    {
+      "pct": 73.37,
+      "rla": 26,
+      "nieto": 23,
+      "sanchez": 50,
+      "belmont": 1
+    }
   ],
   "debug": {
     "recentSlopes": {

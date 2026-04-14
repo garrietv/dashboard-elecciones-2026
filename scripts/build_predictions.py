@@ -42,6 +42,51 @@ def slope(cuts, key, n=4):
     return (last[key] - first[key]) / dp
 
 
+def weighted_projection_from_scenarios(scenarios):
+    agg = {}
+    total_w = sum(s['probability'] for s in scenarios) or 1
+    for s in scenarios:
+        w = s['probability'] / total_w
+        for row in s['ranking']:
+            agg.setdefault(row['candidate'], 0.0)
+            agg[row['candidate']] += row['pct'] * w
+    return agg
+
+
+def build_probability_history(cuts):
+    structural = { 'rla': -0.25, 'nieto': -0.10, 'sanchez': 0.70, 'belmont': -0.55 }
+    contenders = ['rla', 'nieto', 'sanchez', 'belmont']
+    history = []
+    for i in range(2, len(cuts)):
+        cur = cuts[i]
+        prev = cuts[i - 2]
+        dp = max(0.1, cur['pct'] - prev['pct'])
+        scores = {}
+        for k in contenders:
+            slope = (cur[k] - prev[k]) / dp
+            scores[k] = (cur[k] * 1.2) + (slope * 18) + (structural[k] * 2.5) - (0.35 if k in {'rla','nieto'} else 0)
+        min_score = min(scores.values())
+        shifted = {k: max(0.05, v - min_score + 0.05) for k, v in scores.items()}
+        total = sum(shifted.values()) or 1
+        probs = {k: round(v / total * 100) for k, v in shifted.items()}
+        if probs['sanchez'] > 65:
+            excess = probs['sanchez'] - 65
+            probs['sanchez'] = 65
+            probs['rla'] += round(excess * 0.75)
+            probs['nieto'] += round(excess * 0.20)
+            probs['belmont'] += excess - round(excess * 0.75) - round(excess * 0.20)
+        if probs['belmont'] > 8:
+            excess = probs['belmont'] - 8
+            probs['belmont'] = 8
+            probs['rla'] += round(excess * 0.6)
+            probs['sanchez'] += excess - round(excess * 0.6)
+        diff = 100 - sum(probs.values())
+        top = max(probs, key=probs.get)
+        probs[top] += diff
+        history.append({'pct': cur['pct'], **probs})
+    return history
+
+
 def build():
     data = load_tracking()
     cuts = data['cuts']
@@ -160,6 +205,27 @@ def build():
         }
     ]
 
+    weighted = weighted_projection_from_scenarios(scenarios)
+    display_projection = {
+        'Fujimori': round(weighted.get('Keiko Fujimori', projected['fujimori']), 2),
+        'López Aliaga': round(weighted.get('Rafael López Aliaga', projected['rla']), 2),
+        'Nieto': round(weighted.get('Jorge Nieto', projected['nieto']), 2),
+        'Sánchez': round(weighted.get('Roberto Sánchez', projected['sanchez']), 2),
+        'Belmont': round(projected['belmont'], 2)
+    }
+    name_to_key = {'Fujimori':'fuji','López Aliaga':'rla','Nieto':'nieto','Sánchez':'sanch','Belmont':'belm'}
+    actual_map = {'Fujimori': current['fujimori'], 'López Aliaga': current['rla'], 'Nieto': current['nieto'], 'Sánchez': current['sanchez'], 'Belmont': current['belmont']}
+    display_table = []
+    for i, name in enumerate(sorted(display_projection, key=lambda n: display_projection[n], reverse=True), start=1):
+        display_table.append({
+            'pos': i,
+            'key': name_to_key[name],
+            'candidate': name,
+            'actual': round(actual_map[name], 2),
+            'projected': round(display_projection[name], 2),
+            'delta': round(display_projection[name] - actual_map[name], 2),
+        })
+
     insights = []
     if probs['sanchez'] > probs['rla']:
         insights.append('Sánchez pasa a liderar la carrera por el 2° lugar en el modelo por mejor pendiente reciente.')
@@ -178,9 +244,11 @@ def build():
             'sanchez': probs['sanchez'],
             'belmont': probs['belmont'],
         },
-        'projectionTable': table,
+        'projectionTableRaw': table,
+        'projectionTable': display_table,
         'scenarios': scenarios,
         'insights': insights,
+        'probabilityHistory': build_probability_history(cuts),
         'debug': {
             'recentSlopes': recent_slopes,
             'currentCut': current,
