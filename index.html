@@ -135,16 +135,10 @@
     .trend.down svg{animation-name:arrowBounceDown}
     @keyframes arrowBounceDown{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
     /* Hot mover glow */
-    .kpi.hot-mover{animation:hotPulse 2.5s ease-in-out forwards}
-    @keyframes hotPulse{
-      0%{box-shadow:0 0 0 0 rgba(46,205,167,0);border-color:var(--border);transform:scale(1)}
-      10%{box-shadow:0 0 15px 3px rgba(46,205,167,.5);border-color:#2ECDA7;transform:scale(1.03)}
-      20%{box-shadow:0 0 5px 1px rgba(46,205,167,.2);border-color:#2ECDA7;transform:scale(1)}
-      35%{box-shadow:0 0 20px 5px rgba(46,205,167,.6);border-color:#2ECDA7;transform:scale(1.04)}
-      50%{box-shadow:0 0 5px 1px rgba(46,205,167,.2);border-color:#2ECDA7;transform:scale(1)}
-      65%{box-shadow:0 0 12px 3px rgba(46,205,167,.4);border-color:#2ECDA7;transform:scale(1.02)}
-      80%{box-shadow:0 0 3px 1px rgba(46,205,167,.1);border-color:#2ECDA7;transform:scale(1)}
-      100%{box-shadow:none;border-color:var(--border);transform:scale(1)}
+    .kpi.hot-mover{border-color:#2ECDA7 !important;box-shadow:0 0 15px 4px rgba(46,205,167,.4);animation:heartbeat .7s ease-in-out infinite}
+    @keyframes heartbeat{
+      0%,100%{transform:scale(1);box-shadow:0 0 10px 2px rgba(46,205,167,.3)}
+      50%{transform:scale(1.04);box-shadow:0 0 22px 6px rgba(46,205,167,.5)}
     }
     .kpi.hot-mover .kpi-label::after{content:' 🔥';font-size:10px}
 
@@ -863,7 +857,7 @@ function showHeroFallback() {
   const lastCut = TRACKING.cuts[TRACKING.cuts.length - 1];
   const pct = lastCut ? lastCut.pct : 73.37;
   const heroEl = document.getElementById('heroPct');
-  heroEl.innerHTML = `<span class="hero-pct-num">${pct.toFixed(2)}<span class="hero-pct-sign">%</span></span>`;
+  heroEl.innerHTML = `<span class="hero-pct-num">${pct.toFixed(3)}<span class="hero-pct-sign">%</span></span>`;
   document.getElementById('lastUpdate').textContent = 'Data embebida · Actualiza para data en vivo';
 }
 
@@ -909,38 +903,16 @@ async function renderWithEmbeddedData() {
 
   showHeroFallback();
 
-  /* Chart */
-  try {
-    const loader = document.getElementById('chartLoader');
-    const canvas = document.getElementById('trackingChart');
-    if (loader) loader.style.display = 'none';
-    if (canvas) canvas.style.display = 'block';
-    renderTrackingChart();
-  } catch(err) { console.error('Chart error:', err); }
-
-  /* Map */
-  try {
-    document.getElementById('mapOnpe').innerHTML = '';
-    const onpeMapData = ONPE_REGIONS.map(r => ({
-      name:r.name, pct:r.pct, fuji:r.fuji, rla:r.rla, nieto:r.nieto, belm:r.belm, sanch:r.sanch
-    }));
-    await renderMap('mapOnpe', onpeMapData, 'ONPE parcial');
-    updateVoteCounters();
-    updateTrendArrows();
-  } catch(err) {
-    console.error('Map error:', err);
-    document.getElementById('mapOnpe').innerHTML = '<p style="color:var(--c-sanch);padding:20px;text-align:center">Error: '+err.message+'</p>';
-  }
-
-  /* KPIs from embedded data */
+  /* KPIs FIRST — instant, no dependencies */
   const lastCut = TRACKING.cuts[TRACKING.cuts.length - 1];
   if (lastCut) {
     const kpiMap = {kpiFuji:'fujimori', kpiRla:'rla', kpiNieto:'nieto', kpiSanch:'sanchez', kpiBelm:'belmont'};
     for (const [id, key] of Object.entries(kpiMap)) {
       const el = document.getElementById(id);
-      if (el) el.textContent = (lastCut[key] || 0).toFixed(2) + '%';
+      if (el) el.textContent = (lastCut[key] || 0).toFixed(3) + '%';
     }
   }
+  updateTrendArrows();
 
   /* Projection */
   try {
@@ -950,8 +922,30 @@ async function renderWithEmbeddedData() {
     updateProjectionUI(projection, probs);
   } catch(err) { console.error('Projection error:', err); }
 
-  /* Hot-mover glow on first load (uses tracking history) */
-  setTimeout(() => highlightHotMover(), 600);
+  /* Hot-mover glow — called directly, appears from frame 1 */
+  highlightHotMover();
+
+  /* Chart */
+  try {
+    const loader = document.getElementById('chartLoader');
+    const canvas = document.getElementById('trackingChart');
+    if (loader) loader.style.display = 'none';
+    if (canvas) canvas.style.display = 'block';
+    renderTrackingChart();
+  } catch(err) { console.error('Chart error:', err); }
+
+  /* Map LAST — async, fetches TopoJSON (1-3s) */
+  try {
+    document.getElementById('mapOnpe').innerHTML = '';
+    const onpeMapData = ONPE_REGIONS.map(r => ({
+      name:r.name, pct:r.pct, fuji:r.fuji, rla:r.rla, nieto:r.nieto, belm:r.belm, sanch:r.sanch
+    }));
+    await renderMap('mapOnpe', onpeMapData, 'ONPE parcial');
+    updateVoteCounters();
+  } catch(err) {
+    console.error('Map error:', err);
+    document.getElementById('mapOnpe').innerHTML = '<p style="color:var(--c-sanch);padding:20px;text-align:center">Error: '+err.message+'</p>';
+  }
 
   /* Fetch KV tracking in background (non-blocking, updates chart when ready) */
   if (WORKER_URL && !WORKER_URL.includes('TUSUBDOMINIO')) {
@@ -1315,16 +1309,16 @@ function renderTrackingChart() {
               const x = items[0].parsed.x;
               return x === 100 ? 'PROYECCIÓN AL 100%' : 'ONPE al ' + x.toFixed(1) + '% de actas';
             },
-            label:ctx2=> '  ' + ctx2.dataset.label + ':  ' + ctx2.parsed.y.toFixed(3) + '%',
+            label:ctx2=> '  ' + ctx2.dataset.label + ':  ' + ctx2.parsed.y.toFixed(2) + '%',
             afterBody:items=> {
               if (!items.length) return [];
               const vals = {};
               items.forEach(it => { vals[it.dataset.label] = it.parsed.y; });
               const lines = [];
               if (vals['López Aliaga'] && vals['Nieto'])
-                lines.push('  ─ RLA→Nieto: ' + (vals['López Aliaga'] - vals['Nieto']).toFixed(3) + 'pp');
+                lines.push('  ─ RLA→Nieto: ' + (vals['López Aliaga'] - vals['Nieto']).toFixed(2) + 'pp');
               if (vals['López Aliaga'] && vals['Sánchez'])
-                lines.push('  ─ RLA→Sánchez: ' + (vals['López Aliaga'] - vals['Sánchez']).toFixed(3) + 'pp');
+                lines.push('  ─ RLA→Sánchez: ' + (vals['López Aliaga'] - vals['Sánchez']).toFixed(2) + 'pp');
               return lines;
             }
           },
@@ -1495,7 +1489,7 @@ async function refreshFromONPE() {
       const dur = 1200, t0 = performance.now();
       (function tick(t) {
         const p = Math.min((t - t0) / dur, 1);
-        numNode.textContent = (natPct * (1 - Math.pow(1 - p, 3))).toFixed(2);
+        numNode.textContent = (natPct * (1 - Math.pow(1 - p, 3))).toFixed(3);
         if (p < 1) requestAnimationFrame(tick);
       })(t0);
     } catch(e) { console.error('Hero error:', e); }
@@ -1504,7 +1498,7 @@ async function refreshFromONPE() {
     const kpiMap = {kpiFuji:'fuji', kpiRla:'rla', kpiNieto:'nieto', kpiSanch:'sanch', kpiBelm:'belm'};
     for (const [id, key] of Object.entries(kpiMap)) {
       const el = document.getElementById(id);
-      if (el) el.textContent = (natCands[key]||0).toFixed(2) + '%';
+      if (el) el.textContent = (natCands[key]||0).toFixed(3) + '%';
     }
     document.getElementById('lastUpdate').textContent =
       new Date().toLocaleString('es-PE', {month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}) +
