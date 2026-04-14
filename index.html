@@ -426,11 +426,15 @@
 
   <!-- ══════════════ TABS ══════════════ -->
   <div class="tabs">
-    <div class="tab active" onclick="switchTab('onpe')">
+    <div class="tab active" data-tab="onpe" onclick="switchTab('onpe')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       ONPE en Vivo
     </div>
-    <div class="tab" onclick="switchTab('datum')">
+    <div class="tab" data-tab="predicciones" onclick="switchTab('predicciones')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 2 4-5"/></svg>
+      Predicciones
+    </div>
+    <div class="tab" data-tab="datum" onclick="switchTab('datum')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
       Datum CR 100%
     </div>
@@ -577,7 +581,30 @@
   </div>
 
   <!-- ══════════════════════════════════════════════
-       TAB 2: DATUM CR
+       TAB 2: PREDICCIONES
+  ══════════════════════════════════════════════ -->
+  <div class="tab-content" id="tab-predicciones">
+    <div class="kpis">
+      <div class="kpi"><div class="kpi-label">Modelo</div><div class="kpi-val" style="font-size:14px">Hannah v1</div></div>
+      <div class="kpi"><div class="kpi-label">Sánchez 2°</div><div class="kpi-val red" id="predProbSanchez">52%</div></div>
+      <div class="kpi"><div class="kpi-label">RLA 2°</div><div class="kpi-val blue" id="predProbRla">42%</div></div>
+      <div class="kpi"><div class="kpi-label">Nieto 2°</div><div class="kpi-val green" id="predProbNieto">6%</div></div>
+      <div class="kpi"><div class="kpi-label">Corte ONPE</div><div class="kpi-val" id="predNationalPct">75.87%</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">Escenarios más probables</div>
+        <div id="scenarioList"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Insights del modelo</div>
+        <div class="ref-cards" id="insightCards"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       TAB 3: DATUM CR
   ══════════════════════════════════════════════ -->
   <div class="tab-content" id="tab-datum">
     <div class="kpis">
@@ -721,7 +748,7 @@ let topoData = null;
 ══════════════════════════════════════════════════════════ */
 let datumRendered = false;
 function switchTab(id) {
-  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', i === (id==='onpe'?0:1)));
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === id));
   document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
 
@@ -1756,10 +1783,42 @@ function updateJeeData(natData) {
   if (elVotos) elVotos.textContent = '~' + jeeVotos.toLocaleString('es-PE');
 }
 
+/* Predictions layer */
+async function loadPredictionsLayer() {
+  try {
+    const resp = await fetch('./data/predictions.json?_=' + Date.now());
+    const pred = await resp.json();
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    set('predProbSanchez', (pred.secondRoundProbabilities.sanchez || 0) + '%');
+    set('predProbRla', (pred.secondRoundProbabilities.rla || 0) + '%');
+    set('predProbNieto', (pred.secondRoundProbabilities.nieto || 0) + '%');
+    set('predNationalPct', ((pred.nationalPct || 0).toFixed(2)) + '%');
+
+    const scenarioList = document.getElementById('scenarioList');
+    if (scenarioList) {
+      scenarioList.innerHTML = pred.scenarios.map(s => `
+        <div class="ref-card" style="margin-bottom:10px">
+          <strong>${s.name} · ${s.probability}%</strong>
+          <div style="margin:6px 0 8px 0">${s.ranking.map((r, i) => `${i+1}. ${r.candidate} ${r.pct.toFixed(2)}%`).join('<br>')}</div>
+          <div style="color:var(--tx2)">${s.assumptions.map(a => '• ' + a).join('<br>')}</div>
+        </div>
+      `).join('');
+    }
+
+    const insightCards = document.getElementById('insightCards');
+    if (insightCards) {
+      insightCards.innerHTML = pred.insights.map(i => `<div class="ref-card">${i}</div>`).join('');
+    }
+  } catch (e) {
+    console.error('Predictions layer error', e);
+  }
+}
+
 /* Start auto-refresh if Worker is configured */
 if (WORKER_URL && !WORKER_URL.includes('TUSUBDOMINIO')) {
   startCountdown();
 }
+loadPredictionsLayer();
 
 </script>
 </body>

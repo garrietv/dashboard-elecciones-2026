@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-04-14T22:15:00+02:00",
+  "source": "Modelo Hannah v1 sobre tracking ONPE",
+  "nationalPct": 75.87,
+  "secondRoundProbabilities": {
+    "rla": 42,
+    "nieto": 6,
+    "sanchez": 52,
+    "belmont": 0
+  },
+  "scenarios": [
+    {
+      "id": "base",
+      "name": "Escenario base",
+      "probability": 45,
+      "assumptions": [
+        "Se mantiene la tendencia reciente de entradas ONPE",
+        "Sánchez sigue acelerando en regiones con mayor pendiente",
+        "López Aliaga conserva crecimiento bajo por concentración en Lima"
+      ],
+      "ranking": [
+        {"candidate": "Keiko Fujimori", "pct": 16.88},
+        {"candidate": "Roberto Sánchez", "pct": 11.52},
+        {"candidate": "Rafael López Aliaga", "pct": 11.21},
+        {"candidate": "Jorge Nieto", "pct": 10.92}
+      ]
+    },
+    {
+      "id": "sanchez-upside",
+      "name": "Sánchez acelera en bastiones",
+      "probability": 30,
+      "assumptions": [
+        "Cajamarca, Amazonas y Huancavelica pesan más en el tramo final",
+        "La canibalización entre Keiko, RLA y Nieto se mantiene",
+        "Sánchez convierte mejor el pendiente rural"
+      ],
+      "ranking": [
+        {"candidate": "Keiko Fujimori", "pct": 16.95},
+        {"candidate": "Roberto Sánchez", "pct": 12.05},
+        {"candidate": "Rafael López Aliaga", "pct": 11.12},
+        {"candidate": "Jorge Nieto", "pct": 10.85}
+      ]
+    },
+    {
+      "id": "rla-holds",
+      "name": "RLA resiste el 2° lugar",
+      "probability": 25,
+      "assumptions": [
+        "El tramo final se parece más al promedio nacional que al patrón rural reciente",
+        "Sánchez desacelera fuera de sus bastiones",
+        "RLA mantiene su piso y evita mayor pérdida relativa"
+      ],
+      "ranking": [
+        {"candidate": "Keiko Fujimori", "pct": 16.90},
+        {"candidate": "Rafael López Aliaga", "pct": 11.45},
+        {"candidate": "Roberto Sánchez", "pct": 10.98},
+        {"candidate": "Jorge Nieto", "pct": 10.87}
+      ]
+    }
+  ],
+  "insights": [
+    "Sánchez tiene mayor probabilidad de 2° por concentración de voto en regiones con más actas pendientes.",
+    "RLA depende más de Lima y zonas ya muy contadas, lo que limita su upside.",
+    "Nieto sigue competitivo, pero su ventana para remontar es más estrecha."
+  ]
+}
