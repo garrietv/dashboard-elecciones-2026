@@ -324,6 +324,21 @@
     .refresh-status{font-size:11px;font-family:'DM Mono',monospace;margin-bottom:10px;min-height:16px;
       color:var(--tx3);transition:color .3s}
     .refresh-status.ok{color:var(--c-nieto)}.refresh-status.err{color:var(--c-sanch)}
+
+    /* ══════════════ 12b. STATUS BAR ══════════════ */
+    .status-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;
+      margin-bottom:12px;padding:8px 14px;background:var(--bg-card);border:1px solid var(--border);
+      border-radius:8px;opacity:0;animation:fadeUp .5s ease .3s forwards}
+    .status-bar-left,.status-bar-right{display:flex;align-items:center;gap:8px}
+    .jee-badge,.timer-badge{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--tx2)}
+    .jee-badge svg{color:var(--c-fuji);opacity:.7}
+    .jee-badge strong{color:var(--tx1);font-family:'DM Mono',monospace}
+    .timer-badge svg{color:var(--c-nieto);opacity:.7}
+    .timer-badge strong{color:var(--c-nieto);font-family:'DM Mono',monospace;min-width:32px}
+    @media(max-width:600px){
+      .status-bar{flex-direction:column;align-items:flex-start;gap:4px;padding:6px 10px}
+      .jee-badge,.timer-badge{font-size:10px}
+    }
   </style>
 </head>
 <body>
@@ -356,6 +371,22 @@
     </div>
   </div>
   <div class="refresh-status" id="refreshStatus"></div>
+
+  <!-- ══════════════ STATUS BAR: JEE + TIMER ══════════════ -->
+  <div class="status-bar">
+    <div class="status-bar-left">
+      <div class="jee-badge" id="jeeBadge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span>JEE: <strong id="jeeActas">—</strong> actas en revisión · <strong id="jeeVotos">—</strong> votos</span>
+      </div>
+    </div>
+    <div class="status-bar-right">
+      <div class="timer-badge" id="timerBadge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Próximo refresh: <strong id="timerCountdown">5:00</strong></span>
+      </div>
+    </div>
+  </div>
 
   <!-- ══════════════ TABS ══════════════ -->
   <div class="tabs">
@@ -1209,6 +1240,7 @@ async function refreshFromONPE() {
       apiFetch('/api/candidates', '/eleccion-presidencial/participantes-ubicacion-geografica-nombre', {idEleccion:10, tipoFiltro:'eleccion'})
     ]);
     const natPct = natData.data.actasContabilizadas;
+    updateJeeData(natData);
 
     const natCands = {};
     candData.data.filter(c => c.porcentajeVotosValidos).forEach(c => {
@@ -1331,7 +1363,9 @@ async function refreshFromONPE() {
     updateExtranjero();
     updateVoteCounters();
 
-    setStatus('✓ ONPE ' + natPct.toFixed(2) + '% · ' + newRegions.length + ' regiones · Proyección recalculada · Próximo refresh en 10 min', 'ok');
+    setStatus('✓ ONPE ' + natPct.toFixed(2) + '% · ' + newRegions.length + ' regiones · Proyección recalculada', 'ok');
+    /* Restart countdown timer */
+    if (typeof startCountdown === 'function') startCountdown();
 
   } catch (err) {
     console.error('Refresh error:', err);
@@ -1499,22 +1533,63 @@ function updateProjectionUI(projection, probs) {
 }
 
 /* ══════════════════════════════════════════════════════════
-   AUTO-REFRESH TIMER (every 10 minutes)
+   AUTO-REFRESH + COUNTDOWN TIMER (every 5 minutes)
 ══════════════════════════════════════════════════════════ */
+const REFRESH_MINUTES = 5;
 let autoRefreshInterval = null;
+let countdownInterval = null;
+let countdownSeconds = REFRESH_MINUTES * 60;
 
-function startAutoRefresh(minutes) {
-  if (autoRefreshInterval) clearInterval(autoRefreshInterval);
-  autoRefreshInterval = setInterval(() => {
-    console.log('[AutoRefresh] Refreshing at ' + new Date().toLocaleTimeString());
-    refreshFromONPE();
-  }, minutes * 60 * 1000);
-  console.log('[AutoRefresh] Started — every ' + minutes + ' minutes');
+function updateCountdownDisplay() {
+  const el = document.getElementById('timerCountdown');
+  if (!el) return;
+  const m = Math.floor(countdownSeconds / 60);
+  const s = countdownSeconds % 60;
+  el.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+  /* Color shift: green → yellow → red as time runs out */
+  if (countdownSeconds <= 10) el.style.color = 'var(--c-sanch)';
+  else if (countdownSeconds <= 30) el.style.color = 'var(--c-fuji)';
+  else el.style.color = 'var(--c-nieto)';
+}
+
+function startCountdown() {
+  if (countdownInterval) clearInterval(countdownInterval);
+  countdownSeconds = REFRESH_MINUTES * 60;
+  updateCountdownDisplay();
+  countdownInterval = setInterval(() => {
+    countdownSeconds--;
+    if (countdownSeconds <= 0) {
+      countdownSeconds = 0;
+      updateCountdownDisplay();
+      clearInterval(countdownInterval);
+      /* Trigger refresh */
+      console.log('[AutoRefresh] Timer reached 0 — refreshing');
+      refreshFromONPE().then(() => startCountdown());
+    } else {
+      updateCountdownDisplay();
+    }
+  }, 1000);
+}
+
+/* Update JEE data from national totals */
+function updateJeeData(natData) {
+  if (!natData || !natData.data) return;
+  const d = natData.data;
+  const jeeActas = d.enviadasJee || 0;
+  const contabilizadas = d.contabilizadas || 1;
+  const votosEmitidos = d.totalVotosEmitidos || 0;
+  const votosPerActa = Math.round(votosEmitidos / contabilizadas);
+  const jeeVotos = jeeActas * votosPerActa;
+
+  const elActas = document.getElementById('jeeActas');
+  const elVotos = document.getElementById('jeeVotos');
+  if (elActas) elActas.textContent = jeeActas.toLocaleString('es-PE');
+  if (elVotos) elVotos.textContent = '~' + jeeVotos.toLocaleString('es-PE');
 }
 
 /* Start auto-refresh if Worker is configured */
 if (WORKER_URL && !WORKER_URL.includes('TUSUBDOMINIO')) {
-  startAutoRefresh(10);
+  startCountdown();
 }
 
 </script>
