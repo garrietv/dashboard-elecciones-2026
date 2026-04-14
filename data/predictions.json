@@ -1,73 +1,169 @@
 {
-  "generatedAt": "2026-04-14T22:35:00+02:00",
-  "source": "Modelo Hannah v1 sobre tracking ONPE",
-  "nationalPct": 75.87,
+  "generatedAt": "2026-04-14T22:38:17+02:00",
+  "source": "Modelo Hannah v2 automático sobre tracking ONPE",
+  "nationalPct": 73.37,
   "secondRoundProbabilities": {
-    "rla": 42,
-    "nieto": 6,
-    "sanchez": 52,
-    "belmont": 0
+    "rla": 25,
+    "nieto": 8,
+    "sanchez": 65,
+    "belmont": 2
   },
   "projectionTable": [
-    {"pos": 1, "key": "fuji", "candidate": "Fujimori", "actual": 16.88, "projected": 17.76, "delta": 0.88},
-    {"pos": 2, "key": "sanch", "candidate": "Sánchez", "actual": 10.14, "projected": 11.52, "delta": 1.38},
-    {"pos": 3, "key": "rla", "candidate": "López Aliaga", "actual": 12.79, "projected": 11.21, "delta": -1.58},
-    {"pos": 4, "key": "nieto", "candidate": "Nieto", "actual": 11.84, "projected": 10.92, "delta": -0.92},
-    {"pos": 5, "key": "belm", "candidate": "Belmont", "actual": 10.01, "projected": 10.46, "delta": 0.45}
+    {
+      "pos": 1,
+      "key": "fuji",
+      "candidate": "Fujimori",
+      "actual": 16.91,
+      "projected": 17.46,
+      "delta": 0.55
+    },
+    {
+      "pos": 2,
+      "key": "sanch",
+      "candidate": "Sánchez",
+      "actual": 9.83,
+      "projected": 11.63,
+      "delta": 1.8
+    },
+    {
+      "pos": 3,
+      "key": "rla",
+      "candidate": "López Aliaga",
+      "actual": 12.91,
+      "projected": 11.41,
+      "delta": -1.5
+    },
+    {
+      "pos": 4,
+      "key": "nieto",
+      "candidate": "Nieto",
+      "actual": 11.96,
+      "projected": 10.46,
+      "delta": -1.5
+    },
+    {
+      "pos": 5,
+      "key": "belm",
+      "candidate": "Belmont",
+      "actual": 9.98,
+      "projected": 10.1,
+      "delta": 0.12
+    }
   ],
   "scenarios": [
     {
       "id": "base",
       "name": "Escenario base",
-      "probability": 45,
+      "probability": 55,
       "assumptions": [
-        "Se mantiene la tendencia reciente de entradas ONPE",
-        "Sánchez sigue acelerando en regiones con mayor pendiente",
-        "López Aliaga conserva crecimiento bajo por concentración en Lima"
+        "La pendiente final mantiene el patrón reciente del tracking ONPE",
+        "Sánchez sostiene ventaja relativa en tramos pendientes",
+        "RLA sigue limitado por zonas más avanzadas del conteo"
       ],
       "ranking": [
-        {"candidate": "Keiko Fujimori", "pct": 17.76},
-        {"candidate": "Roberto Sánchez", "pct": 11.52},
-        {"candidate": "Rafael López Aliaga", "pct": 11.21},
-        {"candidate": "Jorge Nieto", "pct": 10.92}
+        {
+          "candidate": "Fujimori",
+          "pct": 17.464000000000002
+        },
+        {
+          "candidate": "Sánchez",
+          "pct": 11.63
+        },
+        {
+          "candidate": "López Aliaga",
+          "pct": 11.41
+        },
+        {
+          "candidate": "Nieto",
+          "pct": 10.46
+        }
       ]
     },
     {
       "id": "sanchez-upside",
       "name": "Sánchez acelera en bastiones",
-      "probability": 30,
+      "probability": 55,
       "assumptions": [
-        "Cajamarca, Amazonas y Huancavelica pesan más en el tramo final",
-        "La canibalización entre Keiko, RLA y Nieto se mantiene",
-        "Sánchez convierte mejor el pendiente rural"
+        "El tramo pendiente pesa más en Cajamarca, Amazonas y otras zonas favorables",
+        "Se mantiene la canibalización relativa entre RLA y Nieto",
+        "La pendiente rural empuja a Sánchez por encima de la línea base"
       ],
       "ranking": [
-        {"candidate": "Keiko Fujimori", "pct": 17.95},
-        {"candidate": "Roberto Sánchez", "pct": 12.05},
-        {"candidate": "Rafael López Aliaga", "pct": 11.12},
-        {"candidate": "Jorge Nieto", "pct": 10.85}
+        {
+          "candidate": "Fujimori",
+          "pct": 17.56
+        },
+        {
+          "candidate": "Sánchez",
+          "pct": 11.98
+        },
+        {
+          "candidate": "López Aliaga",
+          "pct": 11.31
+        },
+        {
+          "candidate": "Nieto",
+          "pct": 10.41
+        }
       ]
     },
     {
       "id": "rla-holds",
-      "name": "RLA resiste el 2° lugar",
+      "name": "RLA retiene el 2° lugar",
       "probability": 25,
       "assumptions": [
-        "El tramo final se parece más al promedio nacional que al patrón rural reciente",
-        "Sánchez desacelera fuera de sus bastiones",
-        "RLA mantiene su piso y evita mayor pérdida relativa"
+        "El tramo pendiente converge al promedio nacional",
+        "Sánchez desacelera fuera de sus regiones fuertes",
+        "RLA conserva suficiente piso para quedar delante"
       ],
       "ranking": [
-        {"candidate": "Keiko Fujimori", "pct": 17.70},
-        {"candidate": "Rafael López Aliaga", "pct": 11.45},
-        {"candidate": "Roberto Sánchez", "pct": 10.98},
-        {"candidate": "Jorge Nieto", "pct": 10.87}
+        {
+          "candidate": "Fujimori",
+          "pct": 17.46
+        },
+        {
+          "candidate": "López Aliaga",
+          "pct": 11.59
+        },
+        {
+          "candidate": "Sánchez",
+          "pct": 11.41
+        },
+        {
+          "candidate": "Nieto",
+          "pct": 10.46
+        }
       ]
     }
   ],
   "insights": [
-    "Sánchez tiene mayor probabilidad de 2° por concentración de voto en regiones con más actas pendientes.",
-    "RLA depende más de Lima y zonas ya muy contadas, lo que limita su upside.",
-    "Nieto sigue competitivo, pero su ventana para remontar es más estrecha."
-  ]
+    "Sánchez pasa a liderar la carrera por el 2° lugar en el modelo por mejor pendiente reciente.",
+    "La pendiente reciente favorece a Sánchez (0.113 pp por punto) sobre RLA (-0.071).",
+    "Nieto sigue en la conversación, pero su probabilidad cae si no recorta más rápido en los siguientes cortes."
+  ],
+  "debug": {
+    "recentSlopes": {
+      "fujimori": -0.0029677419354838305,
+      "rla": -0.07096774193548397,
+      "nieto": -0.04799999999999999,
+      "sanchez": 0.11277419354838694,
+      "belmont": 0.006709677419354788
+    },
+    "currentCut": {
+      "pct": 73.37,
+      "fujimori": 16.914,
+      "rla": 12.915,
+      "nieto": 11.958,
+      "belmont": 9.979,
+      "sanchez": 9.831
+    },
+    "previousCut": {
+      "pct": 68.56,
+      "fujimori": 16.922,
+      "rla": 13.253,
+      "nieto": 12.18,
+      "belmont": 9.929,
+      "sanchez": 9.351
+    }
+  }
 }
