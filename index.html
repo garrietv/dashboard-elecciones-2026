@@ -906,21 +906,6 @@ async function renderWithEmbeddedData() {
     }
   } catch(e) { /* localStorage unavailable */ }
 
-  /* Try KV tracking history (shared across all users) */
-  try {
-    if (WORKER_URL && !WORKER_URL.includes('TUSUBDOMINIO')) {
-      const resp = await fetch(WORKER_URL + '/api/tracking');
-      if (resp.ok) {
-        const data = await resp.json();
-        if (data.cuts && data.cuts.length > TRACKING.cuts.length) {
-          console.log('[KV] Loaded ' + data.cuts.length + ' cuts from server');
-          TRACKING.cuts.length = 0;
-          data.cuts.forEach(c => TRACKING.cuts.push(c));
-        }
-      }
-    }
-  } catch(e) { console.warn('[KV] Tracking fetch failed:', e); }
-
   showHeroFallback();
 
   /* Chart */
@@ -969,6 +954,21 @@ async function renderWithEmbeddedData() {
     const prev = TRACKING.cuts[TRACKING.cuts.length - 2];
     const curr = TRACKING.cuts[TRACKING.cuts.length - 1];
     setTimeout(() => highlightHotMover(prev, curr), 600); /* Delay so KPIs render first */
+  }
+
+  /* Fetch KV tracking in background (non-blocking, updates chart when ready) */
+  if (WORKER_URL && !WORKER_URL.includes('TUSUBDOMINIO')) {
+    fetch(WORKER_URL + '/api/tracking').then(r => r.ok ? r.json() : null).then(data => {
+      if (data?.cuts?.length > TRACKING.cuts.length) {
+        console.log('[KV] Loaded ' + data.cuts.length + ' cuts from server');
+        TRACKING.cuts.length = 0;
+        data.cuts.forEach(c => TRACKING.cuts.push(c));
+        /* Re-render chart and trends with full history */
+        if (window._trackingChart) window._trackingChart.destroy();
+        renderTrackingChart();
+        updateTrendArrows();
+      }
+    }).catch(e => console.warn('[KV] Tracking fetch failed:', e));
   }
 }
 function closeModal() { document.getElementById('modal').classList.remove('open'); }

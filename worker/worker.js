@@ -1,10 +1,11 @@
 /**
- * ONPE Proxy + Aggregator — Cloudflare Worker (Free Tier Compatible)
+ * ONPE Proxy + Aggregator + KV Tracking — Cloudflare Worker v3.1
  * 
- * /api/snapshot  → Data completa en 2 llamadas internas (respeta límite 50 subrequests)
- * /api/totals, /api/candidates → Proxy directo
+ * FIX: Cache only serves when complete (26 regions).
+ * /api/snapshot?half=1|2  → Data agregada (split for free tier)
+ * /api/tracking           → Full tracking history from KV
  * 
- * Cache: 2 minutos. Si ONPE está lenta, sirve cache viejo.
+ * KV Binding: TRACKING_KV (namespace: election-tracking)
  */
 const ONPE = 'https://resultadoelectoral.onpe.gob.pe/presentacion-backend';
 const CORS = {'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET, OPTIONS','Access-Control-Allow-Headers':'Content-Type','Access-Control-Max-Age':'86400'};
@@ -14,8 +15,10 @@ const T5 = ['FUJIMORI','LÓPEZ ALIAGA','NIETO','BELMONT','SANCHEZ'];
 const K5 = ['fuji','rla','nieto','belm','sanch'];
 const HDRS = {'Accept':'application/json, text/plain, */*','Referer':'https://resultadoelectoral.onpe.gob.pe/','Origin':'https://resultadoelectoral.onpe.gob.pe','User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'};
 
+/* Cache: only valid when complete (26 regions) */
 let cache = null, cacheTs = 0;
-const TTL = 2 * 60 * 1000;
+const TTL = 5 * 60 * 1000;
+function cacheIsValid() { return cache && cache.regions?.length >= 26 && (Date.now() - cacheTs) < TTL; }
 
 async function oFetch(path) { return (await fetch(ONPE + path, {headers: HDRS})).json(); }
 function parseTop5(data) {
@@ -26,11 +29,8 @@ function parseTop5(data) {
   return r;
 }
 
-/* Build snapshot in 2 halves to stay under 50 subrequest limit */
 async function buildHalf(depts) {
-  const regions = [];
-  /* Process ALL departments in parallel (max 2 calls each) */
-  const results = await Promise.all(depts.map(async d => {
+  return await Promise.all(depts.map(async d => {
     const [cr, tr] = await Promise.all([
       oFetch('/eleccion-presidencial/participantes-ubicacion-geografica-nombre?tipoFiltro=ubigeo_nivel_01&idAmbitoGeografico=1&ubigeoNivel1='+d.u+'&idEleccion=10'),
       oFetch('/resumen-general/totales?idAmbitoGeografico=1&idEleccion=10&tipoFiltro=ubigeo_nivel_01&idUbigeoDepartamento='+d.u)
@@ -38,48 +38,92 @@ async function buildHalf(depts) {
     const c = parseTop5(cr.data);
     return {name:d.n,pct:tr.data.actasContabilizadas,vv:tr.data.totalVotosValidos,fuji:c.fuji||0,rla:c.rla||0,nieto:c.nieto||0,belm:c.belm||0,sanch:c.sanch||0};
   }));
-  return results;
+}
+
+/* ═══ KV TRACKING ═══ */
+async function saveTrackingCut(env, national) {
+  if (!env.TRACKING_KV) return;
+  try {
+    const cut = {
+      ts: new Date().toISOString(), pct: national.pct,
+      fujimori: national.candidates.fuji||0, rla: national.candidates.rla||0,
+      nieto: national.candidates.nieto||0, belmont: national.candidates.belm||0,
+      sanchez: national.candidates.sanch||0,
+      jee: national.enviadasJee||0, contabilizadas: national.contabilizadas||0
+    };
+    let cuts = [];
+    try { const raw = await env.TRACKING_KV.get('tracking_cuts', 'json'); if (Array.isArray(raw)) cuts = raw; } catch(e) {}
+    const last = cuts[cuts.length - 1];
+    if (!last || Math.abs(cut.pct - last.pct) > 0.3) {
+      cuts.push(cut);
+      if (cuts.length > 200) cuts = cuts.slice(-200);
+      await env.TRACKING_KV.put('tracking_cuts', JSON.stringify(cuts));
+    }
+  } catch(e) { console.error('KV write error:', e); }
+}
+
+function jsonResp(data, extra = {}) {
+  return new Response(JSON.stringify(data), {headers:{...CORS,'Content-Type':'application/json',...extra}});
 }
 
 export default {
-  async fetch(request) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (request.method === 'OPTIONS') return new Response(null, {headers: CORS});
 
     if (url.pathname === '/' || url.pathname === '/health') {
-      return new Response(JSON.stringify({status:'ok',service:'ONPE Aggregator v2',cacheAge:cache?Math.round((Date.now()-cacheTs)/1000)+'s':'empty'}),{headers:{...CORS,'Content-Type':'application/json'}});
+      return jsonResp({status:'ok', service:'ONPE Aggregator v3.1 + KV', kvBound:!!env.TRACKING_KV,
+        cacheComplete: cacheIsValid(), cacheRegions: cache?.regions?.length||0,
+        cacheAge: cache ? Math.round((Date.now()-cacheTs)/1000)+'s' : 'empty'});
     }
 
-    /* ═══ SNAPSHOT (split into halves for free tier) ═══ */
+    /* ═══ TRACKING HISTORY ═══ */
+    if (url.pathname === '/api/tracking') {
+      let cuts = [];
+      if (env.TRACKING_KV) {
+        try { const raw = await env.TRACKING_KV.get('tracking_cuts','json'); if (Array.isArray(raw)) cuts = raw; } catch(e) {}
+      }
+      return jsonResp({cuts, count:cuts.length}, {'Cache-Control':'public, max-age=60'});
+    }
+
+    /* ═══ SNAPSHOT ═══ */
     if (url.pathname === '/api/snapshot') {
       const half = url.searchParams.get('half') || '1';
-      const age = Date.now() - cacheTs;
 
-      /* Serve from full cache if fresh */
-      if (cache && age < TTL) {
-        const result = half === '2' ? {regions: cache.regions.slice(13)} : {national: cache.national, regions: cache.regions.slice(0, 13), timestamp: cache.timestamp};
-        return new Response(JSON.stringify(result), {headers:{...CORS,'Content-Type':'application/json','X-Cache':'HIT','X-Cache-Age':Math.round(age/1000)+'s'}});
+      /* Only serve from cache if it's COMPLETE (26 regions) */
+      if (cacheIsValid()) {
+        const result = half === '2'
+          ? {regions: cache.regions.slice(13)}
+          : {national: cache.national, regions: cache.regions.slice(0,13), timestamp: cache.timestamp};
+        return jsonResp(result, {'X-Cache':'HIT','X-Cache-Age':Math.round((Date.now()-cacheTs)/1000)+'s','Cache-Control':'public, max-age=120'});
       }
 
       try {
         if (half === '1') {
-          /* Half 1: national (2 calls) + first 13 depts (26 calls) = 28 subrequests */
+          /* Half 1: national (2) + 13 depts (26) = 28 subrequests */
           const [natT, natC] = await Promise.all([
             oFetch('/resumen-general/totales?idEleccion=10&tipoFiltro=eleccion'),
             oFetch('/eleccion-presidencial/participantes-ubicacion-geografica-nombre?idEleccion=10&tipoFiltro=eleccion')
           ]);
           const national = {
-            pct: natT.data.actasContabilizadas, totalActas: natT.data.totalActas,
-            contabilizadas: natT.data.contabilizadas, enviadasJee: natT.data.enviadasJee,
-            pendientesJee: natT.data.pendientesJee, votosEmitidos: natT.data.totalVotosEmitidos,
-            votosValidos: natT.data.totalVotosValidos, candidates: parseTop5(natC.data)
+            pct:natT.data.actasContabilizadas, totalActas:natT.data.totalActas,
+            contabilizadas:natT.data.contabilizadas, enviadasJee:natT.data.enviadasJee,
+            pendientesJee:natT.data.pendientesJee, votosEmitidos:natT.data.totalVotosEmitidos,
+            votosValidos:natT.data.totalVotosValidos, candidates:parseTop5(natC.data)
           };
-          const regions1 = await buildHalf(DEPTS.slice(0, 13));
-          return new Response(JSON.stringify({national, regions: regions1, timestamp: new Date().toISOString(), half: 1}),
-            {headers:{...CORS,'Content-Type':'application/json','X-Cache':'MISS'}});
+          const regions1 = await buildHalf(DEPTS.slice(0,13));
+
+          /* Save tracking to KV (non-blocking) */
+          ctx.waitUntil(saveTrackingCut(env, national));
+
+          /* Store half1 data temporarily (cache NOT valid yet — incomplete) */
+          cache = {national, regions: regions1, timestamp: new Date().toISOString()};
+          /* DO NOT set cacheTs — cache is incomplete, cacheIsValid() stays false */
+
+          return jsonResp({national, regions:regions1, timestamp:cache.timestamp}, {'X-Cache':'MISS','Cache-Control':'public, max-age=120'});
 
         } else {
-          /* Half 2: remaining 12 depts (24 calls) + extranjero (2 calls) = 26 subrequests */
+          /* Half 2: 12 depts (24) + extranjero (2) = 26 subrequests */
           const regions2 = await buildHalf(DEPTS.slice(13));
           const [exC, exT] = await Promise.all([
             oFetch('/eleccion-presidencial/participantes-ubicacion-geografica-nombre?tipoFiltro=ambito_geografico&idAmbitoGeografico=2&idEleccion=10'),
@@ -88,28 +132,22 @@ export default {
           const ec = parseTop5(exC.data);
           regions2.push({name:'Extranjero',pct:exT.data.actasContabilizadas,vv:exT.data.totalVotosValidos,fuji:ec.fuji||0,rla:ec.rla||0,nieto:ec.nieto||0,belm:ec.belm||0,sanch:ec.sanch||0});
 
-          return new Response(JSON.stringify({regions: regions2, half: 2}),
-            {headers:{...CORS,'Content-Type':'application/json','X-Cache':'MISS'}});
+          /* Complete the cache: merge half1 regions + half2 regions */
+          if (cache && cache.regions) {
+            cache.regions = [...cache.regions.slice(0,13), ...regions2];
+            cacheTs = Date.now(); /* NOW cache is complete — cacheIsValid() returns true */
+          }
+
+          return jsonResp({regions:regions2, half:2}, {'X-Cache':'MISS','Cache-Control':'public, max-age=120'});
         }
       } catch (err) {
-        if (cache) {
-          const result = half === '2' ? {regions: cache.regions.slice(13)} : {national: cache.national, regions: cache.regions.slice(0, 13), timestamp: cache.timestamp};
-          return new Response(JSON.stringify(result), {headers:{...CORS,'Content-Type':'application/json','X-Cache':'STALE','X-Error':err.message}});
+        /* Serve stale cache if available and complete */
+        if (cache?.regions?.length >= 26) {
+          const result = half === '2' ? {regions:cache.regions.slice(13)} : {national:cache.national,regions:cache.regions.slice(0,13),timestamp:cache.timestamp};
+          return jsonResp(result, {'X-Cache':'STALE','X-Error':err.message});
         }
         return new Response(JSON.stringify({error:err.message}),{status:502,headers:{...CORS,'Content-Type':'application/json'}});
       }
-    }
-
-    /* ═══ FULL SNAPSHOT (for caching after both halves are fetched) ═══ */
-    if (url.pathname === '/api/cache-update') {
-      try {
-        const body = await request.json();
-        if (body.national && body.regions) {
-          cache = body; cacheTs = Date.now();
-          return new Response(JSON.stringify({ok:true}),{headers:{...CORS,'Content-Type':'application/json'}});
-        }
-      } catch(e) {}
-      return new Response(JSON.stringify({error:'Invalid body'}),{status:400,headers:{...CORS,'Content-Type':'application/json'}});
     }
 
     /* ═══ Direct proxy ═══ */
