@@ -3,10 +3,10 @@
 <head>
   <!--
   ============================================================
-    PERÚ ELIGE 2026 — Dashboard Electoral Interactivo
+    DASHBOARD ELECCIONES 2026 — Seguimiento Electoral Interactivo
     ONPE en Vivo + Conteo Rápido Datum
   ============================================================
-    Autor:    Renzo Núñez
+    Autor:    Gustavo Arrieta
     Fuente:   ONPE (resultadoelectoral.onpe.gob.pe)
               Datum Internacional — América TV / Canal N
     Versión:  2.0
@@ -14,10 +14,10 @@
   -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perú Elige 2026 — Dashboard Electoral</title>
-  <meta property="og:title" content="Perú Elige 2026 — Dashboard Electoral Interactivo">
-  <meta property="og:description" content="Tracking en vivo del conteo ONPE con proyección al 100% y comparación con Datum e Ipsos.">
-  <meta property="og:image" content="https://renzonunezaf.github.io/Elecciones_2026/og-preview.png">
+  <title>Dashboard Elecciones 2026</title>
+  <meta property="og:title" content="Dashboard Elecciones 2026">
+  <meta property="og:description" content="Tracking en vivo del conteo ONPE para las elecciones presidenciales del Perú 2026.">
+  <meta property="og:image" content="./og-preview.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,19 +31,19 @@
   <style>
     /* ══════════════ 1. VARIABLES ══════════════ */
     :root {
-      --bg: #0f1117; --bg-card: #181b24; --bg-alt: #1e2230;
-      --border: rgba(255,255,255,0.06);
-      --tx1: #e8eaed; --tx2: #9aa0ab; --tx3: #5f6673;
-      --c-fuji: #E8943A; --c-rla: #4A90D9; --c-nieto: #2ECDA7;
-      --c-belm: #B07CD8; --c-sanch: #E04848;
-      --c-fuji-bg: rgba(232,148,58,0.15); --c-rla-bg: rgba(74,144,217,0.15);
-      --c-nieto-bg: rgba(46,205,167,0.15); --c-belm-bg: rgba(176,124,216,0.15);
-      --c-sanch-bg: rgba(224,72,72,0.15);
+      --bg: #f7f9fc; --bg-card: #ffffff; --bg-alt: #eef2f7;
+      --border: rgba(15,23,42,0.10);
+      --tx1: #0f172a; --tx2: #475569; --tx3: #94a3b8;
+      --c-fuji: #E8943A; --c-rla: #2563eb; --c-nieto: #10b981;
+      --c-belm: #8b5cf6; --c-sanch: #dc2626;
+      --c-fuji-bg: rgba(232,148,58,0.12); --c-rla-bg: rgba(37,99,235,0.10);
+      --c-nieto-bg: rgba(16,185,129,0.10); --c-belm-bg: rgba(139,92,246,0.10);
+      --c-sanch-bg: rgba(220,38,38,0.10);
       --radius: 10px;
     }
     /* ══════════════ 2. RESET ══════════════ */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx1);min-height:100vh}
+    body{font-family:'DM Sans',sans-serif;background:linear-gradient(180deg,#ffffff 0%,#f7f9fc 100%);color:var(--tx1);min-height:100vh}
 
     /* ══════════════ 2b. SKELETON LOADING ══════════════ */
     .skel{display:inline-block;width:60px;height:18px;border-radius:4px;background:var(--bg-alt);
@@ -383,7 +383,7 @@
   <!-- ══════════════ HERO HEADER ══════════════ -->
   <div class="hero">
     <div class="hero-left">
-      <div class="hero-title">Perú Elige 2026</div>
+      <div class="hero-title">Dashboard Elecciones 2026</div>
       <div class="hero-sub">Elecciones Generales · Primera Vuelta</div>
     </div>
     <div class="hero-center">
@@ -611,7 +611,7 @@
     </div>
   </div>
 
-  <div class="credits">Elaborado por Renzo Núñez · Fuente: ONPE, Datum Internacional, Ipsos · abril 2026</div>
+  <div class="credits">Elaborado por Gustavo Arrieta · Fuente: ONPE, Datum Internacional, Ipsos · abril 2026</div>
 </div>
 
 <script>
@@ -1762,6 +1762,5 @@ if (WORKER_URL && !WORKER_URL.includes('TUSUBDOMINIO')) {
 }
 
 </script>
-<script data-goatcounter="https://renzo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
