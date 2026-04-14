@@ -65,11 +65,6 @@
     .live-dot{width:7px;height:7px;border-radius:50%;background:var(--c-nieto);animation:livePulse 2s ease-in-out infinite}
     @keyframes livePulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(46,205,167,.5)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(46,205,167,0)}}
     .hero-right{min-width:100px;text-align:right}
-    @media(max-width:600px){
-      .hero{flex-direction:column;text-align:center}
-      .hero-pct{font-size:56px}
-      .hero-right{text-align:center}
-    }
 
     /* ══════════════ 4. TABS ══════════════ */
     .tabs{display:flex;gap:0;margin-bottom:16px;border-bottom:2px solid var(--border)}
@@ -112,7 +107,6 @@
 
     /* ══════════════ 6. GRID ══════════════ */
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
-    @media(max-width:900px){.grid{grid-template-columns:1fr}}
     .card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;overflow:hidden;
       opacity:0;animation:fadeUp .6s ease forwards;animation-delay:.2s}
     .card:nth-child(2){animation-delay:.35s}
@@ -123,6 +117,9 @@
     .map-container svg{width:100%;height:100%}
     .dept-path{stroke:#0f1117;stroke-width:.5;cursor:pointer;transition:opacity .15s,stroke .15s,transform .15s}
     .dept-path:hover{opacity:.85;stroke:#fff;stroke-width:1.5;transform:scale(1.01)}
+    /* Department % labels */
+    .dept-labels text{pointer-events:none;user-select:none}
+    .dept-labels line,.dept-labels circle{pointer-events:none}
     /* Puzzle entrance animation */
     .dept-path.animate-in{
       opacity:0;transform:scale(.6) rotate(-8deg);transform-origin:center;
@@ -134,7 +131,6 @@
 
     /* ══════════════ 8. CHART ══════════════ */
     .chart-container{position:relative;width:100%;height:400px}
-    @media(max-width:900px){.chart-container{height:300px}}
 
     /* ══════════════ 8b. PROJECTION SUMMARY ══════════════ */
     .proj-summary{margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
@@ -189,6 +185,101 @@
     .tag.err{background:rgba(224,72,72,.15);color:#E04848}
 
     .credits{text-align:center;margin-top:16px;font-size:10px;color:var(--tx3);padding-bottom:20px}
+
+    /* ══════════════════════════════════════════════════════
+       RESPONSIVE — TABLET (≤900px)
+    ══════════════════════════════════════════════════════ */
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .chart-container{height:300px}
+      .hero-pct{font-size:60px}
+      .ref-cards{flex-direction:column}
+      .ref-card{min-width:unset}
+    }
+
+    /* ══════════════════════════════════════════════════════
+       RESPONSIVE — MOBILE (≤600px)
+    ══════════════════════════════════════════════════════ */
+    @media(max-width:600px){
+      .container{padding:10px 12px}
+
+      /* Hero: stack and center */
+      .hero{flex-direction:column;text-align:center;gap:8px;padding:14px 0 10px}
+      .hero-left,.hero-right{min-width:unset;text-align:center}
+      .hero-pct{font-size:52px;letter-spacing:-2px}
+      .hero-pct-sign{font-size:28px}
+      .hero-label{font-size:9px;letter-spacing:1px}
+      .hero-live{font-size:10px}
+
+      /* Tabs: full width, equal */
+      .tabs{gap:0}
+      .tab{flex:1;justify-content:center;padding:10px 8px;font-size:12px;gap:5px}
+      .tab svg{width:14px;height:14px}
+
+      /* KPIs: 2-column grid */
+      .kpis{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+      .kpi{min-width:unset;padding:8px 10px}
+      .kpi-val{font-size:16px}
+      .kpi-label{font-size:9px}
+
+      /* Probability bars: vertical stack */
+      .prob-section{padding:10px 12px}
+      .prob-bars{flex-direction:column;gap:8px}
+      .prob-item{min-width:unset}
+      .prob-name{min-width:65px;font-size:10px}
+      .prob-pct{font-size:13px;min-width:32px}
+
+      /* Cards */
+      .card{padding:12px}
+      .card-title{font-size:12px;margin-bottom:8px}
+
+      /* Map */
+      .map-container{aspect-ratio:3/4.5;max-height:400px}
+
+      /* Chart */
+      .chart-container{height:260px}
+
+      /* Projection summary: compact */
+      .proj-summary{padding-top:8px;margin-top:10px}
+      .proj-row{font-size:11px;gap:2px;padding:4px 0}
+      .proj-pos{width:22px;font-size:11px}
+      .proj-name{font-size:11px;min-width:60px}
+      .proj-current{width:55px;font-size:10px}
+      .proj-arrow{width:14px;font-size:8px}
+      .proj-final{width:55px;font-size:11px}
+      .proj-diff{width:60px;font-size:9px}
+      .proj-header{font-size:8px}
+
+      /* Legend */
+      .legend{gap:8px;margin-bottom:8px}
+      .legend-item{font-size:10px}
+
+      /* Ref cards */
+      .ref-card{padding:10px;font-size:10px}
+
+      /* Modal */
+      .modal-overlay{padding:10px}
+      .modal{padding:16px;border-radius:12px;max-height:90vh}
+      .modal h3{font-size:14px}
+      .modal-cand{font-size:12px}
+      .modal-pct{font-size:13px;min-width:45px}
+
+      /* Refresh */
+      .refresh-btn{font-size:10px;padding:5px 10px}
+      .refresh-status{font-size:10px}
+    }
+
+    /* ══════════════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE (≤380px)
+    ══════════════════════════════════════════════════════ */
+    @media(max-width:380px){
+      .hero-pct{font-size:44px}
+      .hero-pct-sign{font-size:24px}
+      .kpis{grid-template-columns:1fr 1fr}
+      .kpi-val{font-size:14px}
+      .proj-diff{display:none}
+      .prob-name{min-width:55px}
+    }
 
     /* ══════════════ 12. REFRESH ══════════════ */
     .refresh-btn{background:var(--bg-alt);border:1px solid var(--border);color:var(--tx2);
@@ -310,6 +401,8 @@
       <div class="card">
         <div class="card-title">Mapa — Ganador por departamento (ONPE parcial)</div>
         <div class="map-container" id="mapOnpe"></div>
+        <!-- Region progress grid -->
+        <div class="region-grid" id="regionGrid"></div>
       </div>
       <div class="card">
         <div class="card-title">Evolución del conteo + Proyección al 100%</div>
@@ -654,6 +747,64 @@ async function renderMap(containerId, regionsData, source) {
       const i = features.indexOf(d), dept = fMap[i];
       if (dept && regMap[dept]) showModal(dept, regMap[dept], source);
     });
+
+  /* ── Department % labels ── */
+  const SMALL_DEPTS = {
+    'Callao':   {dx: -55, dy: 15},
+    'Tumbes':   {dx: 20, dy: -18},
+    'Moquegua': {dx: 30, dy: 10},
+  };
+  const labelG = svg.append('g').attr('class','dept-labels');
+
+  features.forEach((f, i) => {
+    const dept = fMap[i];
+    if (!dept || !regMap[dept]) return;
+    const r = regMap[dept];
+    if (typeof r.pct === 'undefined') return;
+
+    const centroid = path.centroid(f);
+    if (isNaN(centroid[0])) return;
+
+    const pctText = Math.round(r.pct) + '%';
+    const isSmall = SMALL_DEPTS[dept];
+    const fontSize = W < 400 ? 7 : 8.5;
+    const delay = (i * 60 + 400) + 'ms';
+
+    if (isSmall) {
+      const tx = centroid[0] + isSmall.dx;
+      const ty = centroid[1] + isSmall.dy;
+      /* Leader line */
+      labelG.append('line')
+        .attr('x1', centroid[0]).attr('y1', centroid[1])
+        .attr('x2', tx).attr('y2', ty)
+        .attr('stroke', 'rgba(255,255,255,.4)').attr('stroke-width', 0.7)
+        .style('opacity', 0).style('animation', 'fadeUp .4s ease ' + delay + ' forwards');
+      /* Circle anchor */
+      labelG.append('circle')
+        .attr('cx', centroid[0]).attr('cy', centroid[1]).attr('r', 2)
+        .attr('fill', 'rgba(255,255,255,.5)')
+        .style('opacity', 0).style('animation', 'fadeUp .4s ease ' + delay + ' forwards');
+      /* External label */
+      labelG.append('text')
+        .attr('x', tx).attr('y', ty + 3)
+        .attr('text-anchor', isSmall.dx < 0 ? 'end' : 'start')
+        .attr('font-size', fontSize + 'px').attr('font-family', '"DM Mono", monospace')
+        .attr('font-weight', 600).attr('fill', '#fff')
+        .attr('paint-order', 'stroke').attr('stroke', '#0f1117').attr('stroke-width', 2.5)
+        .text(pctText)
+        .style('opacity', 0).style('animation', 'fadeUp .4s ease ' + delay + ' forwards');
+    } else {
+      /* Label inside department */
+      labelG.append('text')
+        .attr('x', centroid[0]).attr('y', centroid[1] + 3)
+        .attr('text-anchor', 'middle')
+        .attr('font-size', fontSize + 'px').attr('font-family', '"DM Mono", monospace')
+        .attr('font-weight', 600).attr('fill', '#fff')
+        .attr('paint-order', 'stroke').attr('stroke', 'rgba(15,17,23,.7)').attr('stroke-width', 2.5)
+        .text(pctText)
+        .style('opacity', 0).style('animation', 'fadeUp .4s ease ' + delay + ' forwards');
+    }
+  });
 }
 
 /* ══════════════════════════════════════════════════════════
