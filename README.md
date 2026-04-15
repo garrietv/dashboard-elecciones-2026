@@ -75,6 +75,7 @@ Este comando:
 - actualiza `data/latest/onpe_latest.json`
 - regenera `data/predictions.json`
 - deja traza en `data/latest/pipeline_state.json`
+- permite que toda la pestaña `Predicciones` se repinte desde una única fuente persistida
 
 ### Modo manual equivalente
 
@@ -124,6 +125,7 @@ La predicción no debe depender de un único escenario agresivo. La UI muestra u
    - persistir snapshot
    - regenerar latest
    - regenerar predicciones
+   - la pestaña `Predicciones` debe releer únicamente `data/predictions.json`
    - recién después validar UI
 
 ## Próximas mejoras recomendadas

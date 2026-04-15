@@ -1560,7 +1560,7 @@ async function refreshFromONPE() {
     updateExtranjero();
     updateVoteCounters();
     updateTrendArrows();
-    loadPredictionsLayer('live');
+    loadPredictionsLayer('persisted');
     document.querySelectorAll('.skel').forEach(s => s.remove());
 
     setStatus('✓ ONPE ' + natPct.toFixed(2) + '% · ' + allRegions.length + ' reg · Proyección recalculada', 'ok');
@@ -1894,24 +1894,25 @@ function applyPredictionsToUI(pred) {
 
 async function loadPredictionsLayer(mode = 'persisted') {
   try {
-    if (mode === 'live') {
-      const live = computeLivePredictionsFromTracking();
-      if (live) {
-        savePredictionsCache(live);
-        applyPredictionsToUI(live);
-        return;
-      }
+    const resp = await fetch('./data/predictions.json?_=' + Date.now(), { cache: 'no-store' });
+    if (resp.ok) {
+      const pred = await resp.json();
+      savePredictionsCache(pred);
+      applyPredictionsToUI(pred);
+      return;
     }
+
     const cached = getPredictionsCache();
     if (cached) {
       applyPredictionsToUI(cached);
       return;
     }
-    const resp = await fetch('./data/predictions.json?_=' + Date.now());
-    const pred = await resp.json();
-    savePredictionsCache(pred);
-    applyPredictionsToUI(pred);
   } catch (e) {
+    const cached = getPredictionsCache();
+    if (cached) {
+      applyPredictionsToUI(cached);
+      return;
+    }
     console.error('Predictions layer error', e);
   }
 }
