@@ -2051,8 +2051,13 @@ async function renderWithEmbeddedData() {
           data.trackingCuts.forEach(c => TRACKING.cuts.push(c));
         } else if (data.natCut) {
           const lastCut = TRACKING.cuts[TRACKING.cuts.length - 1];
-          if (Math.abs(data.natCut.pct - lastCut.pct) > 0.3) TRACKING.cuts.push(data.natCut);
-          else Object.assign(lastCut, data.natCut);
+          if (!lastCut) {
+            TRACKING.cuts.push(data.natCut);
+          } else if (typeof lastCut.pct !== 'number' || Math.abs(data.natCut.pct - lastCut.pct) > 0.3) {
+            TRACKING.cuts.push(data.natCut);
+          } else {
+            Object.assign(lastCut, data.natCut);
+          }
         }
       }
     }
