@@ -2073,8 +2073,7 @@ async function renderWithEmbeddedData() {
           data.trackingCuts.forEach(c => TRACKING.cuts.push(c));
         } else if (data.natCut) {
           const lastCut = TRACKING.cuts[TRACKING.cuts.length - 1];
-          if (!lastCut) TRACKING.cuts.push(data.natCut);
-          else if (typeof lastCut.pct !== 'number' || Math.abs(data.natCut.pct - lastCut.pct) > 0.3) TRACKING.cuts.push(data.natCut);
+          if (Math.abs(data.natCut.pct - lastCut.pct) > 0.3) TRACKING.cuts.push(data.natCut);
           else Object.assign(lastCut, data.natCut);
         }
       }
@@ -2627,16 +2626,7 @@ async function refreshFromONPE() {
     if (snap2.error) throw new Error(snap2.error);
 
     /* Merge both halves */
-    const allRegions = [...(snap1.regions||[]), ...(snap2.regions||[])].map(r => ({
-      name: r.name,
-      pct: r.pct || 0,
-      vv: r.vv || 0,
-      fuji: r.fuji || 0,
-      rla: r.rla || 0,
-      nieto: r.nieto || 0,
-      belm: r.belm || 0,
-      sanch: r.sanch || 0
-    }));
+    const allRegions = [...(snap1.regions||[]), ...(snap2.regions||[])];
     const natPct = snap1.national.pct;
     const natCands = snap1.national.candidates;
 
@@ -2654,9 +2644,7 @@ async function refreshFromONPE() {
       pct: natPct, fujimori: natCands.fuji||0, rla: natCands.rla||0,
       nieto: natCands.nieto||0, belmont: natCands.belm||0, sanchez: natCands.sanch||0
     };
-    if (!lastCut) {
-      TRACKING.cuts.push(newCut);
-    } else if (typeof lastCut.pct !== 'number' || Math.abs(natPct - lastCut.pct) > 0.3) {
+    if (Math.abs(natPct - lastCut.pct) > 0.3) {
       TRACKING.cuts.push(newCut);
     } else {
       Object.assign(lastCut, newCut);
@@ -2709,7 +2697,6 @@ async function refreshFromONPE() {
     updateExtranjero();
     updateVoteCounters();
     updateTrendArrows();
-    loadPredictionsLayer('persisted');
     document.querySelectorAll('.skel').forEach(s => s.remove());
 
     setStatus('✓ ONPE ' + natPct.toFixed(2) + '% · ' + allRegions.length + ' reg · Proyección recalculada', 'ok');
@@ -2728,7 +2715,7 @@ async function refreshFromONPE() {
 
   } catch (err) {
     console.error('Refresh error:', err);
-    setStatus('Usando data embebida mientras se estabiliza el refresh en vivo.', '');
+    setStatus('✗ ' + err.message + ' — mostrando data embebida', 'err');
     if (typeof renderWithEmbeddedData === 'function') renderWithEmbeddedData();
   } finally {
     btn.classList.remove('loading'); btn.disabled = false;
@@ -2951,9 +2938,9 @@ if (WORKER_URL && !WORKER_URL.includes('TUSUBDOMINIO')) {
 }
 
 </script>
-<script data-goatcounter="https://renzo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</body>
-</html>/* Predictions layer */
+<script data-goatcounter="https://renzo.goatcounter.com/count" async src="//gc.zgo.at/count.js">
+
+/* Predictions layer */
 function savePredictionsCache(pred) {
   try { localStorage.setItem('predictions_cache_v2', JSON.stringify({ savedAt: new Date().toISOString(), data: pred })); } catch(e) {}
 }
@@ -3090,6 +3077,7 @@ if (WORKER_URL && !WORKER_URL.includes('TUSUBDOMINIO')) {
   startCountdown();
 }
 loadPredictionsLayer('persisted');
+
 
 </script>
 </body>
