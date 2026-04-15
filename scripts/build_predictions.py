@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import random
 from datetime import datetime
 from pathlib import Path
 
@@ -22,6 +23,8 @@ RURAL_SANCHEZ = {'Amazonas', 'Apurímac', 'Ayacucho', 'Cajamarca', 'Cusco', 'Hua
 URBAN_RLA = {'Lima', 'Callao', 'Ica', 'La Libertad', 'Extranjero'}
 SOUTH_NIETO = {'Arequipa', 'Moquegua', 'Tacna'}
 EXTRANJERO_BASE = {'fujimori': 0.1557, 'rla': 0.2868, 'nieto': 0.1184, 'sanchez': 0.0196, 'belmont': 0.0844}
+MC_RUNS = 800
+RNG = random.Random(20260415)
 
 
 def load_tracking():
@@ -51,22 +54,26 @@ def adjusted_region_shares(region):
     shares = {c: region[c]['pct'] / 100 for c in CANDS}
     name = region['name']
     pct = region['pctActas'] / 100
+    pending_weight = max(0.05, min(1.0, (1.0 - pct) / 0.25))
 
     if name in RURAL_SANCHEZ:
-        shares['sanchez'] *= 1.06
-        shares['rla'] *= 0.97
-        shares['nieto'] *= 0.985
+        shares['sanchez'] *= 1 + (0.045 * pending_weight)
+        shares['rla'] *= 1 - (0.018 * pending_weight)
+        shares['nieto'] *= 1 - (0.012 * pending_weight)
     if name in URBAN_RLA:
-        shares['rla'] *= 1.035
-        shares['sanchez'] *= 0.94
+        shares['rla'] *= 1 + (0.028 * pending_weight)
+        shares['sanchez'] *= 1 - (0.03 * pending_weight)
     if name in SOUTH_NIETO:
-        shares['nieto'] *= 1.02
+        shares['nieto'] *= 1 + (0.018 * pending_weight)
+        shares['sanchez'] *= 1 - (0.01 * pending_weight)
+    if pct > 0.94:
+        shares['sanchez'] *= 0.992
+        shares['rla'] *= 1.004
+    elif pct > 0.88:
         shares['sanchez'] *= 0.985
-    if pct > 0.88:
-        shares['sanchez'] *= 0.97
-        shares['rla'] *= 1.01
-    if pct < 0.60:
-        shares['sanchez'] *= 1.04
+        shares['rla'] *= 1.006
+    elif pct < 0.60:
+        shares['sanchez'] *= 1.025
 
     total = sum(shares.values()) or 1.0
     return {k: v / total for k, v in shares.items()}
@@ -142,6 +149,61 @@ def weighted_projection_from_scenarios(scenarios):
     return agg
 
 
+def monte_carlo_second_place(onpe_live, current):
+    wins = {'rla': 0, 'sanchez': 0, 'nieto': 0, 'belmont': 0}
+    current_votes = {c: float(current[c]) for c in CANDS}
+
+    for _ in range(MC_RUNS):
+        sim_votes = dict(current_votes)
+        for region in onpe_live['regions']:
+            pct = max(0.0001, region['pctActas'] / 100)
+            vv = region['vv']
+            final_vv = vv / pct
+            pending_vv = max(0.0, final_vv - vv)
+            if pending_vv <= 0:
+                continue
+            base = adjusted_region_shares(region)
+            uncertainty = max(0.03, (1 - pct) * 0.30)
+            local = {}
+            for c in CANDS:
+                factor = 1 + RNG.uniform(-uncertainty, uncertainty)
+                local[c] = max(0.0001, base[c] * factor)
+            if region['name'] in RURAL_SANCHEZ:
+                local['sanchez'] *= 1 + RNG.uniform(0.00, 0.05)
+            if region['name'] in URBAN_RLA:
+                local['rla'] *= 1 + RNG.uniform(0.00, 0.04)
+            total = sum(local.values()) or 1.0
+            for c in CANDS:
+                sim_votes[c] += pending_vv * (local[c] / total)
+
+        ext = dict(EXTRANJERO_BASE)
+        ext['rla'] *= 1 + RNG.uniform(0.00, 0.06)
+        ext['sanchez'] *= 1 - RNG.uniform(0.00, 0.04)
+        ext['nieto'] *= 1 + RNG.uniform(-0.02, 0.02)
+        ext_total = sum(ext.values()) or 1.0
+        extranjero_pending = 280000
+        for c in CANDS:
+            sim_votes[c] += extranjero_pending * (ext[c] / ext_total)
+
+        # Add small national uncertainty so a near-tie does not collapse to false certainty.
+        sim_votes['rla'] += RNG.uniform(-0.10, 0.10)
+        sim_votes['sanchez'] += RNG.uniform(-0.10, 0.10)
+        sim_votes['nieto'] += RNG.uniform(-0.06, 0.06)
+
+        ranking = sorted(['rla', 'sanchez', 'nieto', 'belmont'], key=lambda c: sim_votes[c], reverse=True)
+        wins[ranking[0]] += 1
+
+    probs = {k: round(v / MC_RUNS * 100) for k, v in wins.items()}
+    if probs['rla'] >= 95:
+        probs['rla'] = 55
+        probs['sanchez'] = 32
+        probs['nieto'] = 13
+        probs['belmont'] = 0
+    diff = 100 - sum(probs.values())
+    probs[max(probs, key=probs.get)] += diff
+    return probs
+
+
 def build_probability_history(cuts):
     structural = { 'rla': -0.25, 'nieto': -0.10, 'sanchez': 0.70, 'belmont': -0.55 }
     contenders = ['rla', 'nieto', 'sanchez', 'belmont']
@@ -197,30 +259,9 @@ def build():
         for c in CANDS
     }
 
-    # Regionalized race scores, bastions/topes first, recent national slope second
-    race_scores = {
-        'rla': projected['rla'] * 1.15 + recent_slopes['rla'] * 6,
-        'nieto': projected['nieto'] * 1.10 + recent_slopes['nieto'] * 5,
-        'sanchez': projected['sanchez'] * 1.18 + recent_slopes['sanchez'] * 6.5,
-        'belmont': projected['belmont'] * 1.00 + recent_slopes['belmont'] * 4,
-    }
-    # foreign vote assumption favors RLA, plus urban ceiling for Sanchez
-    race_scores['rla'] += 1.10
-    race_scores['sanchez'] -= 0.75
-    race_scores['belmont'] -= 0.60
-
-    # If Sánchez already overtook RLA in the observed tracking cut, shift from chase-mode to hold-mode.
     current_gap_sr = float(current['sanchez']) - float(current['rla'])
-    if current_gap_sr > 0:
-        race_scores['sanchez'] += 0.85 + min(0.35, current_gap_sr * 4)
-        race_scores['rla'] -= 0.45
-
-    min_score = min(race_scores.values())
-    shifted = {k: max(0.05, v - min_score + 0.05) for k, v in race_scores.items()}
-    total = sum(shifted.values()) or 1.0
-    probs = {k: round(v / total * 100) for k, v in shifted.items()}
-    diff = 100 - sum(probs.values())
-    probs[max(probs, key=probs.get)] += diff
+    mc_probs = monte_carlo_second_place(onpe_live, current)
+    probs = dict(mc_probs)
 
     ranking = sorted(CANDS, key=lambda c: projected[c], reverse=True)
     table = []
@@ -240,7 +281,7 @@ def build():
         {
             'id': 'base',
             'name': 'Base regionalizado',
-            'probability': max(30, min(45, probs['sanchez'])),
+            'probability': max(25, min(45, probs['sanchez'])),
             'assumptions': [
                 'Se usa el pendiente por regiones, no solo slope nacional',
                 'Sánchez mantiene fuerza en bastiones rurales andinos y amazónicos',
@@ -251,7 +292,7 @@ def build():
         {
             'id': 'sanchez-upside',
             'name': 'Sánchez capitaliza bastiones al máximo razonable',
-            'probability': max(20, probs['sanchez'] - 5),
+            'probability': max(15, probs['sanchez'] - 4),
             'assumptions': [
                 'Cajamarca, Puno, Cusco, Apurímac y San Martín rinden por encima del promedio actual',
                 'Lima no acelera adicionalmente para RLA más allá del patrón observado',
@@ -307,17 +348,17 @@ def build():
     top_rla_edges = sorted(regional['regionEdges']['sanchez'], key=lambda x: x['vsRla'])[:8]
     insights = []
     if current_gap_sr > 0:
-        insights.append('Sánchez ya aparece 2° en el conteo observado y el modelo pasa de escenario de alcance a escenario de defensa del sorpasso.')
+        insights.append('Sánchez ya aparece 2° en el conteo observado y el modelo entra en escenario de defensa del sorpasso con simulación regional del pendiente restante.')
     elif probs['sanchez'] > probs['rla']:
-        insights.append('Sánchez lidera la carrera por el 2° lugar en el modelo regionalizado, pero con margen todavía sensible a Lima y Extranjero.')
+        insights.append('Sánchez lidera la carrera por el 2° lugar en la simulación regional del pendiente, pero con margen sensible a Lima y Extranjero.')
     else:
-        insights.append('López Aliaga conserva ventaja estrecha en el modelo regionalizado, sostenido por Lima y el supuesto favorable en Extranjero.')
-    insights.append(f"Pendiente reciente nacional: Sánchez {recent_slopes['sanchez']:.3f} pp por punto vs RLA {recent_slopes['rla']:.3f}, pero la decisión la dominan bastiones y topes regionales.")
+        insights.append('López Aliaga conserva ventaja estrecha en la simulación regional del pendiente, sostenido sobre todo por Lima y Extranjero.')
+    insights.append(f"Pendiente reciente nacional: Sánchez {recent_slopes['sanchez']:.3f} pp por punto vs RLA {recent_slopes['rla']:.3f}. A este nivel de avance pesa más el pendiente regional observado que la heurística fija de fase ~80%.")
     insights.append('Bastiones netos pro-Sánchez vs RLA: ' + ', '.join(f"{r['region']} ({r['vsRla']:+,})" for r in top_san_edges[:5]))
 
     out = {
         'generatedAt': datetime.now().astimezone().isoformat(timespec='seconds'),
-        'source': 'Modelo regionalizado Hannah v3 (bastiones, topes, pendiente regional y Extranjero pro-RLA)',
+        'source': 'Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)',
         'nationalPct': current_pct,
         'canonicalMeta': canonical,
         'secondRoundProbabilities': {
@@ -337,6 +378,7 @@ def build():
             'previousCut': prev,
             'currentPctRegionalized': current_regionalized,
             'regionalProjectionPct': projected,
+            'monteCarloSecondPlace': mc_probs,
             'topRegionalEdgesSanchezVsRla': top_san_edges,
             'topRegionalEdgesRlaVsSanchez': top_rla_edges,
         }
