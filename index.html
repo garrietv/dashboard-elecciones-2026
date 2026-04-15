@@ -2073,7 +2073,8 @@ async function renderWithEmbeddedData() {
           data.trackingCuts.forEach(c => TRACKING.cuts.push(c));
         } else if (data.natCut) {
           const lastCut = TRACKING.cuts[TRACKING.cuts.length - 1];
-          if (Math.abs(data.natCut.pct - lastCut.pct) > 0.3) TRACKING.cuts.push(data.natCut);
+          if (!lastCut) TRACKING.cuts.push(data.natCut);
+          else if (typeof lastCut.pct !== 'number' || Math.abs(data.natCut.pct - lastCut.pct) > 0.3) TRACKING.cuts.push(data.natCut);
           else Object.assign(lastCut, data.natCut);
         }
       }
@@ -2626,8 +2627,7 @@ async function refreshFromONPE() {
     if (snap2.error) throw new Error(snap2.error);
 
     /* Merge both halves */
-    const rawRegions = [...(snap1.regions||[]), ...(snap2.regions||[])];
-    const allRegions = rawRegions.map(r => ({
+    const allRegions = [...(snap1.regions||[]), ...(snap2.regions||[])].map(r => ({
       name: r.name,
       pct: r.pct || 0,
       vv: r.vv || 0,
@@ -2639,14 +2639,6 @@ async function refreshFromONPE() {
     }));
     const natPct = snap1.national.pct;
     const natCands = snap1.national.candidates;
-
-    /* Hero first, even if later steps fail */
-    try {
-      const heroEl = document.getElementById('heroPct');
-      if (heroEl) heroEl.innerHTML = `<span class="hero-pct-num">${Number(natPct).toFixed(3)}<span class="hero-pct-sign">%</span></span>`;
-      const lastUpdateEl = document.getElementById('lastUpdate');
-      if (lastUpdateEl) lastUpdateEl.textContent = `ONPE en vivo · ${new Date().toLocaleString('es-PE', {month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}`;
-    } catch(e) { console.warn('Hero pre-update failed:', e); }
 
     /* 1. Update JEE */
     const jeeActas = snap1.national.enviadasJee || 0;
@@ -2680,10 +2672,17 @@ async function refreshFromONPE() {
     const probs = calcProbabilities(projection, natPct);
     updateProjectionUI(projection, probs);
 
-    /* 5. Hero reinforce */
+    /* 5. Hero count-up */
     try {
       const heroEl = document.getElementById('heroPct');
-      if (heroEl) heroEl.innerHTML = `<span class="hero-pct-num">${Number(natPct).toFixed(3)}<span class="hero-pct-sign">%</span></span>`;
+      heroEl.innerHTML = `<span class="hero-pct-num">0.00<span class="hero-pct-sign">%</span></span>`;
+      const numNode = heroEl.querySelector('.hero-pct-num').firstChild;
+      const dur = 1200, t0 = performance.now();
+      (function tick(t) {
+        const p = Math.min((t - t0) / dur, 1);
+        numNode.textContent = (natPct * (1 - Math.pow(1 - p, 3))).toFixed(3);
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
     } catch(e) { console.error('Hero error:', e); }
 
     /* 6. KPIs */
@@ -2881,6 +2880,14 @@ function updateProjectionUI(projection, probs) {
       `<span class="proj-diff" style="color:${diffColor}">${diffStr}</span>`;
   });
 
+  /* Update ref card */
+  const projCard = document.querySelector('.ref-card:first-child');
+  if (projCard) {
+    const top4 = sorted.filter(s => s.key !== 'fuji').slice(0, 4);
+    projCard.innerHTML = `<strong>Proyección dinámica</strong>
+      ${top4.map(c => labelMap[c.key] + ' ' + c.pct.toFixed(2) + '%').join(' · ')}
+      <div><span class="tag ok">Auto-calculado · ${new Date().toLocaleTimeString('es-PE')}</span></div>`;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -2938,7 +2945,15 @@ function updateJeeData(natData) {
   if (elVotos) elVotos.textContent = '~' + jeeVotos.toLocaleString('es-PE');
 }
 
-/* Predictions layer */
+/* Start auto-refresh if Worker is configured */
+if (WORKER_URL && !WORKER_URL.includes('TUSUBDOMINIO')) {
+  startCountdown();
+}
+
+</script>
+<script data-goatcounter="https://renzo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>/* Predictions layer */
 function savePredictionsCache(pred) {
   try { localStorage.setItem('predictions_cache_v2', JSON.stringify({ savedAt: new Date().toISOString(), data: pred })); } catch(e) {}
 }
