@@ -177,7 +177,7 @@ def build():
     cuts = data['cuts']
     current = cuts[-1]
     prev = cuts[-2] if len(cuts) > 1 else cuts[-1]
-    current_pct = float(current['pct'])
+    current_pct = float(onpe_live.get('nationalPct') or current['pct'])
 
     regional = regional_projection(onpe_live)
     projected_raw = regional['projectionPct']
