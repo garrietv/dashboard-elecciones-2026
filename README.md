@@ -76,7 +76,7 @@ Este comando:
 - guarda versión normalizada
 - actualiza `data/latest/onpe_latest.json`
 - regenera `data/predictions.json`
-- resincroniza `index.html`
+- NO vuelve a tocar `index.html`; la UI live de ONPE se mantiene estable y separada de la persistencia
 - deja traza en `data/latest/pipeline_state.json`
 - permite que toda la pestaña `Predicciones` se repinte desde una única fuente persistida
 
@@ -88,7 +88,6 @@ python3 scripts/sync_from_worker.py
 python3 scripts/store_onpe_snapshot.py
 python3 scripts/build_onpe_latest.py
 python3 scripts/build_predictions.py
-python3 scripts/embed_latest_into_index.py
 ```
 
 ### Automatización del repo
@@ -96,7 +95,7 @@ python3 scripts/embed_latest_into_index.py
 - Entrada automática: `scripts/sync_from_worker.py` consulta `https://onpe-proxy.renzonunez-af.workers.dev`
 - Orquestador: `scripts/full_auto_sync.py`
 - Trigger: push a `main`, ejecución manual del workflow, o cualquier corrida del script local
-- Efecto: actualiza JSON fuente, ejecuta el pipeline completo, regenera snapshots/latest/predictions, resincroniza `index.html` y hace commit automático si hubo cambios reales
+- Efecto: actualiza JSON fuente, ejecuta el pipeline completo, regenera snapshots/latest/predictions y hace commit automático si hubo cambios reales, sin alterar la capa live de ONPE en `index.html`
 
 ## Metodología actual de predicción
 

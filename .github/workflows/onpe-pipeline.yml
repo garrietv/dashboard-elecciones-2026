@@ -30,6 +30,10 @@ jobs:
         run: |
           python3 scripts/full_auto_sync.py
 
+      - name: Restore stable ONPE live frontend file
+        run: |
+          git checkout HEAD -- index.html
+
       - name: Commit generated files if changed
         run: |
           git config user.name "github-actions[bot]"
