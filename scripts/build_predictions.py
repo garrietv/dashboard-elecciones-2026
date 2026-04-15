@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TRACKING = ROOT / 'data' / 'tracking.json'
 ONPE_LIVE = ROOT / 'data' / 'onpe_live.json'
+MODEL_INPUT = ROOT / 'data' / 'model_input.json'
 OUT = ROOT / 'data' / 'predictions.json'
 
 CANDS = ['fujimori', 'rla', 'nieto', 'sanchez', 'belmont']
@@ -29,6 +30,10 @@ def load_tracking():
 
 def load_onpe_live():
     return json.loads(ONPE_LIVE.read_text())
+
+
+def load_model_input():
+    return json.loads(MODEL_INPUT.read_text()) if MODEL_INPUT.exists() else None
 
 
 def slope(cuts, key, n=4):
@@ -172,12 +177,14 @@ def build_probability_history(cuts):
 
 
 def build():
-    data = load_tracking()
-    onpe_live = load_onpe_live()
+    model_input = load_model_input()
+    data = model_input['tracking'] if model_input else load_tracking()
+    onpe_live = model_input['onpeLive'] if model_input else load_onpe_live()
+    canonical = model_input['canonical'] if model_input else {}
     cuts = data['cuts']
-    current = cuts[-1]
-    prev = cuts[-2] if len(cuts) > 1 else cuts[-1]
-    current_pct = float(onpe_live.get('nationalPct') or current['pct'])
+    current = data.get('latestCut') or cuts[-1]
+    prev = cuts[-2] if len(cuts) > 1 else current
+    current_pct = float(canonical.get('nationalPct') or onpe_live.get('nationalPct') or current['pct'])
 
     regional = regional_projection(onpe_live)
     projected_raw = regional['projectionPct']
@@ -304,6 +311,7 @@ def build():
         'generatedAt': datetime.now().astimezone().isoformat(timespec='seconds'),
         'source': 'Modelo regionalizado Hannah v3 (bastiones, topes, pendiente regional y Extranjero pro-RLA)',
         'nationalPct': current_pct,
+        'canonicalMeta': canonical,
         'secondRoundProbabilities': {
             'rla': probs['rla'],
             'nieto': probs['nieto'],

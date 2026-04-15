@@ -52,6 +52,7 @@ def main():
 
     run('store_onpe_snapshot.py')
     run('build_onpe_latest.py')
+    run('build_model_input.py')
     run('build_predictions.py')
 
     STATE.parent.mkdir(parents=True, exist_ok=True)

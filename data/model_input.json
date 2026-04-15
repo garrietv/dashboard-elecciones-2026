@@ -1,0 +1,1599 @@
+{
+  "source": "canonical-model-input-v1",
+  "tracking": {
+    "lastUpdate": "2026-04-15T07:39:03.189Z",
+    "nationalPct": 88.207,
+    "latestCut": {
+      "ts": "2026-04-15T07:39:03.189Z",
+      "pct": 88.207,
+      "fujimori": 16.9,
+      "rla": 12.021,
+      "nieto": 11.185,
+      "belmont": 10.155,
+      "sanchez": 11.831,
+      "jee": 3816,
+      "contabilizadas": 81826
+    },
+    "cuts": [
+      {
+        "ts": "2026-04-14T17:10:54.080Z",
+        "pct": 76.444,
+        "fujimori": 16.88,
+        "rla": 12.741,
+        "nieto": 11.804,
+        "belmont": 10.016,
+        "sanchez": 10.251,
+        "jee": 1680,
+        "contabilizadas": 70914,
+        "votosEmitidos": 15854681
+      },
+      {
+        "ts": "2026-04-14T18:19:47.073Z",
+        "pct": 76.875,
+        "fujimori": 16.875,
+        "rla": 12.709,
+        "nieto": 11.778,
+        "belmont": 10.023,
+        "sanchez": 10.324,
+        "jee": 1748,
+        "contabilizadas": 71314
+      },
+      {
+        "ts": "2026-04-14T18:59:17.292Z",
+        "pct": 77.234,
+        "fujimori": 16.867,
+        "rla": 12.687,
+        "nieto": 11.759,
+        "belmont": 10.029,
+        "sanchez": 10.382,
+        "jee": 1826,
+        "contabilizadas": 71647
+      },
+      {
+        "ts": "2026-04-14T19:55:43.959Z",
+        "pct": 77.618,
+        "fujimori": 16.872,
+        "rla": 12.65,
+        "nieto": 11.731,
+        "belmont": 10.034,
+        "sanchez": 10.469,
+        "jee": 1891,
+        "contabilizadas": 72003
+      },
+      {
+        "ts": "2026-04-14T20:18:59.921Z",
+        "pct": 77.918,
+        "fujimori": 16.875,
+        "rla": 12.636,
+        "nieto": 11.722,
+        "belmont": 10.036,
+        "sanchez": 10.498,
+        "jee": 1915,
+        "contabilizadas": 72281
+      },
+      {
+        "ts": "2026-04-14T20:49:17.487Z",
+        "pct": 78.28,
+        "fujimori": 16.88,
+        "rla": 12.623,
+        "nieto": 11.711,
+        "belmont": 10.035,
+        "sanchez": 10.533,
+        "jee": 1977,
+        "contabilizadas": 72617
+      },
+      {
+        "ts": "2026-04-14T21:20:05.394Z",
+        "pct": 78.581,
+        "fujimori": 16.885,
+        "rla": 12.608,
+        "nieto": 11.7,
+        "belmont": 10.032,
+        "sanchez": 10.572,
+        "jee": 2110,
+        "contabilizadas": 72896
+      },
+      {
+        "ts": "2026-04-14T21:48:33.811Z",
+        "pct": 79,
+        "fujimori": 16.888,
+        "rla": 12.59,
+        "nieto": 11.688,
+        "belmont": 10.035,
+        "sanchez": 10.615,
+        "jee": 2178,
+        "contabilizadas": 73285
+      },
+      {
+        "ts": "2026-04-14T22:09:43.720Z",
+        "pct": 79.316,
+        "fujimori": 16.888,
+        "rla": 12.578,
+        "nieto": 11.682,
+        "belmont": 10.037,
+        "sanchez": 10.644,
+        "jee": 2212,
+        "contabilizadas": 73578
+      },
+      {
+        "ts": "2026-04-14T22:38:33.231Z",
+        "pct": 79.697,
+        "fujimori": 16.886,
+        "rla": 12.548,
+        "nieto": 11.663,
+        "belmont": 10.045,
+        "sanchez": 10.703,
+        "jee": 2294,
+        "contabilizadas": 73932
+      },
+      {
+        "ts": "2026-04-14T23:08:45.051Z",
+        "pct": 80.03,
+        "fujimori": 16.884,
+        "rla": 12.531,
+        "nieto": 11.65,
+        "belmont": 10.048,
+        "sanchez": 10.735,
+        "jee": 2371,
+        "contabilizadas": 74241
+      },
+      {
+        "ts": "2026-04-14T23:38:57.295Z",
+        "pct": 80.425,
+        "fujimori": 16.88,
+        "rla": 12.491,
+        "nieto": 11.62,
+        "belmont": 10.061,
+        "sanchez": 10.813,
+        "jee": 2481,
+        "contabilizadas": 74607
+      },
+      {
+        "ts": "2026-04-15T00:08:32.948Z",
+        "pct": 80.768,
+        "fujimori": 16.884,
+        "rla": 12.465,
+        "nieto": 11.599,
+        "belmont": 10.066,
+        "sanchez": 10.859,
+        "jee": 2565,
+        "contabilizadas": 74925
+      },
+      {
+        "ts": "2026-04-15T00:50:49.409Z",
+        "pct": 81.195,
+        "fujimori": 16.886,
+        "rla": 12.446,
+        "nieto": 11.583,
+        "belmont": 10.068,
+        "sanchez": 10.897,
+        "jee": 2634,
+        "contabilizadas": 75321
+      },
+      {
+        "ts": "2026-04-15T01:23:07.787Z",
+        "pct": 81.621,
+        "fujimori": 16.892,
+        "rla": 12.411,
+        "nieto": 11.557,
+        "belmont": 10.071,
+        "sanchez": 10.961,
+        "jee": 2717,
+        "contabilizadas": 75717
+      },
+      {
+        "ts": "2026-04-15T01:51:28.381Z",
+        "pct": 81.972,
+        "fujimori": 16.888,
+        "rla": 12.396,
+        "nieto": 11.544,
+        "belmont": 10.076,
+        "sanchez": 10.99,
+        "jee": 2802,
+        "contabilizadas": 76042
+      },
+      {
+        "ts": "2026-04-15T02:28:45.971Z",
+        "pct": 82.455,
+        "fujimori": 16.879,
+        "rla": 12.372,
+        "nieto": 11.521,
+        "belmont": 10.085,
+        "sanchez": 11.04,
+        "jee": 2878,
+        "contabilizadas": 76490
+      },
+      {
+        "ts": "2026-04-15T02:48:13.749Z",
+        "pct": 82.802,
+        "fujimori": 16.878,
+        "rla": 12.355,
+        "nieto": 11.505,
+        "belmont": 10.091,
+        "sanchez": 11.074,
+        "jee": 2918,
+        "contabilizadas": 76812
+      },
+      {
+        "ts": "2026-04-15T03:08:43.449Z",
+        "pct": 83.154,
+        "fujimori": 16.871,
+        "rla": 12.332,
+        "nieto": 11.485,
+        "belmont": 10.102,
+        "sanchez": 11.115,
+        "jee": 2976,
+        "contabilizadas": 77139
+      },
+      {
+        "ts": "2026-04-15T03:39:57.141Z",
+        "pct": 83.554,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 3016,
+        "contabilizadas": 77510
+      },
+      {
+        "ts": "2026-04-15T03:40:06.296Z",
+        "pct": 83.248,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 2984,
+        "contabilizadas": 77226
+      },
+      {
+        "ts": "2026-04-15T03:40:48.064Z",
+        "pct": 83.554,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 3016,
+        "contabilizadas": 77510
+      },
+      {
+        "ts": "2026-04-15T03:40:52.880Z",
+        "pct": 83.248,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 2984,
+        "contabilizadas": 77226
+      },
+      {
+        "ts": "2026-04-15T03:42:14.666Z",
+        "pct": 83.554,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 3016,
+        "contabilizadas": 77510
+      },
+      {
+        "ts": "2026-04-15T03:42:32.189Z",
+        "pct": 83.248,
+        "fujimori": 16.857,
+        "rla": 12.284,
+        "nieto": 11.444,
+        "belmont": 10.115,
+        "sanchez": 11.221,
+        "jee": 2984,
+        "contabilizadas": 77226
+      },
+      {
+        "ts": "2026-04-15T03:42:32.377Z",
+        "pct": 83.554,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 3016,
+        "contabilizadas": 77510
+      },
+      {
+        "ts": "2026-04-15T03:43:17.816Z",
+        "pct": 83.248,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 2984,
+        "contabilizadas": 77226
+      },
+      {
+        "ts": "2026-04-15T03:43:24.568Z",
+        "pct": 83.554,
+        "fujimori": 16.857,
+        "rla": 12.284,
+        "nieto": 11.444,
+        "belmont": 10.115,
+        "sanchez": 11.221,
+        "jee": 3016,
+        "contabilizadas": 77510
+      },
+      {
+        "ts": "2026-04-15T03:43:59.018Z",
+        "pct": 83.248,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 2984,
+        "contabilizadas": 77226
+      },
+      {
+        "ts": "2026-04-15T03:44:45.394Z",
+        "pct": 83.554,
+        "fujimori": 16.857,
+        "rla": 12.284,
+        "nieto": 11.444,
+        "belmont": 10.115,
+        "sanchez": 11.221,
+        "jee": 3016,
+        "contabilizadas": 77510
+      },
+      {
+        "ts": "2026-04-15T03:44:51.069Z",
+        "pct": 83.248,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 2984,
+        "contabilizadas": 77226
+      },
+      {
+        "ts": "2026-04-15T03:45:18.152Z",
+        "pct": 83.554,
+        "fujimori": 16.857,
+        "rla": 12.284,
+        "nieto": 11.444,
+        "belmont": 10.115,
+        "sanchez": 11.221,
+        "jee": 3016,
+        "contabilizadas": 77510
+      },
+      {
+        "ts": "2026-04-15T03:45:52.897Z",
+        "pct": 83.248,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 2984,
+        "contabilizadas": 77226
+      },
+      {
+        "ts": "2026-04-15T03:46:37.192Z",
+        "pct": 83.554,
+        "fujimori": 16.857,
+        "rla": 12.284,
+        "nieto": 11.444,
+        "belmont": 10.115,
+        "sanchez": 11.221,
+        "jee": 3016,
+        "contabilizadas": 77510
+      },
+      {
+        "ts": "2026-04-15T03:46:47.667Z",
+        "pct": 83.248,
+        "fujimori": 16.86,
+        "rla": 12.307,
+        "nieto": 11.464,
+        "belmont": 10.11,
+        "sanchez": 11.166,
+        "jee": 2984,
+        "contabilizadas": 77226
+      },
+      {
+        "ts": "2026-04-15T03:47:01.997Z",
+        "pct": 83.554,
+        "fujimori": 16.857,
+        "rla": 12.284,
+        "nieto": 11.444,
+        "belmont": 10.115,
+        "sanchez": 11.221,
+        "jee": 3016,
+        "contabilizadas": 77510
+      },
+      {
+        "ts": "2026-04-15T03:47:42.300Z",
+        "pct": 83.248,
+        "fujimori": 16.857,
+        "rla": 12.284,
+        "nieto": 11.444,
+        "belmont": 10.115,
+        "sanchez": 11.221,
+        "jee": 2984,
+        "contabilizadas": 77226
+      },
+      {
+        "ts": "2026-04-15T03:48:14.532Z",
+        "pct": 83.554,
+        "fujimori": 16.857,
+        "rla": 12.284,
+        "nieto": 11.444,
+        "belmont": 10.115,
+        "sanchez": 11.221,
+        "jee": 3016,
+        "contabilizadas": 77510
+      },
+      {
+        "ts": "2026-04-15T03:58:08.083Z",
+        "pct": 84.053,
+        "fujimori": 16.856,
+        "rla": 12.263,
+        "nieto": 11.426,
+        "belmont": 10.12,
+        "sanchez": 11.269,
+        "jee": 3120,
+        "contabilizadas": 77973
+      },
+      {
+        "ts": "2026-04-15T04:09:10.172Z",
+        "pct": 84.393,
+        "fujimori": 16.857,
+        "rla": 12.244,
+        "nieto": 11.41,
+        "belmont": 10.123,
+        "sanchez": 11.314,
+        "jee": 3166,
+        "contabilizadas": 78288
+      },
+      {
+        "ts": "2026-04-15T04:09:57.650Z",
+        "pct": 84.053,
+        "fujimori": 16.857,
+        "rla": 12.244,
+        "nieto": 11.41,
+        "belmont": 10.123,
+        "sanchez": 11.314,
+        "jee": 3120,
+        "contabilizadas": 77973
+      },
+      {
+        "ts": "2026-04-15T04:11:32.822Z",
+        "pct": 84.393,
+        "fujimori": 16.853,
+        "rla": 12.216,
+        "nieto": 11.387,
+        "belmont": 10.131,
+        "sanchez": 11.373,
+        "jee": 3166,
+        "contabilizadas": 78288
+      },
+      {
+        "ts": "2026-04-15T04:12:03.858Z",
+        "pct": 84.053,
+        "fujimori": 16.853,
+        "rla": 12.216,
+        "nieto": 11.387,
+        "belmont": 10.131,
+        "sanchez": 11.373,
+        "jee": 3120,
+        "contabilizadas": 77973
+      },
+      {
+        "ts": "2026-04-15T04:12:45.470Z",
+        "pct": 84.393,
+        "fujimori": 16.853,
+        "rla": 12.216,
+        "nieto": 11.387,
+        "belmont": 10.131,
+        "sanchez": 11.373,
+        "jee": 3166,
+        "contabilizadas": 78288
+      },
+      {
+        "ts": "2026-04-15T04:13:31.941Z",
+        "pct": 84.053,
+        "fujimori": 16.853,
+        "rla": 12.216,
+        "nieto": 11.387,
+        "belmont": 10.131,
+        "sanchez": 11.373,
+        "jee": 3120,
+        "contabilizadas": 77973
+      },
+      {
+        "ts": "2026-04-15T04:14:00.957Z",
+        "pct": 84.393,
+        "fujimori": 16.857,
+        "rla": 12.244,
+        "nieto": 11.41,
+        "belmont": 10.123,
+        "sanchez": 11.314,
+        "jee": 3166,
+        "contabilizadas": 78288
+      },
+      {
+        "ts": "2026-04-15T04:14:33.898Z",
+        "pct": 84.053,
+        "fujimori": 16.853,
+        "rla": 12.216,
+        "nieto": 11.387,
+        "belmont": 10.131,
+        "sanchez": 11.373,
+        "jee": 3120,
+        "contabilizadas": 77973
+      },
+      {
+        "ts": "2026-04-15T04:14:46.178Z",
+        "pct": 84.393,
+        "fujimori": 16.853,
+        "rla": 12.216,
+        "nieto": 11.387,
+        "belmont": 10.131,
+        "sanchez": 11.373,
+        "jee": 3166,
+        "contabilizadas": 78288
+      },
+      {
+        "ts": "2026-04-15T04:14:48.322Z",
+        "pct": 84.053,
+        "fujimori": 16.853,
+        "rla": 12.216,
+        "nieto": 11.387,
+        "belmont": 10.131,
+        "sanchez": 11.373,
+        "jee": 3120,
+        "contabilizadas": 77973
+      },
+      {
+        "ts": "2026-04-15T04:15:38.875Z",
+        "pct": 84.393,
+        "fujimori": 16.853,
+        "rla": 12.216,
+        "nieto": 11.387,
+        "belmont": 10.131,
+        "sanchez": 11.373,
+        "jee": 3166,
+        "contabilizadas": 78288
+      },
+      {
+        "ts": "2026-04-15T04:15:40.953Z",
+        "pct": 84.053,
+        "fujimori": 16.857,
+        "rla": 12.244,
+        "nieto": 11.41,
+        "belmont": 10.123,
+        "sanchez": 11.314,
+        "jee": 3120,
+        "contabilizadas": 77973
+      },
+      {
+        "ts": "2026-04-15T04:16:55.595Z",
+        "pct": 84.393,
+        "fujimori": 16.853,
+        "rla": 12.216,
+        "nieto": 11.387,
+        "belmont": 10.131,
+        "sanchez": 11.373,
+        "jee": 3166,
+        "contabilizadas": 78288
+      },
+      {
+        "ts": "2026-04-15T04:17:24.444Z",
+        "pct": 84.053,
+        "fujimori": 16.857,
+        "rla": 12.244,
+        "nieto": 11.41,
+        "belmont": 10.123,
+        "sanchez": 11.314,
+        "jee": 3120,
+        "contabilizadas": 77973
+      },
+      {
+        "ts": "2026-04-15T04:18:12.762Z",
+        "pct": 84.393,
+        "fujimori": 16.853,
+        "rla": 12.216,
+        "nieto": 11.387,
+        "belmont": 10.131,
+        "sanchez": 11.373,
+        "jee": 3166,
+        "contabilizadas": 78288
+      },
+      {
+        "ts": "2026-04-15T04:30:19.865Z",
+        "pct": 84.722,
+        "fujimori": 16.85,
+        "rla": 12.208,
+        "nieto": 11.38,
+        "belmont": 10.134,
+        "sanchez": 11.394,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:38:58.296Z",
+        "pct": 85.081,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:39:08.506Z",
+        "pct": 84.722,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:39:25.744Z",
+        "pct": 85.081,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:39:47.377Z",
+        "pct": 84.722,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:40:32.469Z",
+        "pct": 85.081,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:41:37.268Z",
+        "pct": 84.722,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:41:53.950Z",
+        "pct": 85.081,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:42:02.695Z",
+        "pct": 84.722,
+        "fujimori": 16.837,
+        "rla": 12.175,
+        "nieto": 11.347,
+        "belmont": 10.142,
+        "sanchez": 11.48,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:42:28.267Z",
+        "pct": 85.081,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:42:39.308Z",
+        "pct": 84.722,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:42:47.950Z",
+        "pct": 85.081,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:43:08.615Z",
+        "pct": 84.722,
+        "fujimori": 16.837,
+        "rla": 12.175,
+        "nieto": 11.347,
+        "belmont": 10.142,
+        "sanchez": 11.48,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:43:51.209Z",
+        "pct": 85.081,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:44:21.248Z",
+        "pct": 84.722,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:45:09.537Z",
+        "pct": 85.081,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:45:19.476Z",
+        "pct": 84.722,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:45:45.099Z",
+        "pct": 85.081,
+        "fujimori": 16.837,
+        "rla": 12.175,
+        "nieto": 11.347,
+        "belmont": 10.142,
+        "sanchez": 11.48,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:46:15.145Z",
+        "pct": 84.722,
+        "fujimori": 16.844,
+        "rla": 12.198,
+        "nieto": 11.368,
+        "belmont": 10.137,
+        "sanchez": 11.421,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:46:41.726Z",
+        "pct": 85.081,
+        "fujimori": 16.837,
+        "rla": 12.175,
+        "nieto": 11.347,
+        "belmont": 10.142,
+        "sanchez": 11.48,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:47:08.311Z",
+        "pct": 84.722,
+        "fujimori": 16.837,
+        "rla": 12.175,
+        "nieto": 11.347,
+        "belmont": 10.142,
+        "sanchez": 11.48,
+        "jee": 3219,
+        "contabilizadas": 78593
+      },
+      {
+        "ts": "2026-04-15T04:48:15.889Z",
+        "pct": 85.081,
+        "fujimori": 16.837,
+        "rla": 12.175,
+        "nieto": 11.347,
+        "belmont": 10.142,
+        "sanchez": 11.48,
+        "jee": 3268,
+        "contabilizadas": 78926
+      },
+      {
+        "ts": "2026-04-15T04:59:06.314Z",
+        "pct": 85.458,
+        "fujimori": 16.836,
+        "rla": 12.163,
+        "nieto": 11.336,
+        "belmont": 10.144,
+        "sanchez": 11.508,
+        "jee": 3310,
+        "contabilizadas": 79276
+      },
+      {
+        "ts": "2026-04-15T05:18:23.635Z",
+        "pct": 85.856,
+        "fujimori": 16.845,
+        "rla": 12.131,
+        "nieto": 11.305,
+        "belmont": 10.148,
+        "sanchez": 11.571,
+        "jee": 3371,
+        "contabilizadas": 79645
+      },
+      {
+        "ts": "2026-04-15T05:38:24.792Z",
+        "pct": 86.356,
+        "fujimori": 16.848,
+        "rla": 12.112,
+        "nieto": 11.286,
+        "belmont": 10.149,
+        "sanchez": 11.616,
+        "jee": 3461,
+        "contabilizadas": 80109
+      },
+      {
+        "ts": "2026-04-15T06:09:13.067Z",
+        "pct": 86.915,
+        "fujimori": 16.861,
+        "rla": 12.072,
+        "nieto": 11.24,
+        "belmont": 10.152,
+        "sanchez": 11.721,
+        "jee": 3562,
+        "contabilizadas": 80628
+      },
+      {
+        "ts": "2026-04-15T06:38:50.949Z",
+        "pct": 87.368,
+        "fujimori": 16.866,
+        "rla": 12.06,
+        "nieto": 11.227,
+        "belmont": 10.155,
+        "sanchez": 11.748,
+        "jee": 3644,
+        "contabilizadas": 81048
+      },
+      {
+        "ts": "2026-04-15T07:08:25.985Z",
+        "pct": 87.811,
+        "fujimori": 16.878,
+        "rla": 12.042,
+        "nieto": 11.205,
+        "belmont": 10.155,
+        "sanchez": 11.798,
+        "jee": 3712,
+        "contabilizadas": 81459
+      },
+      {
+        "ts": "2026-04-15T07:39:03.189Z",
+        "pct": 88.207,
+        "fujimori": 16.9,
+        "rla": 12.021,
+        "nieto": 11.185,
+        "belmont": 10.155,
+        "sanchez": 11.831,
+        "jee": 3816,
+        "contabilizadas": 81826
+      }
+    ]
+  },
+  "onpeLive": {
+    "lastUpdate": "2026-04-15T07:44:02.674Z",
+    "nationalPct": 88.029,
+    "totalActas": 92766,
+    "actasContabilizadas": 81661,
+    "regions": [
+      {
+        "name": "Amazonas",
+        "pctActas": 81.925,
+        "vv": 137508,
+        "fujimori": {
+          "pct": 17.967,
+          "v": 24706
+        },
+        "rla": {
+          "pct": 3.898,
+          "v": 5360
+        },
+        "nieto": {
+          "pct": 3.89,
+          "v": 5349
+        },
+        "belmont": {
+          "pct": 10.776,
+          "v": 14818
+        },
+        "sanchez": {
+          "pct": 34.416,
+          "v": 47325
+        }
+      },
+      {
+        "name": "Áncash",
+        "pctActas": 88.306,
+        "vv": 478507,
+        "fujimori": {
+          "pct": 17.897,
+          "v": 85638
+        },
+        "rla": {
+          "pct": 5.972,
+          "v": 28576
+        },
+        "nieto": {
+          "pct": 7.364,
+          "v": 35237
+        },
+        "belmont": {
+          "pct": 10.077,
+          "v": 48219
+        },
+        "sanchez": {
+          "pct": 15.166,
+          "v": 72570
+        }
+      },
+      {
+        "name": "Apurímac",
+        "pctActas": 91.42,
+        "vv": 184023,
+        "fujimori": {
+          "pct": 6.958,
+          "v": 12804
+        },
+        "rla": {
+          "pct": 3.201,
+          "v": 5891
+        },
+        "nieto": {
+          "pct": 3.748,
+          "v": 6897
+        },
+        "belmont": {
+          "pct": 14.141,
+          "v": 26023
+        },
+        "sanchez": {
+          "pct": 40.541,
+          "v": 74605
+        }
+      },
+      {
+        "name": "Arequipa",
+        "pctActas": 96.014,
+        "vv": 846254,
+        "fujimori": {
+          "pct": 7.319,
+          "v": 61937
+        },
+        "rla": {
+          "pct": 10.681,
+          "v": 90388
+        },
+        "nieto": {
+          "pct": 18.637,
+          "v": 157716
+        },
+        "belmont": {
+          "pct": 10.902,
+          "v": 92259
+        },
+        "sanchez": {
+          "pct": 10.056,
+          "v": 85099
+        }
+      },
+      {
+        "name": "Ayacucho",
+        "pctActas": 94.053,
+        "vv": 267617,
+        "fujimori": {
+          "pct": 8.109,
+          "v": 21701
+        },
+        "rla": {
+          "pct": 2.754,
+          "v": 7370
+        },
+        "nieto": {
+          "pct": 5.593,
+          "v": 14968
+        },
+        "belmont": {
+          "pct": 14.458,
+          "v": 38692
+        },
+        "sanchez": {
+          "pct": 31.097,
+          "v": 83221
+        }
+      },
+      {
+        "name": "Cajamarca",
+        "pctActas": 84.269,
+        "vv": 557677,
+        "fujimori": {
+          "pct": 13.675,
+          "v": 76262
+        },
+        "rla": {
+          "pct": 3.337,
+          "v": 18610
+        },
+        "nieto": {
+          "pct": 4.732,
+          "v": 26389
+        },
+        "belmont": {
+          "pct": 11.043,
+          "v": 61584
+        },
+        "sanchez": {
+          "pct": 41.489,
+          "v": 231375
+        }
+      },
+      {
+        "name": "Callao",
+        "pctActas": 95.066,
+        "vv": 550766,
+        "fujimori": {
+          "pct": 20.661,
+          "v": 113794
+        },
+        "rla": {
+          "pct": 15.01,
+          "v": 82670
+        },
+        "nieto": {
+          "pct": 15.036,
+          "v": 82813
+        },
+        "belmont": {
+          "pct": 8.137,
+          "v": 44816
+        },
+        "sanchez": {
+          "pct": 2.998,
+          "v": 16512
+        }
+      },
+      {
+        "name": "Cusco",
+        "pctActas": 91.162,
+        "vv": 641005,
+        "fujimori": {
+          "pct": 6.052,
+          "v": 38794
+        },
+        "rla": {
+          "pct": 4.895,
+          "v": 31377
+        },
+        "nieto": {
+          "pct": 9.23,
+          "v": 59165
+        },
+        "belmont": {
+          "pct": 15.499,
+          "v": 99349
+        },
+        "sanchez": {
+          "pct": 22.027,
+          "v": 141194
+        }
+      },
+      {
+        "name": "Huancavelica",
+        "pctActas": 94.894,
+        "vv": 164462,
+        "fujimori": {
+          "pct": 7.064,
+          "v": 11618
+        },
+        "rla": {
+          "pct": 2.348,
+          "v": 3862
+        },
+        "nieto": {
+          "pct": 3.243,
+          "v": 5334
+        },
+        "belmont": {
+          "pct": 13.535,
+          "v": 22260
+        },
+        "sanchez": {
+          "pct": 43.38,
+          "v": 71344
+        }
+      },
+      {
+        "name": "Huánuco",
+        "pctActas": 87.954,
+        "vv": 305374,
+        "fujimori": {
+          "pct": 15.386,
+          "v": 46985
+        },
+        "rla": {
+          "pct": 6.012,
+          "v": 18359
+        },
+        "nieto": {
+          "pct": 4.766,
+          "v": 14554
+        },
+        "belmont": {
+          "pct": 14.243,
+          "v": 43494
+        },
+        "sanchez": {
+          "pct": 29.306,
+          "v": 89493
+        }
+      },
+      {
+        "name": "Ica",
+        "pctActas": 72.084,
+        "vv": 351454,
+        "fujimori": {
+          "pct": 20.143,
+          "v": 70793
+        },
+        "rla": {
+          "pct": 9.906,
+          "v": 34815
+        },
+        "nieto": {
+          "pct": 10.143,
+          "v": 35648
+        },
+        "belmont": {
+          "pct": 10.318,
+          "v": 36263
+        },
+        "sanchez": {
+          "pct": 7.484,
+          "v": 26303
+        }
+      },
+      {
+        "name": "Junín",
+        "pctActas": 94.852,
+        "vv": 606463,
+        "fujimori": {
+          "pct": 16.97,
+          "v": 102917
+        },
+        "rla": {
+          "pct": 7.614,
+          "v": 46176
+        },
+        "nieto": {
+          "pct": 8.039,
+          "v": 48754
+        },
+        "belmont": {
+          "pct": 11.131,
+          "v": 67505
+        },
+        "sanchez": {
+          "pct": 12.193,
+          "v": 73946
+        }
+      },
+      {
+        "name": "La Libertad",
+        "pctActas": 90.249,
+        "vv": 841056,
+        "fujimori": {
+          "pct": 20.215,
+          "v": 170019
+        },
+        "rla": {
+          "pct": 8.313,
+          "v": 69917
+        },
+        "nieto": {
+          "pct": 9.863,
+          "v": 82953
+        },
+        "belmont": {
+          "pct": 7.093,
+          "v": 59656
+        },
+        "sanchez": {
+          "pct": 9.556,
+          "v": 80371
+        }
+      },
+      {
+        "name": "Lambayeque",
+        "pctActas": 95.097,
+        "vv": 636685,
+        "fujimori": {
+          "pct": 26.413,
+          "v": 168168
+        },
+        "rla": {
+          "pct": 8.592,
+          "v": 54704
+        },
+        "nieto": {
+          "pct": 10.361,
+          "v": 65967
+        },
+        "belmont": {
+          "pct": 7.497,
+          "v": 47732
+        },
+        "sanchez": {
+          "pct": 10.63,
+          "v": 67680
+        }
+      },
+      {
+        "name": "Lima",
+        "pctActas": 92.522,
+        "vv": 5643636,
+        "fujimori": {
+          "pct": 17.839,
+          "v": 1006768
+        },
+        "rla": {
+          "pct": 19.968,
+          "v": 1126921
+        },
+        "nieto": {
+          "pct": 15.08,
+          "v": 851060
+        },
+        "belmont": {
+          "pct": 9.122,
+          "v": 514812
+        },
+        "sanchez": {
+          "pct": 3.268,
+          "v": 184434
+        }
+      },
+      {
+        "name": "Loreto",
+        "pctActas": 77.419,
+        "vv": 274480,
+        "fujimori": {
+          "pct": 28.535,
+          "v": 78323
+        },
+        "rla": {
+          "pct": 6.956,
+          "v": 19093
+        },
+        "nieto": {
+          "pct": 3.801,
+          "v": 10433
+        },
+        "belmont": {
+          "pct": 4.324,
+          "v": 11869
+        },
+        "sanchez": {
+          "pct": 8.409,
+          "v": 23081
+        }
+      },
+      {
+        "name": "Madre de Dios",
+        "pctActas": 75.345,
+        "vv": 62129,
+        "fujimori": {
+          "pct": 14.251,
+          "v": 8854
+        },
+        "rla": {
+          "pct": 3.636,
+          "v": 2259
+        },
+        "nieto": {
+          "pct": 5.624,
+          "v": 3494
+        },
+        "belmont": {
+          "pct": 14.333,
+          "v": 8905
+        },
+        "sanchez": {
+          "pct": 21.272,
+          "v": 13216
+        }
+      },
+      {
+        "name": "Moquegua",
+        "pctActas": 94.983,
+        "vv": 108556,
+        "fujimori": {
+          "pct": 6.59,
+          "v": 7154
+        },
+        "rla": {
+          "pct": 5.815,
+          "v": 6313
+        },
+        "nieto": {
+          "pct": 10.424,
+          "v": 11316
+        },
+        "belmont": {
+          "pct": 12.17,
+          "v": 13211
+        },
+        "sanchez": {
+          "pct": 12.816,
+          "v": 13913
+        }
+      },
+      {
+        "name": "Pasco",
+        "pctActas": 92.643,
+        "vv": 107625,
+        "fujimori": {
+          "pct": 18.731,
+          "v": 20159
+        },
+        "rla": {
+          "pct": 6.511,
+          "v": 7007
+        },
+        "nieto": {
+          "pct": 4.466,
+          "v": 4807
+        },
+        "belmont": {
+          "pct": 11.99,
+          "v": 12904
+        },
+        "sanchez": {
+          "pct": 18.782,
+          "v": 20214
+        }
+      },
+      {
+        "name": "Piura",
+        "pctActas": 75.819,
+        "vv": 678159,
+        "fujimori": {
+          "pct": 27.314,
+          "v": 185232
+        },
+        "rla": {
+          "pct": 7.21,
+          "v": 48895
+        },
+        "nieto": {
+          "pct": 9.246,
+          "v": 62703
+        },
+        "belmont": {
+          "pct": 7.529,
+          "v": 51059
+        },
+        "sanchez": {
+          "pct": 10.717,
+          "v": 72678
+        }
+      },
+      {
+        "name": "Puno",
+        "pctActas": 95.702,
+        "vv": 624899,
+        "fujimori": {
+          "pct": 3.895,
+          "v": 24340
+        },
+        "rla": {
+          "pct": 1.93,
+          "v": 12061
+        },
+        "nieto": {
+          "pct": 4.169,
+          "v": 26052
+        },
+        "belmont": {
+          "pct": 17.688,
+          "v": 110532
+        },
+        "sanchez": {
+          "pct": 24.697,
+          "v": 154331
+        }
+      },
+      {
+        "name": "San Martín",
+        "pctActas": 83.11,
+        "vv": 326186,
+        "fujimori": {
+          "pct": 23.574,
+          "v": 76895
+        },
+        "rla": {
+          "pct": 5.958,
+          "v": 19434
+        },
+        "nieto": {
+          "pct": 4.633,
+          "v": 15112
+        },
+        "belmont": {
+          "pct": 11.196,
+          "v": 36520
+        },
+        "sanchez": {
+          "pct": 23.647,
+          "v": 77133
+        }
+      },
+      {
+        "name": "Tacna",
+        "pctActas": 95.005,
+        "vv": 209943,
+        "fujimori": {
+          "pct": 6.867,
+          "v": 14417
+        },
+        "rla": {
+          "pct": 6.216,
+          "v": 13050
+        },
+        "nieto": {
+          "pct": 11.479,
+          "v": 24099
+        },
+        "belmont": {
+          "pct": 14.583,
+          "v": 30616
+        },
+        "sanchez": {
+          "pct": 11.889,
+          "v": 24960
+        }
+      },
+      {
+        "name": "Tumbes",
+        "pctActas": 90.665,
+        "vv": 100640,
+        "fujimori": {
+          "pct": 33.96,
+          "v": 34177
+        },
+        "rla": {
+          "pct": 5.918,
+          "v": 5956
+        },
+        "nieto": {
+          "pct": 5.56,
+          "v": 5596
+        },
+        "belmont": {
+          "pct": 4.885,
+          "v": 4916
+        },
+        "sanchez": {
+          "pct": 6.872,
+          "v": 6916
+        }
+      },
+      {
+        "name": "Ucayali",
+        "pctActas": 82.545,
+        "vv": 187571,
+        "fujimori": {
+          "pct": 30.072,
+          "v": 56406
+        },
+        "rla": {
+          "pct": 5.775,
+          "v": 10832
+        },
+        "nieto": {
+          "pct": 4.51,
+          "v": 8459
+        },
+        "belmont": {
+          "pct": 8.293,
+          "v": 15555
+        },
+        "sanchez": {
+          "pct": 11.872,
+          "v": 22268
+        }
+      },
+      {
+        "name": "Extranjero",
+        "pctActas": 36.532,
+        "vv": 109492,
+        "fujimori": {
+          "pct": 15.931,
+          "v": 17443
+        },
+        "rla": {
+          "pct": 29.066,
+          "v": 31825
+        },
+        "nieto": {
+          "pct": 10.84,
+          "v": 11869
+        },
+        "belmont": {
+          "pct": 9.001,
+          "v": 9855
+        },
+        "sanchez": {
+          "pct": 2.424,
+          "v": 2654
+        }
+      }
+    ]
+  },
+  "canonical": {
+    "nationalPct": 88.029,
+    "trackingPct": 88.207,
+    "livePct": 88.029,
+    "trackingLastUpdate": "2026-04-15T07:39:03.189Z",
+    "liveLastUpdate": "2026-04-15T07:44:02.674Z"
+  }
+}

@@ -1,7 +1,14 @@
 {
-  "generatedAt": "2026-04-15T07:44:03+00:00",
+  "generatedAt": "2026-04-15T13:01:34+02:00",
   "source": "Modelo regionalizado Hannah v3 (bastiones, topes, pendiente regional y Extranjero pro-RLA)",
   "nationalPct": 88.029,
+  "canonicalMeta": {
+    "nationalPct": 88.029,
+    "trackingPct": 88.207,
+    "livePct": 88.029,
+    "trackingLastUpdate": "2026-04-15T07:39:03.189Z",
+    "liveLastUpdate": "2026-04-15T07:44:02.674Z"
+  },
   "secondRoundProbabilities": {
     "rla": 47,
     "nieto": 20,
