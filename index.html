@@ -2627,7 +2627,9 @@ async function refreshFromONPE() {
       pct: natPct, fujimori: natCands.fuji||0, rla: natCands.rla||0,
       nieto: natCands.nieto||0, belmont: natCands.belm||0, sanchez: natCands.sanch||0
     };
-    if (Math.abs(natPct - lastCut.pct) > 0.3) {
+    if (!lastCut) {
+      TRACKING.cuts.push(newCut);
+    } else if (typeof lastCut.pct !== 'number' || Math.abs(natPct - lastCut.pct) > 0.3) {
       TRACKING.cuts.push(newCut);
     } else {
       Object.assign(lastCut, newCut);
