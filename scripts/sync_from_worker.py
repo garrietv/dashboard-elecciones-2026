@@ -20,11 +20,15 @@ def fetch_json(path, params=None):
 
 def build_tracking():
     data = fetch_json('/api/tracking')
-    last = (data.get('cuts') or [{}])[-1]
+    cuts = data.get('cuts', [])
+    if cuts:
+        latest_cut = max(cuts, key=lambda c: float(c.get('pct') or 0))
+    else:
+        latest_cut = {}
     payload = {
-        'lastUpdate': last.get('ts'),
-        'nationalPct': last.get('pct'),
-        'cuts': data.get('cuts', []),
+        'lastUpdate': latest_cut.get('ts'),
+        'nationalPct': latest_cut.get('pct'),
+        'cuts': cuts,
         'count': data.get('count')
     }
     TRACKING.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
