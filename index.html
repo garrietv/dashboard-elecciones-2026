@@ -3022,7 +3022,10 @@ function applyPredictionsToUI(pred) {
   if (meta) {
     const generated = pred.generatedAt ? new Date(pred.generatedAt).toLocaleString('es-PE') : '—';
     const pct = pred.nationalPct != null ? Number(pred.nationalPct).toFixed(3) + '%' : '—';
-    meta.textContent = `Último corte procesado: ${pct} · Recalculado: ${generated}`;
+    const canonical = pred.canonicalMeta || {};
+    const livePct = canonical.livePct != null ? Number(canonical.livePct).toFixed(3) + '%' : '—';
+    const trackingPct = canonical.trackingPct != null ? Number(canonical.trackingPct).toFixed(3) + '%' : '—';
+    meta.textContent = `Corte modelo: ${pct} · Live: ${livePct} · Tracking: ${trackingPct} · Recalculado: ${generated}`;
   }
 
   const audit = document.getElementById('regionalAuditList');

@@ -220,7 +220,7 @@ def build():
     table = []
     for i, c in enumerate(ranking, start=1):
         key, label = LABELS[c]
-        actual_base = current_regionalized[c] if c in current_regionalized else current[c]
+        actual_base = float(current[c]) if c in current else float(current_regionalized.get(c, 0))
         table.append({
             'pos': i,
             'key': key,
@@ -285,7 +285,7 @@ def build():
         'Belmont': round(projected['belmont'], 2)
     }
     name_to_key = {'Fujimori':'fuji','López Aliaga':'rla','Nieto':'nieto','Sánchez':'sanch','Belmont':'belm'}
-    actual_map = {'Fujimori': current['fujimori'], 'López Aliaga': current['rla'], 'Nieto': current['nieto'], 'Sánchez': current['sanchez'], 'Belmont': current['belmont']}
+    actual_map = {'Fujimori': float(current['fujimori']), 'López Aliaga': float(current['rla']), 'Nieto': float(current['nieto']), 'Sánchez': float(current['sanchez']), 'Belmont': float(current['belmont'])}
     display_table = []
     for i, name in enumerate(sorted(display_projection, key=lambda n: display_projection[n], reverse=True), start=1):
         display_table.append({

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-15T11:01:50+00:00",
+  "generatedAt": "2026-04-15T13:05:43+02:00",
   "source": "Modelo regionalizado Hannah v3 (bastiones, topes, pendiente regional y Extranjero pro-RLA)",
   "nationalPct": 89.645,
   "canonicalMeta": {
@@ -20,41 +20,41 @@
       "pos": 1,
       "key": "fuji",
       "candidate": "Fujimori",
-      "actual": 27.24,
+      "actual": 16.93,
       "projected": 17.08,
-      "delta": -10.16
+      "delta": 0.15
     },
     {
       "pos": 2,
       "key": "rla",
       "candidate": "López Aliaga",
-      "actual": 19.37,
+      "actual": 11.95,
       "projected": 12.52,
-      "delta": -6.85
+      "delta": 0.57
     },
     {
       "pos": 3,
       "key": "sanch",
       "candidate": "Sánchez",
-      "actual": 19.17,
+      "actual": 11.96,
       "projected": 11.57,
-      "delta": -7.6
+      "delta": -0.39
     },
     {
       "pos": 4,
       "key": "nieto",
       "candidate": "Nieto",
-      "actual": 17.89,
+      "actual": 11.12,
       "projected": 10.96,
-      "delta": -6.93
+      "delta": -0.16
     },
     {
       "pos": 5,
       "key": "belm",
       "candidate": "Belmont",
-      "actual": 16.33,
+      "actual": 10.16,
       "projected": 10.0,
-      "delta": -6.33
+      "delta": -0.16
     }
   ],
   "projectionTable": [
