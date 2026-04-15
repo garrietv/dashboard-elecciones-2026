@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-15T11:06:03+00:00",
+  "generatedAt": "2026-04-15T13:10:14+02:00",
   "source": "Modelo regionalizado Hannah v3 (bastiones, topes, pendiente regional y Extranjero pro-RLA)",
   "nationalPct": 89.685,
   "canonicalMeta": {
@@ -10,9 +10,9 @@
     "liveLastUpdate": "2026-04-15T11:06:02.607Z"
   },
   "secondRoundProbabilities": {
-    "rla": 47,
-    "nieto": 20,
-    "sanchez": 33,
+    "rla": 42,
+    "nieto": 19,
+    "sanchez": 39,
     "belmont": 0
   },
   "projectionTableRaw": [
@@ -71,16 +71,16 @@
       "key": "rla",
       "candidate": "López Aliaga",
       "actual": 11.95,
-      "projected": 12.53,
-      "delta": 0.58
+      "projected": 12.52,
+      "delta": 0.57
     },
     {
       "pos": 3,
       "key": "sanch",
       "candidate": "Sánchez",
       "actual": 11.96,
-      "projected": 11.56,
-      "delta": -0.4
+      "projected": 11.58,
+      "delta": -0.38
     },
     {
       "pos": 4,
@@ -103,7 +103,7 @@
     {
       "id": "base",
       "name": "Base regionalizado",
-      "probability": 33,
+      "probability": 39,
       "assumptions": [
         "Se usa el pendiente por regiones, no solo slope nacional",
         "Sánchez mantiene fuerza en bastiones rurales andinos y amazónicos",
@@ -131,7 +131,7 @@
     {
       "id": "sanchez-upside",
       "name": "Sánchez capitaliza bastiones al máximo razonable",
-      "probability": 28,
+      "probability": 34,
       "assumptions": [
         "Cajamarca, Puno, Cusco, Apurímac y San Martín rinden por encima del promedio actual",
         "Lima no acelera adicionalmente para RLA más allá del patrón observado",
@@ -159,7 +159,7 @@
     {
       "id": "rla-holds",
       "name": "RLA retiene por Lima + Extranjero",
-      "probability": 47,
+      "probability": 42,
       "assumptions": [
         "Lima y Extranjero pesan más en el tramo final útil",
         "Sánchez encuentra topes fuera de sus bastiones más claros",
@@ -186,7 +186,7 @@
     }
   ],
   "insights": [
-    "López Aliaga conserva ventaja estrecha en el modelo regionalizado, sostenido por Lima y el supuesto favorable en Extranjero.",
+    "Sánchez ya aparece 2° en el conteo observado y el modelo pasa de escenario de alcance a escenario de defensa del sorpasso.",
     "Pendiente reciente nacional: Sánchez 0.099 pp por punto vs RLA -0.051, pero la decisión la dominan bastiones y topes regionales.",
     "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+42,310), Cusco (+19,100), San Martín (+14,186), Puno (+11,856), Huánuco (+11,705)"
   ],

@@ -209,6 +209,12 @@ def build():
     race_scores['sanchez'] -= 0.75
     race_scores['belmont'] -= 0.60
 
+    # If Sánchez already overtook RLA in the observed tracking cut, shift from chase-mode to hold-mode.
+    current_gap_sr = float(current['sanchez']) - float(current['rla'])
+    if current_gap_sr > 0:
+        race_scores['sanchez'] += 0.85 + min(0.35, current_gap_sr * 4)
+        race_scores['rla'] -= 0.45
+
     min_score = min(race_scores.values())
     shifted = {k: max(0.05, v - min_score + 0.05) for k, v in race_scores.items()}
     total = sum(shifted.values()) or 1.0
@@ -300,7 +306,9 @@ def build():
     top_san_edges = sorted(regional['regionEdges']['sanchez'], key=lambda x: x['vsRla'], reverse=True)[:8]
     top_rla_edges = sorted(regional['regionEdges']['sanchez'], key=lambda x: x['vsRla'])[:8]
     insights = []
-    if probs['sanchez'] > probs['rla']:
+    if current_gap_sr > 0:
+        insights.append('Sánchez ya aparece 2° en el conteo observado y el modelo pasa de escenario de alcance a escenario de defensa del sorpasso.')
+    elif probs['sanchez'] > probs['rla']:
         insights.append('Sánchez lidera la carrera por el 2° lugar en el modelo regionalizado, pero con margen todavía sensible a Lima y Extranjero.')
     else:
         insights.append('López Aliaga conserva ventaja estrecha en el modelo regionalizado, sostenido por Lima y el supuesto favorable en Extranjero.')
