@@ -59,7 +59,7 @@ El proyecto combina dos capas:
 ## Cómo se actualiza hoy
 
 ### ONPE en vivo
-Se actualiza automáticamente desde el frontend cuando el Worker responde con nueva data, pero debe persistirse con snapshots.
+Se actualiza automáticamente desde el frontend cuando el Worker responde con nueva data, pero ahora el repo ya tiene pipeline para persistir y resincronizar el estado completo.
 
 ### Persistencia recomendada
 
@@ -84,7 +84,13 @@ cd /home/garrieta/.openclaw/workspace/check_dashboard
 python3 scripts/store_onpe_snapshot.py
 python3 scripts/build_onpe_latest.py
 python3 scripts/build_predictions.py
+python3 scripts/embed_latest_into_index.py
 ```
+
+### Automatización del repo
+- Workflow: `.github/workflows/onpe-pipeline.yml`
+- Trigger: push a `main` cuando cambian `data/tracking.json` o `data/onpe_live.json`
+- Efecto: ejecuta el pipeline, regenera snapshots/latest/predictions, resincroniza `index.html` y hace commit automático si hubo cambios reales
 
 ## Metodología actual de predicción
 

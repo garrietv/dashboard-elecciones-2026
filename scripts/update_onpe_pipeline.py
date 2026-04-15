@@ -53,6 +53,7 @@ def main():
     run('store_onpe_snapshot.py')
     run('build_onpe_latest.py')
     run('build_predictions.py')
+    run('embed_latest_into_index.py')
 
     STATE.parent.mkdir(parents=True, exist_ok=True)
     STATE.write_text(json.dumps(sig, ensure_ascii=False, indent=2))

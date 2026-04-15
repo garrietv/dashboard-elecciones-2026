@@ -660,51 +660,914 @@
 ══════════════════════════════════════════════════════════ */
 
 const TRACKING = {
-  cuts: [
-    {pct:56.00, fujimori:16.939, rla:14.257, nieto:12.672, belmont:9.895, sanchez:8.255},
-    {pct:56.60, fujimori:16.932, rla:14.212, nieto:12.652, belmont:9.902, sanchez:8.293},
-    {pct:56.85, fujimori:16.927, rla:14.185, nieto:12.641, belmont:9.905, sanchez:8.310},
-    {pct:57.83, fujimori:16.907, rla:14.085, nieto:12.602, belmont:9.923, sanchez:8.390},
-    {pct:59.32, fujimori:16.887, rla:13.950, nieto:12.540, belmont:9.933, sanchez:8.510},
-    {pct:63.31, fujimori:16.908, rla:13.629, nieto:12.410, belmont:9.942, sanchez:8.775},
-    {pct:65.62, fujimori:16.937, rla:13.465, nieto:12.330, belmont:9.927, sanchez:8.957},
-    {pct:66.83, fujimori:16.937, rla:13.396, nieto:12.280, belmont:9.926, sanchez:9.094},
-    {pct:68.56, fujimori:16.922, rla:13.253, nieto:12.180, belmont:9.929, sanchez:9.351},
-    {pct:73.37, fujimori:16.914, rla:12.915, nieto:11.958, belmont:9.979, sanchez:9.831},
-    {pct:75.87, fujimori:16.883, rla:12.790, nieto:11.844, belmont:10.007, sanchez:10.135}
+  "lastUpdate": "2026-04-15T05:18:23.635Z",
+  "nationalPct": 85.856,
+  "cuts": [
+    {
+      "pct": 76.444,
+      "fujimori": 16.88,
+      "rla": 12.741,
+      "nieto": 11.804,
+      "belmont": 10.016,
+      "sanchez": 10.251
+    },
+    {
+      "pct": 76.875,
+      "fujimori": 16.875,
+      "rla": 12.709,
+      "nieto": 11.778,
+      "belmont": 10.023,
+      "sanchez": 10.324
+    },
+    {
+      "pct": 77.234,
+      "fujimori": 16.867,
+      "rla": 12.687,
+      "nieto": 11.759,
+      "belmont": 10.029,
+      "sanchez": 10.382
+    },
+    {
+      "pct": 77.618,
+      "fujimori": 16.872,
+      "rla": 12.65,
+      "nieto": 11.731,
+      "belmont": 10.034,
+      "sanchez": 10.469
+    },
+    {
+      "pct": 77.918,
+      "fujimori": 16.875,
+      "rla": 12.636,
+      "nieto": 11.722,
+      "belmont": 10.036,
+      "sanchez": 10.498
+    },
+    {
+      "pct": 78.28,
+      "fujimori": 16.88,
+      "rla": 12.623,
+      "nieto": 11.711,
+      "belmont": 10.035,
+      "sanchez": 10.533
+    },
+    {
+      "pct": 78.581,
+      "fujimori": 16.885,
+      "rla": 12.608,
+      "nieto": 11.7,
+      "belmont": 10.032,
+      "sanchez": 10.572
+    },
+    {
+      "pct": 79,
+      "fujimori": 16.888,
+      "rla": 12.59,
+      "nieto": 11.688,
+      "belmont": 10.035,
+      "sanchez": 10.615
+    },
+    {
+      "pct": 79.316,
+      "fujimori": 16.888,
+      "rla": 12.578,
+      "nieto": 11.682,
+      "belmont": 10.037,
+      "sanchez": 10.644
+    },
+    {
+      "pct": 79.697,
+      "fujimori": 16.886,
+      "rla": 12.548,
+      "nieto": 11.663,
+      "belmont": 10.045,
+      "sanchez": 10.703
+    },
+    {
+      "pct": 80.03,
+      "fujimori": 16.884,
+      "rla": 12.531,
+      "nieto": 11.65,
+      "belmont": 10.048,
+      "sanchez": 10.735
+    },
+    {
+      "pct": 80.425,
+      "fujimori": 16.88,
+      "rla": 12.491,
+      "nieto": 11.62,
+      "belmont": 10.061,
+      "sanchez": 10.813
+    },
+    {
+      "pct": 80.768,
+      "fujimori": 16.884,
+      "rla": 12.465,
+      "nieto": 11.599,
+      "belmont": 10.066,
+      "sanchez": 10.859
+    },
+    {
+      "pct": 81.195,
+      "fujimori": 16.886,
+      "rla": 12.446,
+      "nieto": 11.583,
+      "belmont": 10.068,
+      "sanchez": 10.897
+    },
+    {
+      "pct": 81.621,
+      "fujimori": 16.892,
+      "rla": 12.411,
+      "nieto": 11.557,
+      "belmont": 10.071,
+      "sanchez": 10.961
+    },
+    {
+      "pct": 81.972,
+      "fujimori": 16.888,
+      "rla": 12.396,
+      "nieto": 11.544,
+      "belmont": 10.076,
+      "sanchez": 10.99
+    },
+    {
+      "pct": 82.455,
+      "fujimori": 16.879,
+      "rla": 12.372,
+      "nieto": 11.521,
+      "belmont": 10.085,
+      "sanchez": 11.04
+    },
+    {
+      "pct": 82.802,
+      "fujimori": 16.878,
+      "rla": 12.355,
+      "nieto": 11.505,
+      "belmont": 10.091,
+      "sanchez": 11.074
+    },
+    {
+      "pct": 83.154,
+      "fujimori": 16.871,
+      "rla": 12.332,
+      "nieto": 11.485,
+      "belmont": 10.102,
+      "sanchez": 11.115
+    },
+    {
+      "pct": 83.554,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.248,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.554,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.248,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.554,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.248,
+      "fujimori": 16.857,
+      "rla": 12.284,
+      "nieto": 11.444,
+      "belmont": 10.115,
+      "sanchez": 11.221
+    },
+    {
+      "pct": 83.554,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.248,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.554,
+      "fujimori": 16.857,
+      "rla": 12.284,
+      "nieto": 11.444,
+      "belmont": 10.115,
+      "sanchez": 11.221
+    },
+    {
+      "pct": 83.248,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.554,
+      "fujimori": 16.857,
+      "rla": 12.284,
+      "nieto": 11.444,
+      "belmont": 10.115,
+      "sanchez": 11.221
+    },
+    {
+      "pct": 83.248,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.554,
+      "fujimori": 16.857,
+      "rla": 12.284,
+      "nieto": 11.444,
+      "belmont": 10.115,
+      "sanchez": 11.221
+    },
+    {
+      "pct": 83.248,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.554,
+      "fujimori": 16.857,
+      "rla": 12.284,
+      "nieto": 11.444,
+      "belmont": 10.115,
+      "sanchez": 11.221
+    },
+    {
+      "pct": 83.248,
+      "fujimori": 16.86,
+      "rla": 12.307,
+      "nieto": 11.464,
+      "belmont": 10.11,
+      "sanchez": 11.166
+    },
+    {
+      "pct": 83.554,
+      "fujimori": 16.857,
+      "rla": 12.284,
+      "nieto": 11.444,
+      "belmont": 10.115,
+      "sanchez": 11.221
+    },
+    {
+      "pct": 83.248,
+      "fujimori": 16.857,
+      "rla": 12.284,
+      "nieto": 11.444,
+      "belmont": 10.115,
+      "sanchez": 11.221
+    },
+    {
+      "pct": 83.554,
+      "fujimori": 16.857,
+      "rla": 12.284,
+      "nieto": 11.444,
+      "belmont": 10.115,
+      "sanchez": 11.221
+    },
+    {
+      "pct": 84.053,
+      "fujimori": 16.856,
+      "rla": 12.263,
+      "nieto": 11.426,
+      "belmont": 10.12,
+      "sanchez": 11.269
+    },
+    {
+      "pct": 84.393,
+      "fujimori": 16.857,
+      "rla": 12.244,
+      "nieto": 11.41,
+      "belmont": 10.123,
+      "sanchez": 11.314
+    },
+    {
+      "pct": 84.053,
+      "fujimori": 16.857,
+      "rla": 12.244,
+      "nieto": 11.41,
+      "belmont": 10.123,
+      "sanchez": 11.314
+    },
+    {
+      "pct": 84.393,
+      "fujimori": 16.853,
+      "rla": 12.216,
+      "nieto": 11.387,
+      "belmont": 10.131,
+      "sanchez": 11.373
+    },
+    {
+      "pct": 84.053,
+      "fujimori": 16.853,
+      "rla": 12.216,
+      "nieto": 11.387,
+      "belmont": 10.131,
+      "sanchez": 11.373
+    },
+    {
+      "pct": 84.393,
+      "fujimori": 16.853,
+      "rla": 12.216,
+      "nieto": 11.387,
+      "belmont": 10.131,
+      "sanchez": 11.373
+    },
+    {
+      "pct": 84.053,
+      "fujimori": 16.853,
+      "rla": 12.216,
+      "nieto": 11.387,
+      "belmont": 10.131,
+      "sanchez": 11.373
+    },
+    {
+      "pct": 84.393,
+      "fujimori": 16.857,
+      "rla": 12.244,
+      "nieto": 11.41,
+      "belmont": 10.123,
+      "sanchez": 11.314
+    },
+    {
+      "pct": 84.053,
+      "fujimori": 16.853,
+      "rla": 12.216,
+      "nieto": 11.387,
+      "belmont": 10.131,
+      "sanchez": 11.373
+    },
+    {
+      "pct": 84.393,
+      "fujimori": 16.853,
+      "rla": 12.216,
+      "nieto": 11.387,
+      "belmont": 10.131,
+      "sanchez": 11.373
+    },
+    {
+      "pct": 84.053,
+      "fujimori": 16.853,
+      "rla": 12.216,
+      "nieto": 11.387,
+      "belmont": 10.131,
+      "sanchez": 11.373
+    },
+    {
+      "pct": 84.393,
+      "fujimori": 16.853,
+      "rla": 12.216,
+      "nieto": 11.387,
+      "belmont": 10.131,
+      "sanchez": 11.373
+    },
+    {
+      "pct": 84.053,
+      "fujimori": 16.857,
+      "rla": 12.244,
+      "nieto": 11.41,
+      "belmont": 10.123,
+      "sanchez": 11.314
+    },
+    {
+      "pct": 84.393,
+      "fujimori": 16.853,
+      "rla": 12.216,
+      "nieto": 11.387,
+      "belmont": 10.131,
+      "sanchez": 11.373
+    },
+    {
+      "pct": 84.053,
+      "fujimori": 16.857,
+      "rla": 12.244,
+      "nieto": 11.41,
+      "belmont": 10.123,
+      "sanchez": 11.314
+    },
+    {
+      "pct": 84.393,
+      "fujimori": 16.853,
+      "rla": 12.216,
+      "nieto": 11.387,
+      "belmont": 10.131,
+      "sanchez": 11.373
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.85,
+      "rla": 12.208,
+      "nieto": 11.38,
+      "belmont": 10.134,
+      "sanchez": 11.394
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.837,
+      "rla": 12.175,
+      "nieto": 11.347,
+      "belmont": 10.142,
+      "sanchez": 11.48
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.837,
+      "rla": 12.175,
+      "nieto": 11.347,
+      "belmont": 10.142,
+      "sanchez": 11.48
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.837,
+      "rla": 12.175,
+      "nieto": 11.347,
+      "belmont": 10.142,
+      "sanchez": 11.48
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.844,
+      "rla": 12.198,
+      "nieto": 11.368,
+      "belmont": 10.137,
+      "sanchez": 11.421
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.837,
+      "rla": 12.175,
+      "nieto": 11.347,
+      "belmont": 10.142,
+      "sanchez": 11.48
+    },
+    {
+      "pct": 84.722,
+      "fujimori": 16.837,
+      "rla": 12.175,
+      "nieto": 11.347,
+      "belmont": 10.142,
+      "sanchez": 11.48
+    },
+    {
+      "pct": 85.081,
+      "fujimori": 16.837,
+      "rla": 12.175,
+      "nieto": 11.347,
+      "belmont": 10.142,
+      "sanchez": 11.48
+    },
+    {
+      "pct": 85.458,
+      "fujimori": 16.836,
+      "rla": 12.163,
+      "nieto": 11.336,
+      "belmont": 10.144,
+      "sanchez": 11.508
+    },
+    {
+      "pct": 85.856,
+      "fujimori": 16.845,
+      "rla": 12.131,
+      "nieto": 11.305,
+      "belmont": 10.148,
+      "sanchez": 11.571
+    }
   ],
-  projection: {pct:100, fujimori:17.76, rla:12.64, nieto:11.71, belmont:10.46, sanchez:11.52},
-  datum: {fujimori:16.8, rla:12.9, nieto:11.6, belmont:10.1, sanchez:9.4},
-  ipsos: {fujimori:17.1, rla:11.3, nieto:10.7, belmont:10.2, sanchez:12.4}
+  "projection": {},
+  "references": {
+    "datum": {
+      "rla": 12.9,
+      "sanchez": 9.4,
+      "nieto": 11.6,
+      "belmont": 10.1,
+      "fujimori": 16.8
+    },
+    "ipsos": {
+      "rla": 11.3,
+      "sanchez": 12.4,
+      "nieto": 10.7,
+      "belmont": 10.2,
+      "fujimori": 17.1
+    }
+  }
 };
 
 const ONPE_REGIONS = [
-  {name:"Amazonas",pct:52.5,vv:95145,fuji:20.16,rla:4.18,nieto:4.63,belm:11.51,sanch:29.20},
-  {name:"Áncash",pct:75.7,vv:411966,fuji:17.66,rla:6.02,nieto:7.59,belm:10.14,sanch:14.91},
-  {name:"Apurímac",pct:72.4,vv:150800,fuji:7.03,rla:3.45,nieto:3.94,belm:13.70,sanch:39.53},
-  {name:"Arequipa",pct:93.1,vv:822329,fuji:7.31,rla:10.65,nieto:18.63,belm:10.93,sanch:10.09},
-  {name:"Ayacucho",pct:72.8,vv:216101,fuji:8.24,rla:3.02,nieto:6.37,belm:14.66,sanch:27.60},
-  {name:"Cajamarca",pct:51.8,vv:359159,fuji:14.21,rla:3.53,nieto:5.22,belm:11.27,sanch:39.13},
-  {name:"Callao",pct:93.5,vv:542305,fuji:20.65,rla:15.07,nieto:15.06,belm:8.11,sanch:2.98},
-  {name:"Cusco",pct:77.9,vv:564563,fuji:6.35,rla:5.36,nieto:10.00,belm:15.25,sanch:19.42},
-  {name:"Huancavelica",pct:75.9,vv:135179,fuji:7.02,rla:2.31,nieto:3.50,belm:13.70,sanch:42.10},
-  {name:"Huánuco",pct:72.6,vv:256118,fuji:16.09,rla:6.49,nieto:5.17,belm:13.94,sanch:26.62},
-  {name:"Ica",pct:61.0,vv:298748,fuji:20.21,rla:9.96,nieto:10.21,belm:10.32,sanch:7.34},
-  {name:"Junín",pct:71.3,vv:480121,fuji:16.16,rla:8.12,nieto:9.01,belm:10.73,sanch:9.71},
-  {name:"La Libertad",pct:71.8,vv:695067,fuji:20.12,rla:9.05,nieto:10.59,belm:6.83,sanch:7.73},
-  {name:"Lambayeque",pct:77.9,vv:534960,fuji:25.87,rla:9.46,nieto:11.29,belm:7.22,sanch:8.81},
-  {name:"Lima",pct:89.9,vv:5497042,fuji:17.73,rla:20.11,nieto:15.10,belm:9.10,sanch:3.20},
-  {name:"Loreto",pct:69.0,vv:255496,fuji:28.41,rla:6.85,nieto:4.03,belm:4.49,sanch:7.97},
-  {name:"Madre de Dios",pct:49.3,vv:42172,fuji:14.51,rla:3.83,nieto:6.28,belm:14.56,sanch:19.31},
-  {name:"Moquegua",pct:94.6,vv:108154,fuji:6.58,rla:5.81,nieto:10.42,belm:12.16,sanch:12.84},
-  {name:"Pasco",pct:76.8,vv:94080,fuji:18.65,rla:6.84,nieto:4.84,belm:12.22,sanch:16.84},
-  {name:"Piura",pct:57.5,vv:535253,fuji:28.44,rla:7.92,nieto:9.69,belm:7.14,sanch:8.47},
-  {name:"Puno",pct:75.4,vv:496140,fuji:3.94,rla:2.05,nieto:4.27,belm:17.53,sanch:24.08},
-  {name:"San Martín",pct:63.7,vv:255903,fuji:22.77,rla:6.07,nieto:5.00,belm:11.58,sanch:23.37},
-  {name:"Tacna",pct:81.3,vv:182718,fuji:6.91,rla:6.54,nieto:11.82,belm:14.43,sanch:11.13},
-  {name:"Tumbes",pct:79.7,vv:88444,fuji:33.61,rla:5.94,nieto:5.68,belm:4.66,sanch:6.47},
-  {name:"Ucayali",pct:55.1,vv:130512,fuji:31.24,rla:5.88,nieto:5.13,belm:8.34,sanch:8.42},
-  {name:"Extranjero",pct:16.9,vv:55450,fuji:15.63,rla:28.95,nieto:11.64,belm:8.37,sanch:1.98}
+  {
+    "name": "Amazonas",
+    "pct": 70.4,
+    "vv": 122831,
+    "fuji": 18.63,
+    "rla": 4.0,
+    "nieto": 4.12,
+    "belm": 11.18,
+    "sanch": 32.56
+  },
+  {
+    "name": "Áncash",
+    "pct": 85.2,
+    "vv": 460316,
+    "fuji": 17.71,
+    "rla": 5.96,
+    "nieto": 7.37,
+    "belm": 10.09,
+    "sanch": 15.35
+  },
+  {
+    "name": "Apurímac",
+    "pct": 90.3,
+    "vv": 181987,
+    "fuji": 6.95,
+    "rla": 3.2,
+    "nieto": 3.77,
+    "belm": 14.15,
+    "sanch": 40.52
+  },
+  {
+    "name": "Arequipa",
+    "pct": 96.0,
+    "vv": 846254,
+    "fuji": 7.32,
+    "rla": 10.68,
+    "nieto": 18.64,
+    "belm": 10.9,
+    "sanch": 10.06
+  },
+  {
+    "name": "Ayacucho",
+    "pct": 93.7,
+    "vv": 266879,
+    "fuji": 8.12,
+    "rla": 2.76,
+    "nieto": 5.61,
+    "belm": 14.46,
+    "sanch": 31.04
+  },
+  {
+    "name": "Cajamarca",
+    "pct": 79.0,
+    "vv": 526213,
+    "fuji": 13.57,
+    "rla": 3.37,
+    "nieto": 4.79,
+    "belm": 11.05,
+    "sanch": 41.51
+  },
+  {
+    "name": "Callao",
+    "pct": 95.0,
+    "vv": 550577,
+    "fuji": 20.66,
+    "rla": 15.01,
+    "nieto": 15.04,
+    "belm": 8.14,
+    "sanch": 3.0
+  },
+  {
+    "name": "Cusco",
+    "pct": 91.2,
+    "vv": 641005,
+    "fuji": 6.05,
+    "rla": 4.89,
+    "nieto": 9.23,
+    "belm": 15.5,
+    "sanch": 22.03
+  },
+  {
+    "name": "Huancavelica",
+    "pct": 93.5,
+    "vv": 162309,
+    "fuji": 7.03,
+    "rla": 2.35,
+    "nieto": 3.25,
+    "belm": 13.52,
+    "sanch": 43.36
+  },
+  {
+    "name": "Huánuco",
+    "pct": 86.5,
+    "vv": 302118,
+    "fuji": 15.33,
+    "rla": 6.05,
+    "nieto": 4.8,
+    "belm": 14.25,
+    "sanch": 29.22
+  },
+  {
+    "name": "Ica",
+    "pct": 67.3,
+    "vv": 328180,
+    "fuji": 20.21,
+    "rla": 9.89,
+    "nieto": 10.14,
+    "belm": 10.28,
+    "sanch": 7.5
+  },
+  {
+    "name": "Junín",
+    "pct": 89.9,
+    "vv": 581936,
+    "fuji": 16.84,
+    "rla": 7.76,
+    "nieto": 8.26,
+    "belm": 10.95,
+    "sanch": 11.57
+  },
+  {
+    "name": "La Libertad",
+    "pct": 89.3,
+    "vv": 834570,
+    "fuji": 20.2,
+    "rla": 8.36,
+    "nieto": 9.9,
+    "belm": 7.08,
+    "sanch": 9.4
+  },
+  {
+    "name": "Lambayeque",
+    "pct": 90.9,
+    "vv": 610624,
+    "fuji": 26.35,
+    "rla": 8.8,
+    "nieto": 10.55,
+    "belm": 7.33,
+    "sanch": 10.22
+  },
+  {
+    "name": "Lima",
+    "pct": 92.2,
+    "vv": 5624913,
+    "fuji": 17.82,
+    "rla": 20.0,
+    "nieto": 15.1,
+    "belm": 9.12,
+    "sanch": 3.25
+  },
+  {
+    "name": "Loreto",
+    "pct": 76.7,
+    "vv": 272312,
+    "fuji": 28.49,
+    "rla": 6.93,
+    "nieto": 3.83,
+    "belm": 4.34,
+    "sanch": 8.38
+  },
+  {
+    "name": "Madre de Dios",
+    "pct": 63.3,
+    "vv": 53592,
+    "fuji": 14.75,
+    "rla": 3.84,
+    "nieto": 5.93,
+    "belm": 14.45,
+    "sanch": 19.5
+  },
+  {
+    "name": "Moquegua",
+    "pct": 95.0,
+    "vv": 108556,
+    "fuji": 6.59,
+    "rla": 5.82,
+    "nieto": 10.42,
+    "belm": 12.17,
+    "sanch": 12.82
+  },
+  {
+    "name": "Pasco",
+    "pct": 88.5,
+    "vv": 104188,
+    "fuji": 18.76,
+    "rla": 6.52,
+    "nieto": 4.54,
+    "belm": 11.98,
+    "sanch": 18.45
+  },
+  {
+    "name": "Piura",
+    "pct": 70.8,
+    "vv": 641140,
+    "fuji": 27.74,
+    "rla": 7.39,
+    "nieto": 9.42,
+    "belm": 7.49,
+    "sanch": 9.73
+  },
+  {
+    "name": "Puno",
+    "pct": 94.8,
+    "vv": 619087,
+    "fuji": 3.9,
+    "rla": 1.94,
+    "nieto": 4.18,
+    "belm": 17.72,
+    "sanch": 24.64
+  },
+  {
+    "name": "San Martín",
+    "pct": 79.6,
+    "vv": 313040,
+    "fuji": 23.57,
+    "rla": 5.93,
+    "nieto": 4.64,
+    "belm": 11.27,
+    "sanch": 23.75
+  },
+  {
+    "name": "Tacna",
+    "pct": 94.2,
+    "vv": 208292,
+    "fuji": 6.86,
+    "rla": 6.23,
+    "nieto": 11.51,
+    "belm": 14.56,
+    "sanch": 11.86
+  },
+  {
+    "name": "Tumbes",
+    "pct": 90.7,
+    "vv": 100640,
+    "fuji": 33.96,
+    "rla": 5.92,
+    "nieto": 5.56,
+    "belm": 4.88,
+    "sanch": 6.87
+  },
+  {
+    "name": "Ucayali",
+    "pct": 71.7,
+    "vv": 164186,
+    "fuji": 30.27,
+    "rla": 5.87,
+    "nieto": 4.8,
+    "belm": 8.21,
+    "sanch": 10.66
+  },
+  {
+    "name": "Extranjero",
+    "pct": 31.1,
+    "vv": 96998,
+    "fuji": 16.1,
+    "rla": 27.82,
+    "nieto": 10.93,
+    "belm": 9.12,
+    "sanch": 2.55
+  }
 ];
 
 const DATUM_REGIONS = [
