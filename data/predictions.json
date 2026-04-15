@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-15T09:31:26+02:00",
+  "generatedAt": "2026-04-15T07:31:38+00:00",
   "source": "Modelo regionalizado Hannah v3 (bastiones, topes, pendiente regional y Extranjero pro-RLA)",
-  "nationalPct": 87.811,
+  "nationalPct": 88.029,
   "secondRoundProbabilities": {
     "rla": 47,
     "nieto": 19,
@@ -13,9 +13,9 @@
       "pos": 1,
       "key": "fuji",
       "candidate": "Fujimori",
-      "actual": 27.18,
+      "actual": 27.19,
       "projected": 17.12,
-      "delta": -10.06
+      "delta": -10.07
     },
     {
       "pos": 2,
@@ -38,8 +38,8 @@
       "key": "nieto",
       "candidate": "Nieto",
       "actual": 18.02,
-      "projected": 10.94,
-      "delta": -7.08
+      "projected": 10.95,
+      "delta": -7.07
     },
     {
       "pos": 5,
@@ -80,8 +80,8 @@
       "key": "nieto",
       "candidate": "Nieto",
       "actual": 11.21,
-      "projected": 10.93,
-      "delta": -0.28
+      "projected": 10.94,
+      "delta": -0.27
     },
     {
       "pos": 5,
@@ -117,7 +117,7 @@
         },
         {
           "candidate": "Nieto",
-          "pct": 10.94
+          "pct": 10.95
         }
       ]
     },
@@ -145,7 +145,7 @@
         },
         {
           "candidate": "Nieto",
-          "pct": 10.9
+          "pct": 10.91
         }
       ]
     },
@@ -173,7 +173,7 @@
         },
         {
           "candidate": "Nieto",
-          "pct": 10.94
+          "pct": 10.95
         }
       ]
     }
@@ -776,16 +776,16 @@
       "contabilizadas": 81048
     },
     "currentPctRegionalized": {
-      "fujimori": 27.184,
-      "rla": 19.509,
-      "nieto": 18.02,
-      "sanchez": 18.953,
+      "fujimori": 27.186,
+      "rla": 19.51,
+      "nieto": 18.019,
+      "sanchez": 18.951,
       "belmont": 16.334
     },
     "regionalProjectionPct": {
       "fujimori": 17.12,
       "rla": 12.5,
-      "nieto": 10.94,
+      "nieto": 10.95,
       "sanchez": 11.53,
       "belmont": 9.98
     },
@@ -875,18 +875,18 @@
       },
       {
         "region": "Extranjero",
-        "pendingVotes": 193219,
-        "vsRla": -78472,
-        "vsNieto": -23915,
+        "pendingVotes": 190223,
+        "vsRla": -77255,
+        "vsNieto": -23544,
         "rawSanchez": 0.02435,
         "rawRla": 0.29059,
         "rawNieto": 0.10821
       },
       {
         "region": "Ica",
-        "pendingVotes": 142463,
-        "vsRla": -7974,
-        "vsNieto": -7706,
+        "pendingVotes": 141004,
+        "vsRla": -7893,
+        "vsNieto": -7628,
         "rawSanchez": 0.07467,
         "rawRla": 0.09912000000000001,
         "rawNieto": 0.1015
