@@ -20,3 +20,4 @@
 >>>>>>> 6752d4b (Persist latest 89.685 cutoff artifacts)
 {"capturedAt": "2026-04-15T13:05:51+02:00", "sourceLastUpdate": "2026-04-15T11:03:04.914Z", "nationalPct": 89.685, "lastCut": {"ts": "2026-04-15T10:31:59.632Z", "pct": 89.509, "fujimori": 16.931, "rla": 11.951, "nieto": 11.123, "belmont": 10.16, "sanchez": 11.96, "jee": 4058, "contabilizadas": 83034}}
 {"capturedAt": "2026-04-15T11:06:03+00:00", "sourceLastUpdate": "2026-04-15T11:06:02.607Z", "nationalPct": 89.685, "lastCut": {"ts": "2026-04-15T10:31:59.632Z", "pct": 89.509, "fujimori": 16.931, "rla": 11.951, "nieto": 11.123, "belmont": 10.16, "sanchez": 11.96, "jee": 4058, "contabilizadas": 83034}}
+{"capturedAt": "2026-04-15T11:10:31+00:00", "sourceLastUpdate": "2026-04-15T11:10:30.619Z", "nationalPct": 89.772, "lastCut": {"ts": "2026-04-15T10:31:59.632Z", "pct": 89.509, "fujimori": 16.931, "rla": 11.951, "nieto": 11.123, "belmont": 10.16, "sanchez": 11.96, "jee": 4058, "contabilizadas": 83034}}
