@@ -2645,6 +2645,14 @@ async function refreshFromONPE() {
     const natPct = snap1.national.pct;
     const natCands = snap1.national.candidates;
 
+    /* Hero first, even if later steps fail */
+    try {
+      const heroEl = document.getElementById('heroPct');
+      if (heroEl) heroEl.innerHTML = `<span class="hero-pct-num">${Number(natPct).toFixed(3)}<span class="hero-pct-sign">%</span></span>`;
+      const lastUpdateEl = document.getElementById('lastUpdate');
+      if (lastUpdateEl) lastUpdateEl.textContent = `ONPE en vivo · ${new Date().toLocaleString('es-PE', {month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}`;
+    } catch(e) { console.warn('Hero pre-update failed:', e); }
+
     /* 1. Update JEE */
     const jeeActas = snap1.national.enviadasJee || 0;
     const votosPerActa = Math.round(snap1.national.votosEmitidos / snap1.national.contabilizadas);
@@ -2677,17 +2685,10 @@ async function refreshFromONPE() {
     const probs = calcProbabilities(projection, natPct);
     updateProjectionUI(projection, probs);
 
-    /* 5. Hero count-up */
+    /* 5. Hero reinforce */
     try {
       const heroEl = document.getElementById('heroPct');
-      heroEl.innerHTML = `<span class="hero-pct-num">0.00<span class="hero-pct-sign">%</span></span>`;
-      const numNode = heroEl.querySelector('.hero-pct-num').firstChild;
-      const dur = 1200, t0 = performance.now();
-      (function tick(t) {
-        const p = Math.min((t - t0) / dur, 1);
-        numNode.textContent = (natPct * (1 - Math.pow(1 - p, 3))).toFixed(3);
-        if (p < 1) requestAnimationFrame(tick);
-      })(t0);
+      if (heroEl) heroEl.innerHTML = `<span class="hero-pct-num">${Number(natPct).toFixed(3)}<span class="hero-pct-sign">%</span></span>`;
     } catch(e) { console.error('Hero error:', e); }
 
     /* 6. KPIs */
