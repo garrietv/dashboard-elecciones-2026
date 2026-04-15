@@ -570,23 +570,16 @@
     </div>
 
     <div class="card" style="margin-top:16px">
-      <div class="card-title">Evolución de la probabilidad de 2° lugar</div>
-      <div class="chart-container">
-        <canvas id="probabilityChart"></canvas>
-      </div>
-    </div>
-
-    <div class="card" style="margin-top:16px">
-      <div class="card-title">ONPE actual → Proyección 100%</div>
-      <div style="font-size:12px;color:var(--tx2);margin-bottom:10px">Proyección mostrada = media ponderada de escenarios probables.</div>
+      <div class="card-title">Estado actual del modelo</div>
+      <div style="font-size:12px;color:var(--tx2);margin-bottom:10px">Quité las piezas heredadas que inducían a error. Aquí solo queda salida consistente con el modelo persistido actual.</div>
       <div class="proj-summary" id="predProjectionTable">
         <div class="proj-row proj-header">
           <span class="proj-pos">Pos</span>
           <span class="proj-name">Candidato</span>
           <span class="proj-current">ONPE actual</span>
           <span class="proj-arrow">→</span>
-          <span class="proj-final">Proyección 100%</span>
-          <span class="proj-diff">Δ vs actual</span>
+          <span class="proj-final">Modelo actual</span>
+          <span class="proj-diff">Lectura</span>
         </div>
       </div>
     </div>
@@ -1796,40 +1789,6 @@ function updateJeeData(natData) {
 }
 
 /* Predictions layer */
-function renderProbabilityChart(history) {
-  const canvas = document.getElementById('probabilityChart');
-  if (!canvas || !window.Chart) return;
-  if (window._probabilityChart) window._probabilityChart.destroy();
-  const hist = {
-    labels: history.map(h => h.pct.toFixed(2) + '%'),
-    rla: history.map(h => h.rla),
-    nieto: history.map(h => h.nieto),
-    sanchez: history.map(h => h.sanchez),
-    belmont: history.map(h => h.belmont)
-  };
-  window._probabilityChart = new Chart(canvas, {
-    type: 'line',
-    data: {
-      labels: hist.labels,
-      datasets: [
-        { label: 'López Aliaga', data: hist.rla, borderColor: '#2563eb', backgroundColor: '#2563eb', tension: 0.25 },
-        { label: 'Nieto', data: hist.nieto, borderColor: '#10b981', backgroundColor: '#10b981', tension: 0.25 },
-        { label: 'Sánchez', data: hist.sanchez, borderColor: '#dc2626', backgroundColor: '#dc2626', tension: 0.25 },
-        { label: 'Belmont', data: hist.belmont, borderColor: '#8b5cf6', backgroundColor: '#8b5cf6', tension: 0.25 }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' } },
-      scales: {
-        y: { min: 0, max: 100, ticks: { callback: v => v + '%' }, title: { display: true, text: 'Probabilidad de 2° lugar' } },
-        x: { title: { display: true, text: '% actas ONPE' } }
-      }
-    }
-  });
-}
-
 function savePredictionsCache(pred) {
   try { localStorage.setItem('predictions_cache_v2', JSON.stringify({ savedAt: new Date().toISOString(), data: pred })); } catch(e) {}
 }
@@ -1859,10 +1818,15 @@ function applyPredictionsToUI(pred) {
   const projectionTable = document.getElementById('predProjectionTable');
   if (projectionTable && pred.projectionTable) {
     const colorMap = {fuji:'var(--c-fuji)', rla:'var(--c-rla)', nieto:'var(--c-nieto)', belm:'var(--c-belm)', sanch:'var(--c-sanch)'};
-    projectionTable.innerHTML = `<div class="proj-row proj-header"><span class="proj-pos">Pos</span><span class="proj-name">Candidato</span><span class="proj-current">ONPE actual</span><span class="proj-arrow">→</span><span class="proj-final">Proyección 100%</span><span class="proj-diff">Δ vs actual</span></div>` + pred.projectionTable.map(r => {
-      const diff = r.delta > 0 ? `▲ ${r.delta.toFixed(2)}` : r.delta < 0 ? `▼ ${Math.abs(r.delta).toFixed(2)}` : '—';
-      const diffColor = r.delta > 0 ? 'var(--c-nieto)' : r.delta < 0 ? 'var(--c-sanch)' : 'var(--tx3)';
-      return `<div class="proj-row"><span class="proj-pos">${r.pos}°</span><span class="proj-name" style="color:${colorMap[r.key]}">${r.candidate}</span><span class="proj-current">${r.actual.toFixed(2)}%</span><span class="proj-arrow">→</span><span class="proj-final" style="color:${colorMap[r.key]}">${r.projected.toFixed(2)}%</span><span class="proj-diff" style="color:${diffColor}">${diff}</span></div>`;
+    const probs = pred.secondRoundProbabilities || {};
+    projectionTable.innerHTML = `<div class="proj-row proj-header"><span class="proj-pos">Pos</span><span class="proj-name">Candidato</span><span class="proj-current">ONPE actual</span><span class="proj-arrow">→</span><span class="proj-final">Modelo actual</span><span class="proj-diff">Lectura</span></div>` + pred.projectionTable.map(r => {
+      let reading = 'Fuera de disputa por 2°';
+      if (r.key === 'fuji') reading = '1° lugar consolidado';
+      if (r.key === 'rla') reading = `${probs.rla || 0}% prob. de 2°`;
+      if (r.key === 'sanch') reading = `${probs.sanchez || 0}% prob. de 2°`;
+      if (r.key === 'nieto') reading = `${probs.nieto || 0}% prob. de 2°`;
+      if (r.key === 'belm') reading = `${probs.belmont || 0}% prob. de 2°`;
+      return `<div class="proj-row"><span class="proj-pos">${r.pos}°</span><span class="proj-name" style="color:${colorMap[r.key]}">${r.candidate}</span><span class="proj-current">${r.actual.toFixed(2)}%</span><span class="proj-arrow">→</span><span class="proj-final" style="color:${colorMap[r.key]}">${r.projected.toFixed(2)}%</span><span class="proj-diff">${reading}</span></div>`;
     }).join('');
   }
 
@@ -1926,7 +1890,6 @@ function applyPredictionsToUI(pred) {
 
   const insightCards = document.getElementById('insightCards');
   if (insightCards) insightCards.innerHTML = (pred.insights || []).map(i => `<div class="ref-card">${i}</div>`).join('');
-  renderProbabilityChart(pred.probabilityHistory || []);
 }
 
 async function loadPredictionsLayer(mode = 'persisted') {
