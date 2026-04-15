@@ -22,13 +22,15 @@ El proyecto combina dos capas:
 ### Capa 1: ingestión en tiempo real
 - fuente principal: `data/tracking.json`
 - fuente regional: `data/onpe_live.json`
-- frontend consulta ONPE vía `WORKER_URL`
-- cuando entra nueva data, el tracking se actualiza en cliente
+- snapshots persistidos: `data/onpe_snapshots/`
+- normalizados persistidos: `data/normalized/`
+- latest estable: `data/latest/onpe_latest.json`
+- frontend consulta ONPE vía `WORKER_URL`, pero la verdad persistida vive en archivos
 
 ### Capa 2: predicción
 - script: `scripts/build_predictions.py`
 - salida persistida: `data/predictions.json`
-- también existe recalculo live en frontend cuando entra nueva data ONPE
+- fuente canónica: archivos persistidos, no recálculo heurístico en frontend
 
 ### Capa 3: visualización
 - `index.html`
@@ -57,24 +59,22 @@ El proyecto combina dos capas:
 ## Cómo se actualiza hoy
 
 ### ONPE en vivo
-Se actualiza automáticamente desde el frontend cuando el Worker responde con nueva data.
+Se actualiza automáticamente desde el frontend cuando el Worker responde con nueva data, pero debe persistirse con snapshots.
 
-### Predicciones
-Se actualizan de 2 formas:
-
-1. **Live en frontend**
-   - cuando entra nueva data ONPE
-   - recalcula numérico + insights
-
-2. **Persistidas**
-   - ejecutando:
+### Persistencia recomendada
 
 ```bash
 cd /home/garrieta/.openclaw/workspace/check_dashboard
+python3 scripts/store_onpe_snapshot.py
+python3 scripts/build_onpe_latest.py
 python3 scripts/build_predictions.py
 ```
 
-Esto regenera `data/predictions.json`.
+Esto deja:
+- snapshot bruto por corte
+- versión normalizada
+- latest estable
+- `data/predictions.json` regenerado desde fuente persistida
 
 ## Metodología actual de predicción
 
@@ -101,18 +101,21 @@ La predicción no debe depender de un único escenario agresivo. La UI muestra u
 ## Cosas importantes a recordar
 
 1. **No mezclar extracción y predicción en el mismo bloque lógico**
-   - la extracción debe seguir desacoplada
-   - la predicción debe vivir como capa separada
+   - la extracción sigue desacoplada
+   - la predicción vive como capa separada y persistida
 
 2. **La visual mostrada en Predicciones no es un forecast único**
    - es una media ponderada de escenarios
 
-3. **No confiar solo en hardcodes del frontend**
-   - si se cambia metodología, reflejar también en `scripts/build_predictions.py`
+3. **Frontend no debe ser source of truth**
+   - no recalcular un modelo alterno en cliente como default
+   - renderizar `data/predictions.json`
 
 4. **Si cambian los cortes ONPE o el Worker**
-   - verificar que `TRACKING.cuts` siga alimentándose bien
-   - luego validar si la histórica de probabilidad sigue siendo lógica
+   - persistir snapshot
+   - regenerar latest
+   - regenerar predicciones
+   - recién después validar UI
 
 ## Próximas mejoras recomendadas
 
