@@ -594,20 +594,7 @@
     <div class="card" style="margin-top:16px">
       <div class="card-title">Lectura actual del modelo</div>
       <div id="predictionSummary" style="font-size:14px;color:var(--tx1);line-height:1.5"></div>
-      <div id="predictionMeta" style="font-size:12px;color:var(--tx2);margin-top:8px">Modelo recalculado con el último corte ONPE disponible.</div>
-    </div>
-
-    <div class="grid" style="margin-top:16px">
-      <div class="card">
-        <div class="card-title">Auditoría regional clave pro-Sánchez</div>
-        <div style="font-size:12px;color:var(--tx2);margin-bottom:10px">Regiones que más empujan a Sánchez frente a López Aliaga en el tramo pendiente.</div>
-        <div id="regionalAuditList"></div>
-      </div>
-      <div class="card">
-        <div class="card-title">Tabla espejo pro-Aliaga</div>
-        <div style="font-size:12px;color:var(--tx2);margin-bottom:10px">Regiones donde López Aliaga mantiene o amplía ventaja relativa sobre Sánchez en el tramo pendiente.</div>
-        <div id="regionalMirrorList"></div>
-      </div>
+      <div style="font-size:12px;color:var(--tx2);margin-top:8px">Modelo recalculado con el último corte ONPE disponible.</div>
     </div>
 
     <div class="grid" style="margin-top:16px">
@@ -1980,56 +1967,32 @@ function applyPredictionsToUI(pred) {
     summary.textContent = main.replace(/^Lectura principal:\s*/,'');
   }
 
-  const meta = document.getElementById('predictionMeta');
-  if (meta) {
-    const generated = pred.generatedAt ? new Date(pred.generatedAt).toLocaleString('es-PE') : '—';
-    const pct = pred.nationalPct != null ? Number(pred.nationalPct).toFixed(3) + '%' : '—';
-    meta.textContent = `Último corte procesado: ${pct} · Recalculado: ${generated}`;
-  }
-
-  const audit = document.getElementById('regionalAuditList');
-  const topEdges = (((pred.debug || {}).topRegionalEdgesSanchezVsRla) || []).slice(0, 8);
-  if (audit) {
-    audit.innerHTML = topEdges.map(r => `
-      <div class="proj-row">
-        <span class="proj-name">${r.region}</span>
-        <span class="proj-current">Pendiente ~${Number(r.pendingVotes || 0).toLocaleString('es-PE')}</span>
-        <span class="proj-arrow">→</span>
-        <span class="proj-final" style="color:var(--c-sanch)">S−RLA ${Number(r.vsRla || 0) > 0 ? '+' : ''}${Number(r.vsRla || 0).toLocaleString('es-PE')}</span>
-        <span class="proj-diff">S−Nieto ${Number(r.vsNieto || 0) > 0 ? '+' : ''}${Number(r.vsNieto || 0).toLocaleString('es-PE')}</span>
-      </div>
-    `).join('');
-  }
-
-  const mirror = document.getElementById('regionalMirrorList');
-  const mirrorEdges = (((pred.debug || {}).topRegionalEdgesRlaVsSanchez) || []).slice(0, 8);
-  if (mirror) {
-    mirror.innerHTML = mirrorEdges.map(r => `
-      <div class="proj-row">
-        <span class="proj-name">${r.region}</span>
-        <span class="proj-current">Pendiente ~${Number(r.pendingVotes || 0).toLocaleString('es-PE')}</span>
-        <span class="proj-arrow">→</span>
-        <span class="proj-final" style="color:var(--c-rla)">RLA−S ${Number(-(r.vsRla || 0)) > 0 ? '+' : ''}${Number(-(r.vsRla || 0)).toLocaleString('es-PE')}</span>
-        <span class="proj-diff">Neto Sánchez ${Number(r.vsRla || 0) > 0 ? '+' : ''}${Number(r.vsRla || 0).toLocaleString('es-PE')}</span>
-      </div>
-    `).join('');
-  }
-
   const insightCards = document.getElementById('insightCards');
   if (insightCards) insightCards.innerHTML = (pred.insights || []).map(i => `<div class="ref-card">${i}</div>`).join('');
   renderProbabilityChart(pred.probabilityHistory || []);
 }
 
-async async function loadPredictionsLayer(mode = 'persisted') {
+async function loadPredictionsLayer(mode = 'persisted') {
   try {
+    if (mode === 'live') {
+      const live = computeLivePredictionsFromTracking();
+      if (live) {
+        savePredictionsCache(live);
+        applyPredictionsToUI(live);
+        return;
+      }
+    }
+    const cached = getPredictionsCache();
+    if (cached) {
+      applyPredictionsToUI(cached);
+      return;
+    }
     const resp = await fetch('./data/predictions.json?_=' + Date.now());
     const pred = await resp.json();
     savePredictionsCache(pred);
     applyPredictionsToUI(pred);
   } catch (e) {
     console.error('Predictions layer error', e);
-    const cached = getPredictionsCache();
-    if (cached) applyPredictionsToUI(cached);
   }
 }
 
