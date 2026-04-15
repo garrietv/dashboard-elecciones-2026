@@ -4,4 +4,9 @@
 {"capturedAt": "2026-04-15T08:51:38+02:00", "sourceLastUpdate": "2026-04-15T05:18:23.635Z", "nationalPct": 85.856, "lastCut": {"pct": 85.856, "fujimori": 16.845, "rla": 12.131, "nieto": 11.305, "belmont": 10.148, "sanchez": 11.571}}
 {"capturedAt": "2026-04-15T09:03:05+02:00", "sourceLastUpdate": "2026-04-15T06:59:29.803Z", "nationalPct": 87.435, "lastCut": {"ts": "2026-04-15T06:38:50.949Z", "pct": 87.368, "fujimori": 16.866, "rla": 12.06, "nieto": 11.227, "belmont": 10.155, "sanchez": 11.748, "jee": 3644, "contabilizadas": 81048}}
 {"capturedAt": "2026-04-15T07:03:40+00:00", "sourceLastUpdate": "2026-04-15T06:59:32.865Z", "nationalPct": 87.589, "lastCut": {"ts": "2026-04-15T06:38:50.949Z", "pct": 87.368, "fujimori": 16.866, "rla": 12.06, "nieto": 11.227, "belmont": 10.155, "sanchez": 11.748, "jee": 3644, "contabilizadas": 81048}}
+<<<<<<< HEAD
 {"capturedAt": "2026-04-15T07:28:04+00:00", "sourceLastUpdate": "2026-04-15T07:28:04.531Z", "nationalPct": 88.029, "lastCut": {"ts": "2026-04-15T07:08:25.985Z", "pct": 87.811, "fujimori": 16.878, "rla": 12.042, "nieto": 11.205, "belmont": 10.155, "sanchez": 11.798, "jee": 3712, "contabilizadas": 81459}}
+=======
+{"capturedAt": "2026-04-15T09:31:00+02:00", "sourceLastUpdate": "2026-04-15T07:27:00.292Z", "nationalPct": 87.811, "lastCut": {"ts": "2026-04-15T07:08:25.985Z", "pct": 87.811, "fujimori": 16.878, "rla": 12.042, "nieto": 11.205, "belmont": 10.155, "sanchez": 11.798, "jee": 3712, "contabilizadas": 81459}}
+>>>>>>> 09f82ef (Resync persisted ONPE sources to latest worker cutoff)
+{"capturedAt": "2026-04-15T09:31:26+02:00", "sourceLastUpdate": "2026-04-15T07:26:57.540Z", "nationalPct": 87.811, "lastCut": {"ts": "2026-04-15T07:08:25.985Z", "pct": 87.811, "fujimori": 16.878, "rla": 12.042, "nieto": 11.205, "belmont": 10.155, "sanchez": 11.798, "jee": 3712, "contabilizadas": 81459}}

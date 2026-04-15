@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-15T07:28:04+00:00",
+  "generatedAt": "2026-04-15T09:31:26+02:00",
   "source": "Modelo regionalizado Hannah v3 (bastiones, topes, pendiente regional y Extranjero pro-RLA)",
-  "nationalPct": 88.029,
+  "nationalPct": 87.811,
   "secondRoundProbabilities": {
     "rla": 47,
     "nieto": 19,
@@ -181,7 +181,7 @@
   "insights": [
     "López Aliaga conserva ventaja estrecha en el modelo regionalizado, sostenido por Lima y el supuesto favorable en Extranjero.",
     "Pendiente reciente nacional: Sánchez 0.125 pp por punto vs RLA -0.048, pero la decisión la dominan bastiones y topes regionales.",
-    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+56,884), Cusco (+19,100), San Martín (+18,619), Huánuco (+15,300), Amazonas (+14,869)"
+    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+56,884), Cusco (+19,100), San Martín (+18,742), Huánuco (+15,300), Amazonas (+14,869)"
   ],
   "probabilityHistory": [
     {
@@ -778,7 +778,7 @@
     "currentPctRegionalized": {
       "fujimori": 27.184,
       "rla": 19.509,
-      "nieto": 18.019,
+      "nieto": 18.02,
       "sanchez": 18.953,
       "belmont": 16.334
     },
@@ -810,9 +810,9 @@
       },
       {
         "region": "San Martín",
-        "pendingVotes": 67516,
-        "vsRla": 18619,
-        "vsNieto": 19788,
+        "pendingVotes": 67962,
+        "vsRla": 18742,
+        "vsNieto": 19919,
         "rawSanchez": 0.23716,
         "rawRla": 0.059519999999999997,
         "rawNieto": 0.04627
@@ -875,18 +875,18 @@
       },
       {
         "region": "Extranjero",
-        "pendingVotes": 191404,
-        "vsRla": -77734,
-        "vsNieto": -23690,
+        "pendingVotes": 193219,
+        "vsRla": -78472,
+        "vsNieto": -23915,
         "rawSanchez": 0.02435,
         "rawRla": 0.29059,
         "rawNieto": 0.10821
       },
       {
         "region": "Ica",
-        "pendingVotes": 141004,
-        "vsRla": -7893,
-        "vsNieto": -7628,
+        "pendingVotes": 142463,
+        "vsRla": -7974,
+        "vsNieto": -7706,
         "rawSanchez": 0.07467,
         "rawRla": 0.09912000000000001,
         "rawNieto": 0.1015

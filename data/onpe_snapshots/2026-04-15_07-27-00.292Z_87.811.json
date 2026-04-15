@@ -1,6 +1,6 @@
 {
-  "capturedAt": "2026-04-15T09:31:26+02:00",
-  "sourceLastUpdate": "2026-04-15T07:26:57.540Z",
+  "capturedAt": "2026-04-15T09:31:00+02:00",
+  "sourceLastUpdate": "2026-04-15T07:27:00.292Z",
   "nationalPct": 87.811,
   "tracking": {
     "lastUpdate": "2026-04-15T07:08:25.985Z",
@@ -913,7 +913,7 @@
     "count": 82
   },
   "regional": {
-    "lastUpdate": "2026-04-15T07:26:57.540Z",
+    "lastUpdate": "2026-04-15T07:27:00.292Z",
     "nationalPct": 87.811,
     "totalActas": 92766,
     "actasContabilizadas": 81459,
