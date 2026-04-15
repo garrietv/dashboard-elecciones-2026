@@ -65,15 +65,18 @@ Se actualiza automáticamente desde el frontend cuando el Worker responde con nu
 
 ```bash
 cd /home/garrieta/.openclaw/workspace/check_dashboard
-python3 scripts/update_onpe_pipeline.py
+python3 scripts/full_auto_sync.py
 ```
 
 Este comando:
+- consulta el Worker ONPE configurado
+- actualiza `data/tracking.json` y `data/onpe_live.json`
 - detecta si entró un corte nuevo
 - guarda snapshot bruto por corte
 - guarda versión normalizada
 - actualiza `data/latest/onpe_latest.json`
 - regenera `data/predictions.json`
+- resincroniza `index.html`
 - deja traza en `data/latest/pipeline_state.json`
 - permite que toda la pestaña `Predicciones` se repinte desde una única fuente persistida
 
@@ -81,6 +84,7 @@ Este comando:
 
 ```bash
 cd /home/garrieta/.openclaw/workspace/check_dashboard
+python3 scripts/sync_from_worker.py
 python3 scripts/store_onpe_snapshot.py
 python3 scripts/build_onpe_latest.py
 python3 scripts/build_predictions.py
@@ -89,8 +93,10 @@ python3 scripts/embed_latest_into_index.py
 
 ### Automatización del repo
 - Workflow: `.github/workflows/onpe-pipeline.yml`
-- Trigger: push a `main` cuando cambian `data/tracking.json` o `data/onpe_live.json`
-- Efecto: ejecuta el pipeline, regenera snapshots/latest/predictions, resincroniza `index.html` y hace commit automático si hubo cambios reales
+- Entrada automática: `scripts/sync_from_worker.py` consulta `https://onpe-proxy.renzonunez-af.workers.dev`
+- Orquestador: `scripts/full_auto_sync.py`
+- Trigger: push a `main`, ejecución manual del workflow, o cualquier corrida del script local
+- Efecto: actualiza JSON fuente, ejecuta el pipeline completo, regenera snapshots/latest/predictions, resincroniza `index.html` y hace commit automático si hubo cambios reales
 
 ## Metodología actual de predicción
 

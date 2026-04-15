@@ -26,10 +26,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run ONPE pipeline
+      - name: Run full ONPE sync + pipeline
         run: |
-          python3 scripts/update_onpe_pipeline.py || true
-          python3 scripts/embed_latest_into_index.py
+          python3 scripts/full_auto_sync.py
 
       - name: Commit generated files if changed
         run: |
