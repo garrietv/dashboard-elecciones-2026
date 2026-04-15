@@ -1830,104 +1830,13 @@ function renderProbabilityChart(history) {
   });
 }
 
-function computeLivePredictionsFromTracking() {
-  const cuts = TRACKING.cuts || [];
-  if (cuts.length < 3) return null;
-  const current = cuts[cuts.length - 1];
-  const prev = cuts[cuts.length - 3];
-  const dp = Math.max(0.1, current.pct - prev.pct);
-  const structural = { rla: -0.25, nieto: -0.10, sanchez: 0.70, belmont: -0.55 };
-  const contenders = ['rla','nieto','sanchez','belmont'];
-  const scores = {};
-  contenders.forEach(k => {
-    const s = (current[k] - prev[k]) / dp;
-    scores[k] = (current[k] * 1.2) + (s * 18) + (structural[k] * 2.5) - ((k === 'rla' || k === 'nieto') ? 0.35 : 0);
-  });
-  const min = Math.min(...Object.values(scores));
-  const shifted = Object.fromEntries(contenders.map(k => [k, Math.max(0.05, scores[k] - min + 0.05)]));
-  const total = Object.values(shifted).reduce((a,b) => a + b, 0) || 1;
-  const probs = Object.fromEntries(contenders.map(k => [k, Math.round((shifted[k] / total) * 100)]));
-  if (probs.sanchez > 65) {
-    const excess = probs.sanchez - 65;
-    probs.sanchez = 65;
-    probs.rla += Math.round(excess * 0.75);
-    probs.nieto += Math.round(excess * 0.20);
-    probs.belmont += excess - Math.round(excess * 0.75) - Math.round(excess * 0.20);
-  }
-  if (probs.belmont > 8) {
-    const excess = probs.belmont - 8;
-    probs.belmont = 8;
-    probs.rla += Math.round(excess * 0.6);
-    probs.sanchez += excess - Math.round(excess * 0.6);
-  }
-  const diff = 100 - Object.values(probs).reduce((a,b) => a + b, 0);
-  probs[Object.keys(probs).sort((a,b) => probs[b] - probs[a])[0]] += diff;
-
-  const history = (TRACKING.cuts || []).slice(2).map((cut, idx, arr) => {
-    const base = (TRACKING.cuts || [])[idx];
-    const ddp = Math.max(0.1, cut.pct - base.pct);
-    const localScores = {};
-    contenders.forEach(k => {
-      const s = (cut[k] - base[k]) / ddp;
-      localScores[k] = (cut[k] * 1.2) + (s * 18) + (structural[k] * 2.5) - ((k === 'rla' || k === 'nieto') ? 0.35 : 0);
-    });
-    const mn = Math.min(...Object.values(localScores));
-    const sh = Object.fromEntries(contenders.map(k => [k, Math.max(0.05, localScores[k] - mn + 0.05)]));
-    const tt = Object.values(sh).reduce((a,b) => a + b, 0) || 1;
-    const pr = Object.fromEntries(contenders.map(k => [k, Math.round((sh[k] / tt) * 100)]));
-    const d = 100 - Object.values(pr).reduce((a,b) => a + b, 0);
-    pr[Object.keys(pr).sort((a,b) => pr[b] - pr[a])[0]] += d;
-    return { pct: cut.pct, ...pr };
-  });
-
-  const scenarios = [
-    { name: 'Escenario base', probability: 45, assumptions: ['Se mantiene la pendiente reciente del conteo', 'Sánchez conserva mejor tracción relativa que RLA'], ranking: [
-      { candidate: 'Fujimori', pct: current.fujimori + 0.55 },
-      { candidate: 'Sánchez', pct: current.sanchez + 1.20 },
-      { candidate: 'López Aliaga', pct: current.rla - 0.90 },
-      { candidate: 'Nieto', pct: current.nieto - 0.75 }
-    ]},
-    { name: 'Sánchez acelera en bastiones', probability: 30, assumptions: ['El pendiente rural pesa más en el tramo final', 'La ventaja relativa de Sánchez se expande'], ranking: [
-      { candidate: 'Fujimori', pct: current.fujimori + 0.60 },
-      { candidate: 'Sánchez', pct: current.sanchez + 1.55 },
-      { candidate: 'López Aliaga', pct: current.rla - 1.00 },
-      { candidate: 'Nieto', pct: current.nieto - 0.85 }
-    ]},
-    { name: 'RLA retiene el 2° lugar', probability: 25, assumptions: ['El tramo final converge al promedio nacional', 'Sánchez desacelera fuera de sus zonas más fuertes'], ranking: [
-      { candidate: 'Fujimori', pct: current.fujimori + 0.50 },
-      { candidate: 'López Aliaga', pct: current.rla - 0.55 },
-      { candidate: 'Sánchez', pct: current.sanchez + 0.70 },
-      { candidate: 'Nieto', pct: current.nieto - 0.65 }
-    ]}
-  ];
-
-  return {
-    nationalPct: current.pct,
-    secondRoundProbabilities: probs,
-    probabilityHistory: history,
-    scenarios,
-    projectionTable: [
-      { pos: 1, key: 'fuji', candidate: 'Fujimori', actual: current.fujimori, projected: current.fujimori + 0.55, delta: 0.55 },
-      { pos: 2, key: probs.sanchez >= probs.rla ? 'sanch' : 'rla', candidate: probs.sanchez >= probs.rla ? 'Sánchez' : 'López Aliaga', actual: probs.sanchez >= probs.rla ? current.sanchez : current.rla, projected: probs.sanchez >= probs.rla ? current.sanchez + 1.20 : current.rla - 0.55, delta: probs.sanchez >= probs.rla ? 1.20 : -0.55 },
-      { pos: 3, key: probs.sanchez >= probs.rla ? 'rla' : 'sanch', candidate: probs.sanchez >= probs.rla ? 'López Aliaga' : 'Sánchez', actual: probs.sanchez >= probs.rla ? current.rla : current.sanchez, projected: probs.sanchez >= probs.rla ? current.rla - 0.90 : current.sanchez + 0.70, delta: probs.sanchez >= probs.rla ? -0.90 : 0.70 },
-      { pos: 4, key: 'nieto', candidate: 'Nieto', actual: current.nieto, projected: current.nieto - 0.75, delta: -0.75 },
-      { pos: 5, key: 'belm', candidate: 'Belmont', actual: current.belmont, projected: current.belmont + 0.10, delta: 0.10 }
-    ],
-    insights: [
-      probs.sanchez > probs.rla ? 'Lectura principal: Sánchez pasa a ser favorito estrecho para el 2° lugar.' : 'Lectura principal: RLA mantiene una ventaja estrecha por ahora.',
-      `Señal cuantitativa: pendiente reciente Sánchez ${(((current.sanchez - prev.sanchez) / dp) || 0).toFixed(3)} vs RLA ${(((current.rla - prev.rla) / dp) || 0).toFixed(3)} puntos por punto de acta.`,
-      probs.sanchez > probs.rla ? 'Implicación: si este patrón continúa, el gap por el 2° lugar debería seguir cerrándose a favor de Sánchez.' : 'Implicación: si el patrón no cambia, RLA debería sostener el 2° lugar con poco margen.'
-    ]
-  };
-}
-
 function savePredictionsCache(pred) {
-  try { localStorage.setItem('predictions_cache', JSON.stringify({ savedAt: new Date().toISOString(), data: pred })); } catch(e) {}
+  try { localStorage.setItem('predictions_cache_v2', JSON.stringify({ savedAt: new Date().toISOString(), data: pred })); } catch(e) {}
 }
 
 function getPredictionsCache() {
   try {
-    const raw = localStorage.getItem('predictions_cache');
+    const raw = localStorage.getItem('predictions_cache_v2');
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     return parsed && parsed.data ? parsed.data : null;
