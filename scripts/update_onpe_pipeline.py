@@ -54,6 +54,11 @@ def main():
     run('build_onpe_latest.py')
     run('build_model_input.py')
     run('build_predictions.py')
+    try:
+        run('db_init.py')
+        run('record_pipeline_state.py')
+    except Exception as e:
+        print(json.dumps({'dbSidecarWarning': str(e)}, ensure_ascii=False, indent=2))
 
     STATE.parent.mkdir(parents=True, exist_ok=True)
     STATE.write_text(json.dumps(sig, ensure_ascii=False, indent=2))

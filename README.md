@@ -25,6 +25,7 @@ El proyecto combina dos capas:
 - snapshots persistidos: `data/onpe_snapshots/`
 - normalizados persistidos: `data/normalized/`
 - latest estable: `data/latest/onpe_latest.json`
+- sidecar DB aislado: `data/onpe_history.db`
 - frontend consulta ONPE vía `WORKER_URL`, pero la verdad persistida vive en archivos
 
 ### Capa 2: predicción
@@ -76,6 +77,7 @@ Este comando:
 - guarda versión normalizada
 - actualiza `data/latest/onpe_latest.json`
 - regenera `data/predictions.json`
+- registra sidecar histórico en `data/onpe_history.db` sin reemplazar el flujo actual
 - NO vuelve a tocar `index.html`; la UI live de ONPE se mantiene estable y separada de la persistencia
 - deja traza en `data/latest/pipeline_state.json`
 - permite que toda la pestaña `Predicciones` se repinte desde una única fuente persistida
@@ -145,6 +147,7 @@ La predicción no debe depender de un único escenario agresivo. La UI muestra u
 - persistir automáticamente nueva histórica de probabilidad corte a corte
 - unificar fórmula JS y fórmula Python para evitar drift
 - mover parte del recálculo live a una capa más mantenible
+- aprovechar `data/onpe_history.db` para auditoría histórica y futuros modelos
 
 ### Media prioridad
 - crear `data/model_input.json` como capa intermedia normalizada
