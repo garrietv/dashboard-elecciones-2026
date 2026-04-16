@@ -1295,10 +1295,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-16T22:52:39.888Z",
-    "nationalPct": 93.064,
+    "lastUpdate": "2026-04-16T23:39:54.468Z",
+    "nationalPct": 93.068,
     "totalActas": 92766,
-    "actasContabilizadas": 86332,
+    "actasContabilizadas": 86335,
     "regions": [
       {
         "name": "Amazonas",
@@ -1677,27 +1677,27 @@
       },
       {
         "name": "Loreto",
-        "pctActas": 83.982,
-        "vv": 288610,
+        "pctActas": 84.019,
+        "vv": 288655,
         "fujimori": {
-          "pct": 28.104,
-          "v": 81111
+          "pct": 28.099,
+          "v": 81109
         },
         "rla": {
-          "pct": 6.774,
-          "v": 19550
+          "pct": 6.772,
+          "v": 19548
         },
         "nieto": {
-          "pct": 3.655,
-          "v": 10549
+          "pct": 3.654,
+          "v": 10547
         },
         "belmont": {
-          "pct": 4.212,
-          "v": 12156
+          "pct": 4.211,
+          "v": 12155
         },
         "sanchez": {
-          "pct": 9.896,
-          "v": 28561
+          "pct": 9.908,
+          "v": 28600
         }
       },
       {
@@ -1953,10 +1953,10 @@
     ]
   },
   "canonical": {
-    "nationalPct": 93.064,
+    "nationalPct": 93.068,
     "trackingPct": 92.909,
-    "livePct": 93.064,
+    "livePct": 93.068,
     "trackingLastUpdate": "2026-04-16T09:58:54.317Z",
-    "liveLastUpdate": "2026-04-16T22:52:39.888Z"
+    "liveLastUpdate": "2026-04-16T23:39:54.468Z"
   }
 }
