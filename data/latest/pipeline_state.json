@@ -1,16 +1,16 @@
 {
-  "lastUpdate": "2026-04-16T06:18:44.674Z",
-  "nationalPct": 92.128,
-  "cutPct": 92.036,
+  "lastUpdate": "2026-04-16T08:09:13.039Z",
+  "nationalPct": 92.555,
+  "cutPct": 92.555,
   "cut": {
-    "ts": "2026-04-16T02:59:12.283Z",
-    "pct": 92.036,
-    "fujimori": 17.049,
-    "rla": 11.86,
-    "nieto": 11.058,
-    "belmont": 10.151,
-    "sanchez": 12.055,
-    "jee": 4744,
-    "contabilizadas": 85378
+    "ts": "2026-04-16T07:26:59.547Z",
+    "pct": 92.555,
+    "fujimori": 17.054,
+    "rla": 11.898,
+    "nieto": 11.066,
+    "belmont": 10.155,
+    "sanchez": 12.011,
+    "jee": 4900,
+    "contabilizadas": 85860
   }
 }

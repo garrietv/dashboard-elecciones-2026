@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-04-16T06:18:44.674Z",
-  "nationalPct": 92.128,
+  "lastUpdate": "2026-04-16T08:09:13.039Z",
+  "nationalPct": 92.555,
   "totalActas": 92766,
-  "actasContabilizadas": 85463,
+  "actasContabilizadas": 85860,
   "regions": [
     {
       "name": "Amazonas",
@@ -631,27 +631,27 @@
     },
     {
       "name": "Extranjero",
-      "pctActas": 49.351,
-      "vv": 150490,
+      "pctActas": 57.963,
+      "vv": 179037,
       "fujimori": {
-        "pct": 16.034,
-        "v": 24130
+        "pct": 16.099,
+        "v": 28823
       },
       "rla": {
-        "pct": 28.001,
-        "v": 42139
+        "pct": 27.271,
+        "v": 48825
       },
       "nieto": {
-        "pct": 10.696,
-        "v": 16096
+        "pct": 10.45,
+        "v": 18709
       },
       "belmont": {
-        "pct": 9.423,
-        "v": 14181
+        "pct": 10.086,
+        "v": 18058
       },
       "sanchez": {
-        "pct": 2.431,
-        "v": 3658
+        "pct": 2.443,
+        "v": 4374
       }
     }
   ]
