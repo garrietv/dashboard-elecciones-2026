@@ -1295,10 +1295,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-16T19:34:53.652Z",
-    "nationalPct": 93.053,
+    "lastUpdate": "2026-04-16T20:23:40.733Z",
+    "nationalPct": 93.056,
     "totalActas": 92766,
-    "actasContabilizadas": 86322,
+    "actasContabilizadas": 86324,
     "regions": [
       {
         "name": "Amazonas",
@@ -1652,52 +1652,52 @@
       },
       {
         "name": "Lima",
-        "pctActas": 94.926,
-        "vv": 5788966,
+        "pctActas": 94.943,
+        "vv": 5790054,
         "fujimori": {
-          "pct": 17.877,
-          "v": 1034893
+          "pct": 17.876,
+          "v": 1035030
         },
         "rla": {
-          "pct": 19.925,
-          "v": 1153451
+          "pct": 19.926,
+          "v": 1153726
         },
         "nieto": {
-          "pct": 15.111,
-          "v": 874771
+          "pct": 15.112,
+          "v": 874993
         },
         "belmont": {
-          "pct": 9.125,
-          "v": 528243
+          "pct": 9.124,
+          "v": 528285
         },
         "sanchez": {
           "pct": 3.269,
-          "v": 189241
+          "v": 189277
         }
       },
       {
         "name": "Loreto",
-        "pctActas": 83.871,
-        "vv": 288372,
+        "pctActas": 83.908,
+        "vv": 288534,
         "fujimori": {
           "pct": 28.111,
-          "v": 81064
+          "v": 81110
         },
         "rla": {
           "pct": 6.775,
-          "v": 19537
+          "v": 19548
         },
         "nieto": {
           "pct": 3.656,
-          "v": 10543
+          "v": 10549
         },
         "belmont": {
           "pct": 4.213,
-          "v": 12149
+          "v": 12156
         },
         "sanchez": {
           "pct": 9.882,
-          "v": 28497
+          "v": 28513
         }
       },
       {
@@ -1927,36 +1927,36 @@
       },
       {
         "name": "Extranjero",
-        "pctActas": 68.305,
-        "vv": 213686,
+        "pctActas": 68.344,
+        "vv": 213755,
         "fujimori": {
-          "pct": 16.549,
-          "v": 35363
+          "pct": 16.547,
+          "v": 35370
         },
         "rla": {
-          "pct": 25.956,
-          "v": 55464
+          "pct": 25.962,
+          "v": 55495
         },
         "nieto": {
-          "pct": 10.41,
-          "v": 22245
+          "pct": 10.409,
+          "v": 22250
         },
         "belmont": {
           "pct": 10.175,
-          "v": 21743
+          "v": 21750
         },
         "sanchez": {
-          "pct": 2.497,
-          "v": 5336
+          "pct": 2.496,
+          "v": 5335
         }
       }
     ]
   },
   "canonical": {
-    "nationalPct": 93.053,
+    "nationalPct": 93.056,
     "trackingPct": 92.909,
-    "livePct": 93.053,
+    "livePct": 93.056,
     "trackingLastUpdate": "2026-04-16T09:58:54.317Z",
-    "liveLastUpdate": "2026-04-16T19:34:53.652Z"
+    "liveLastUpdate": "2026-04-16T20:23:40.733Z"
   }
 }
