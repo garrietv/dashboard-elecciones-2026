@@ -1,5 +1,6 @@
 {
-  "lastUpdate": "2026-04-16T09:48:10.622Z",
+  "capturedAt": "2026-04-16T09:48:12+00:00",
+  "sourceLastUpdate": "2026-04-16T09:48:10.622Z",
   "nationalPct": 92.807,
   "lastCut": {
     "ts": "2026-04-16T07:26:59.547Z",
@@ -1932,5 +1933,6 @@
       }
     }
   ],
-  "references": {}
+  "totalActas": 92766,
+  "actasContabilizadas": 86093
 }

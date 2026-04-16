@@ -1284,10 +1284,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-16T08:09:13.039Z",
-    "nationalPct": 92.555,
+    "lastUpdate": "2026-04-16T09:48:10.622Z",
+    "nationalPct": 92.807,
     "totalActas": 92766,
-    "actasContabilizadas": 85860,
+    "actasContabilizadas": 86093,
     "regions": [
       {
         "name": "Amazonas",
@@ -1441,27 +1441,27 @@
       },
       {
         "name": "Callao",
-        "pctActas": 95.307,
-        "vv": 552083,
+        "pctActas": 95.376,
+        "vv": 552444,
         "fujimori": {
           "pct": 20.669,
-          "v": 114110
+          "v": 114185
         },
         "rla": {
-          "pct": 14.994,
-          "v": 82779
+          "pct": 14.99,
+          "v": 82811
         },
         "nieto": {
-          "pct": 15.029,
-          "v": 82973
+          "pct": 15.026,
+          "v": 83010
         },
         "belmont": {
-          "pct": 8.148,
-          "v": 44984
+          "pct": 8.151,
+          "v": 45030
         },
         "sanchez": {
-          "pct": 3.003,
-          "v": 16579
+          "pct": 3.005,
+          "v": 16601
         }
       },
       {
@@ -1641,27 +1641,27 @@
       },
       {
         "name": "Lima",
-        "pctActas": 93.77,
-        "vv": 5717740,
+        "pctActas": 94.639,
+        "vv": 5771801,
         "fujimori": {
-          "pct": 17.858,
-          "v": 1021074
+          "pct": 17.876,
+          "v": 1031767
         },
         "rla": {
-          "pct": 19.943,
-          "v": 1140289
+          "pct": 19.913,
+          "v": 1149339
         },
         "nieto": {
-          "pct": 15.101,
-          "v": 863436
+          "pct": 15.112,
+          "v": 872235
         },
         "belmont": {
-          "pct": 9.127,
-          "v": 521858
+          "pct": 9.128,
+          "v": 526850
         },
         "sanchez": {
-          "pct": 3.271,
-          "v": 187027
+          "pct": 3.272,
+          "v": 188853
         }
       },
       {
@@ -1916,36 +1916,36 @@
       },
       {
         "name": "Extranjero",
-        "pctActas": 57.963,
-        "vv": 179037,
+        "pctActas": 63.901,
+        "vv": 201393,
         "fujimori": {
-          "pct": 16.099,
-          "v": 28823
+          "pct": 16.141,
+          "v": 32507
         },
         "rla": {
-          "pct": 27.271,
-          "v": 48825
+          "pct": 26.638,
+          "v": 53647
         },
         "nieto": {
-          "pct": 10.45,
-          "v": 18709
+          "pct": 10.591,
+          "v": 21330
         },
         "belmont": {
-          "pct": 10.086,
-          "v": 18058
+          "pct": 10.153,
+          "v": 20447
         },
         "sanchez": {
-          "pct": 2.443,
-          "v": 4374
+          "pct": 2.39,
+          "v": 4813
         }
       }
     ]
   },
   "canonical": {
-    "nationalPct": 92.555,
+    "nationalPct": 92.807,
     "trackingPct": 92.555,
-    "livePct": 92.555,
+    "livePct": 92.807,
     "trackingLastUpdate": "2026-04-16T07:18:04.013Z",
-    "liveLastUpdate": "2026-04-16T08:09:13.039Z"
+    "liveLastUpdate": "2026-04-16T09:48:10.622Z"
   }
 }
