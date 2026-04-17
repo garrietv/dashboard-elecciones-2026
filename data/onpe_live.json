@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-04-17T17:09:58.814Z",
-  "nationalPct": 93.347,
+  "lastUpdate": "2026-04-17T18:05:35.731Z",
+  "nationalPct": 93.349,
   "totalActas": 92766,
-  "actasContabilizadas": 86594,
+  "actasContabilizadas": 86596,
   "regions": [
     {
       "name": "Amazonas",
@@ -356,27 +356,27 @@
     },
     {
       "name": "Lima",
-      "pctActas": 95.117,
-      "vv": 5800792,
+      "pctActas": 95.128,
+      "vv": 5801420,
       "fujimori": {
-        "pct": 17.872,
-        "v": 1036718
+        "pct": 17.873,
+        "v": 1036888
       },
       "rla": {
         "pct": 19.934,
-        "v": 1156330
+        "v": 1156455
       },
       "nieto": {
         "pct": 15.118,
-        "v": 876964
+        "v": 877059
       },
       "belmont": {
         "pct": 9.122,
-        "v": 529148
+        "v": 529206
       },
       "sanchez": {
         "pct": 3.267,
-        "v": 189512
+        "v": 189532
       }
     },
     {
