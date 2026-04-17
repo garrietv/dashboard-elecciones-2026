@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-17T08:07:42+00:00",
+  "generatedAt": "2026-04-17T09:45:42+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
   "nationalPct": 93.179,
   "canonicalMeta": {
@@ -7,7 +7,7 @@
     "trackingPct": 92.909,
     "livePct": 93.179,
     "trackingLastUpdate": "2026-04-16T09:58:54.317Z",
-    "liveLastUpdate": "2026-04-17T08:07:40.750Z"
+    "liveLastUpdate": "2026-04-17T09:44:18.818Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -1021,7 +1021,7 @@
       "contabilizadas": 85860
     },
     "currentPctRegionalized": {
-      "fujimori": 27.422,
+      "fujimori": 27.421,
       "rla": 19.318,
       "nieto": 17.805,
       "sanchez": 19.157,
@@ -1153,12 +1153,12 @@
       },
       {
         "region": "Arequipa",
-        "pendingVotes": 18804,
-        "vsRla": -234,
-        "vsNieto": -2855,
+        "pendingVotes": 18389,
+        "vsRla": -228,
+        "vsNieto": -2791,
         "rawSanchez": 0.10049,
-        "rawRla": 0.10634,
-        "rawNieto": 0.18666
+        "rawRla": 0.10632,
+        "rawNieto": 0.18664000000000003
       },
       {
         "region": "Tumbes",
