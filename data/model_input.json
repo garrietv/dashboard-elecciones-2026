@@ -1306,7 +1306,7 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-17T20:58:55.195Z",
+    "lastUpdate": "2026-04-17T21:55:42.120Z",
     "nationalPct": 93.359,
     "totalActas": 92766,
     "actasContabilizadas": 86605,
@@ -1488,52 +1488,52 @@
       },
       {
         "name": "Cusco",
-        "pctActas": 94.527,
-        "vv": 661729,
+        "pctActas": 94.577,
+        "vv": 662082,
         "fujimori": {
           "pct": 6.085,
-          "v": 40266
+          "v": 40288
         },
         "rla": {
-          "pct": 4.789,
-          "v": 31690
+          "pct": 4.787,
+          "v": 31694
         },
         "nieto": {
-          "pct": 9.003,
-          "v": 59575
+          "pct": 9,
+          "v": 59587
         },
         "belmont": {
           "pct": 15.738,
-          "v": 104143
+          "v": 104198
         },
         "sanchez": {
-          "pct": 22.602,
-          "v": 149564
+          "pct": 22.614,
+          "v": 149723
         }
       },
       {
         "name": "Huancavelica",
-        "pctActas": 94.894,
-        "vv": 164462,
+        "pctActas": 95.051,
+        "vv": 164732,
         "fujimori": {
-          "pct": 7.064,
-          "v": 11618
+          "pct": 7.059,
+          "v": 11628
         },
         "rla": {
-          "pct": 2.348,
-          "v": 3862
+          "pct": 2.347,
+          "v": 3866
         },
         "nieto": {
-          "pct": 3.243,
-          "v": 5334
+          "pct": 3.245,
+          "v": 5346
         },
         "belmont": {
-          "pct": 13.535,
-          "v": 22260
+          "pct": 13.546,
+          "v": 22315
         },
         "sanchez": {
-          "pct": 43.38,
-          "v": 71344
+          "pct": 43.377,
+          "v": 71456
         }
       },
       {
@@ -1968,6 +1968,6 @@
     "trackingPct": 93.23,
     "livePct": 93.359,
     "trackingLastUpdate": "2026-04-17T10:00:38.789Z",
-    "liveLastUpdate": "2026-04-17T20:58:55.195Z"
+    "liveLastUpdate": "2026-04-17T21:55:42.120Z"
   }
 }
