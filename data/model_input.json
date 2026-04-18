@@ -1306,7 +1306,7 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-18T22:35:28.872Z",
+    "lastUpdate": "2026-04-18T23:07:10.669Z",
     "nationalPct": 93.475,
     "totalActas": 92766,
     "actasContabilizadas": 86713,
@@ -1674,12 +1674,12 @@
           "v": 1157404
         },
         "nieto": {
-          "pct": 15.118,
-          "v": 877690
+          "pct": 15.117,
+          "v": 877632
         },
         "belmont": {
-          "pct": 9.121,
-          "v": 529529
+          "pct": 9.122,
+          "v": 529587
         },
         "sanchez": {
           "pct": 3.266,
@@ -1968,6 +1968,6 @@
     "trackingPct": 93.23,
     "livePct": 93.475,
     "trackingLastUpdate": "2026-04-17T10:00:38.789Z",
-    "liveLastUpdate": "2026-04-18T22:35:28.872Z"
+    "liveLastUpdate": "2026-04-18T23:07:10.669Z"
   }
 }
