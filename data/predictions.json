@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-18T14:26:58+00:00",
+  "generatedAt": "2026-04-18T15:07:25+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 93.414,
+  "nationalPct": 93.422,
   "canonicalMeta": {
-    "nationalPct": 93.414,
+    "nationalPct": 93.422,
     "trackingPct": 93.23,
-    "livePct": 93.414,
+    "livePct": 93.422,
     "trackingLastUpdate": "2026-04-17T10:00:38.789Z",
-    "liveLastUpdate": "2026-04-18T14:26:57.636Z"
+    "liveLastUpdate": "2026-04-18T15:04:28.829Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -188,7 +188,7 @@
   "insights": [
     "Sánchez ya aparece 2° en el conteo observado y el modelo entra en escenario de defensa del sorpasso con simulación regional del pendiente restante.",
     "Pendiente reciente nacional: Sánchez -0.074 pp por punto vs RLA 0.063. A este nivel de avance pesa más el pendiente regional observado que la heurística fija de fase ~80%.",
-    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+18,929), Huánuco (+10,495), Cusco (+9,505), Puno (+8,854), San Martín (+6,468)"
+    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+18,929), Huánuco (+10,092), Cusco (+9,505), Puno (+8,854), San Martín (+6,468)"
   ],
   "probabilityHistory": [
     {
@@ -1029,10 +1029,10 @@
     },
     "currentPctRegionalized": {
       "fujimori": 27.392,
-      "rla": 19.294,
-      "nieto": 17.782,
-      "sanchez": 19.211,
-      "belmont": 16.32
+      "rla": 19.293,
+      "nieto": 17.781,
+      "sanchez": 19.213,
+      "belmont": 16.321
     },
     "regionalProjectionPct": {
       "fujimori": 17.13,
@@ -1059,12 +1059,12 @@
       },
       {
         "region": "Huánuco",
-        "pendingVotes": 31166,
-        "vsRla": 10495,
-        "vsNieto": 11069,
-        "rawSanchez": 0.29436,
-        "rawRla": 0.059800000000000006,
-        "rawNieto": 0.047119999999999995
+        "pendingVotes": 30004,
+        "vsRla": 10092,
+        "vsNieto": 10639,
+        "rawSanchez": 0.29418,
+        "rawRla": 0.05979,
+        "rawNieto": 0.047240000000000004
       },
       {
         "region": "Cusco",

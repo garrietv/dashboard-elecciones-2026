@@ -1306,10 +1306,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-18T14:26:57.636Z",
-    "nationalPct": 93.414,
+    "lastUpdate": "2026-04-18T15:04:28.829Z",
+    "nationalPct": 93.422,
     "totalActas": 92766,
-    "actasContabilizadas": 86656,
+    "actasContabilizadas": 86664,
     "regions": [
       {
         "name": "Amazonas",
@@ -1538,27 +1538,27 @@
       },
       {
         "name": "Huánuco",
-        "pctActas": 90.944,
-        "vv": 312980,
+        "pctActas": 91.286,
+        "vv": 314316,
         "fujimori": {
-          "pct": 15.449,
-          "v": 48352
+          "pct": 15.441,
+          "v": 48534
         },
         "rla": {
-          "pct": 5.98,
-          "v": 18716
+          "pct": 5.979,
+          "v": 18793
         },
         "nieto": {
-          "pct": 4.712,
-          "v": 14748
+          "pct": 4.724,
+          "v": 14848
         },
         "belmont": {
-          "pct": 14.175,
-          "v": 44365
+          "pct": 14.179,
+          "v": 44567
         },
         "sanchez": {
-          "pct": 29.436,
-          "v": 92129
+          "pct": 29.418,
+          "v": 92465
         }
       },
       {
@@ -1964,10 +1964,10 @@
     ]
   },
   "canonical": {
-    "nationalPct": 93.414,
+    "nationalPct": 93.422,
     "trackingPct": 93.23,
-    "livePct": 93.414,
+    "livePct": 93.422,
     "trackingLastUpdate": "2026-04-17T10:00:38.789Z",
-    "liveLastUpdate": "2026-04-18T14:26:57.636Z"
+    "liveLastUpdate": "2026-04-18T15:04:28.829Z"
   }
 }
