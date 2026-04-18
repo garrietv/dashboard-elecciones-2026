@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-04-18T17:52:37.895Z",
-  "nationalPct": 93.422,
+  "lastUpdate": "2026-04-18T18:36:32.628Z",
+  "nationalPct": 93.474,
   "totalActas": 92766,
-  "actasContabilizadas": 86664,
+  "actasContabilizadas": 86712,
   "regions": [
     {
       "name": "Amazonas",
@@ -631,7 +631,7 @@
     },
     {
       "name": "Extranjero",
-      "pctActas": 68.384,
+      "pctActas": 70.271,
       "vv": 213928,
       "fujimori": {
         "pct": 16.545,
