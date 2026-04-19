@@ -1306,10 +1306,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-19T20:03:27.770Z",
-    "nationalPct": 93.492,
+    "lastUpdate": "2026-04-19T20:51:40.587Z",
+    "nationalPct": 93.501,
     "totalActas": 92766,
-    "actasContabilizadas": 86729,
+    "actasContabilizadas": 86737,
     "regions": [
       {
         "name": "Amazonas",
@@ -1663,27 +1663,27 @@
       },
       {
         "name": "Lima",
-        "pctActas": 95.234,
-        "vv": 5807754,
+        "pctActas": 95.241,
+        "vv": 5808173,
         "fujimori": {
           "pct": 17.873,
-          "v": 1038020
+          "v": 1038095
         },
         "rla": {
           "pct": 19.934,
-          "v": 1157718
+          "v": 1157801
         },
         "nieto": {
           "pct": 15.117,
-          "v": 877958
+          "v": 878022
         },
         "belmont": {
           "pct": 9.123,
-          "v": 529841
+          "v": 529880
         },
         "sanchez": {
           "pct": 3.267,
-          "v": 189739
+          "v": 189753
         }
       },
       {
@@ -1938,36 +1938,36 @@
       },
       {
         "name": "Extranjero",
-        "pctActas": 70.389,
-        "vv": 214292,
+        "pctActas": 70.625,
+        "vv": 215096,
         "fujimori": {
-          "pct": 16.559,
-          "v": 35485
+          "pct": 16.558,
+          "v": 35616
         },
         "rla": {
-          "pct": 25.946,
-          "v": 55600
+          "pct": 25.886,
+          "v": 55680
         },
         "nieto": {
-          "pct": 10.407,
-          "v": 22301
+          "pct": 10.389,
+          "v": 22346
         },
         "belmont": {
-          "pct": 10.168,
-          "v": 21789
+          "pct": 10.184,
+          "v": 21905
         },
         "sanchez": {
-          "pct": 2.498,
-          "v": 5353
+          "pct": 2.515,
+          "v": 5410
         }
       }
     ]
   },
   "canonical": {
-    "nationalPct": 93.492,
+    "nationalPct": 93.501,
     "trackingPct": 93.23,
-    "livePct": 93.492,
+    "livePct": 93.501,
     "trackingLastUpdate": "2026-04-17T10:00:38.789Z",
-    "liveLastUpdate": "2026-04-19T20:03:27.770Z"
+    "liveLastUpdate": "2026-04-19T20:51:40.587Z"
   }
 }
