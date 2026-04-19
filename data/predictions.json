@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-19T20:51:43+00:00",
+  "generatedAt": "2026-04-19T21:25:29+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 93.501,
+  "nationalPct": 93.504,
   "canonicalMeta": {
-    "nationalPct": 93.501,
+    "nationalPct": 93.504,
     "trackingPct": 93.23,
-    "livePct": 93.501,
+    "livePct": 93.504,
     "trackingLastUpdate": "2026-04-17T10:00:38.789Z",
-    "liveLastUpdate": "2026-04-19T20:51:40.587Z"
+    "liveLastUpdate": "2026-04-19T21:25:29.193Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -1028,10 +1028,10 @@
       "contabilizadas": 86188
     },
     "currentPctRegionalized": {
-      "fujimori": 27.392,
-      "rla": 19.294,
+      "fujimori": 27.393,
+      "rla": 19.295,
       "nieto": 17.781,
-      "sanchez": 19.211,
+      "sanchez": 19.21,
       "belmont": 16.322
     },
     "regionalProjectionPct": {
@@ -1133,12 +1133,12 @@
       },
       {
         "region": "Extranjero",
-        "pendingVotes": 89465,
-        "vsRla": -32675,
-        "vsNieto": -10746,
-        "rawSanchez": 0.025150000000000002,
-        "rawRla": 0.25886,
-        "rawNieto": 0.10389
+        "pendingVotes": 89106,
+        "vsRla": -32518,
+        "vsNieto": -10688,
+        "rawSanchez": 0.025169999999999998,
+        "rawRla": 0.25864,
+        "rawNieto": 0.10378
       },
       {
         "region": "Callao",
