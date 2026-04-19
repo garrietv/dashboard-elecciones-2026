@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-19T17:53:04+00:00",
+  "generatedAt": "2026-04-19T18:38:59+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 93.486,
+  "nationalPct": 93.487,
   "canonicalMeta": {
-    "nationalPct": 93.486,
+    "nationalPct": 93.487,
     "trackingPct": 93.23,
-    "livePct": 93.486,
+    "livePct": 93.487,
     "trackingLastUpdate": "2026-04-17T10:00:38.789Z",
-    "liveLastUpdate": "2026-04-19T17:53:03.078Z"
+    "liveLastUpdate": "2026-04-19T18:38:58.888Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -188,7 +188,7 @@
   "insights": [
     "Sánchez ya aparece 2° en el conteo observado y el modelo entra en escenario de defensa del sorpasso con simulación regional del pendiente restante.",
     "Pendiente reciente nacional: Sánchez -0.074 pp por punto vs RLA 0.063. A este nivel de avance pesa más el pendiente regional observado que la heurística fija de fase ~80%.",
-    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+18,929), Huánuco (+10,092), Cusco (+9,505), Puno (+8,854), San Martín (+6,468)"
+    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+18,852), Huánuco (+10,092), Cusco (+9,505), Puno (+8,854), San Martín (+6,468)"
   ],
   "probabilityHistory": [
     {
@@ -1031,7 +1031,7 @@
       "fujimori": 27.392,
       "rla": 19.294,
       "nieto": 17.781,
-      "sanchez": 19.211,
+      "sanchez": 19.212,
       "belmont": 16.321
     },
     "regionalProjectionPct": {
@@ -1050,12 +1050,12 @@
     "topRegionalEdgesSanchezVsRla": [
       {
         "region": "Cajamarca",
-        "pendingVotes": 36560,
-        "vsRla": 18929,
-        "vsNieto": 18263,
-        "rawSanchez": 0.41702,
+        "pendingVotes": 36410,
+        "vsRla": 18852,
+        "vsNieto": 18189,
+        "rawSanchez": 0.41703,
         "rawRla": 0.032400000000000005,
-        "rawNieto": 0.04609
+        "rawNieto": 0.046079999999999996
       },
       {
         "region": "Huánuco",

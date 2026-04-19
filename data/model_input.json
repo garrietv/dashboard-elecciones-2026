@@ -1306,10 +1306,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-19T17:53:03.078Z",
-    "nationalPct": 93.486,
+    "lastUpdate": "2026-04-19T18:38:58.888Z",
+    "nationalPct": 93.487,
     "totalActas": 92766,
-    "actasContabilizadas": 86723,
+    "actasContabilizadas": 86724,
     "regions": [
       {
         "name": "Amazonas",
@@ -1438,27 +1438,27 @@
       },
       {
         "name": "Cajamarca",
-        "pctActas": 94.34,
-        "vv": 609370,
+        "pctActas": 94.363,
+        "vv": 609504,
         "fujimori": {
-          "pct": 13.823,
-          "v": 84233
+          "pct": 13.822,
+          "v": 84246
         },
         "rla": {
           "pct": 3.24,
-          "v": 19744
+          "v": 19748
         },
         "nieto": {
-          "pct": 4.609,
+          "pct": 4.608,
           "v": 28086
         },
         "belmont": {
           "pct": 11.007,
-          "v": 67073
+          "v": 67088
         },
         "sanchez": {
-          "pct": 41.702,
-          "v": 254119
+          "pct": 41.703,
+          "v": 254181
         }
       },
       {
@@ -1964,10 +1964,10 @@
     ]
   },
   "canonical": {
-    "nationalPct": 93.486,
+    "nationalPct": 93.487,
     "trackingPct": 93.23,
-    "livePct": 93.486,
+    "livePct": 93.487,
     "trackingLastUpdate": "2026-04-17T10:00:38.789Z",
-    "liveLastUpdate": "2026-04-19T17:53:03.078Z"
+    "liveLastUpdate": "2026-04-19T18:38:58.888Z"
   }
 }
