@@ -1,7 +1,7 @@
 {
-  "capturedAt": "2026-04-19T04:26:27+00:00",
-  "sourceLastUpdate": "2026-04-19T04:26:27.081Z",
-  "nationalPct": 93.483,
+  "capturedAt": "2026-04-19T06:14:44+00:00",
+  "sourceLastUpdate": "2026-04-19T05:55:11.627Z",
+  "nationalPct": 93.484,
   "tracking": {
     "lastUpdate": "2026-04-17T10:00:38.789Z",
     "nationalPct": 93.23,
@@ -1298,10 +1298,10 @@
     "count": 117
   },
   "regional": {
-    "lastUpdate": "2026-04-19T04:26:27.081Z",
-    "nationalPct": 93.483,
+    "lastUpdate": "2026-04-19T05:55:11.627Z",
+    "nationalPct": 93.484,
     "totalActas": 92766,
-    "actasContabilizadas": 86720,
+    "actasContabilizadas": 86721,
     "regions": [
       {
         "name": "Amazonas",
@@ -1455,27 +1455,27 @@
       },
       {
         "name": "Callao",
-        "pctActas": 95.376,
-        "vv": 552444,
+        "pctActas": 95.411,
+        "vv": 552653,
         "fujimori": {
-          "pct": 20.669,
-          "v": 114185
+          "pct": 20.668,
+          "v": 114222
         },
         "rla": {
           "pct": 14.99,
-          "v": 82811
+          "v": 82843
         },
         "nieto": {
-          "pct": 15.026,
-          "v": 83010
+          "pct": 15.028,
+          "v": 83053
         },
         "belmont": {
-          "pct": 8.151,
-          "v": 45030
+          "pct": 8.149,
+          "v": 45036
         },
         "sanchez": {
           "pct": 3.005,
-          "v": 16601
+          "v": 16607
         }
       },
       {
