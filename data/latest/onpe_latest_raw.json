@@ -1,7 +1,7 @@
 {
-  "capturedAt": "2026-04-19T19:29:42+00:00",
-  "sourceLastUpdate": "2026-04-19T19:29:41.581Z",
-  "nationalPct": 93.489,
+  "capturedAt": "2026-04-19T20:03:28+00:00",
+  "sourceLastUpdate": "2026-04-19T20:03:27.770Z",
+  "nationalPct": 93.492,
   "tracking": {
     "lastUpdate": "2026-04-17T10:00:38.789Z",
     "nationalPct": 93.23,
@@ -1298,10 +1298,10 @@
     "count": 117
   },
   "regional": {
-    "lastUpdate": "2026-04-19T19:29:41.581Z",
-    "nationalPct": 93.489,
+    "lastUpdate": "2026-04-19T20:03:27.770Z",
+    "nationalPct": 93.492,
     "totalActas": 92766,
-    "actasContabilizadas": 86726,
+    "actasContabilizadas": 86729,
     "regions": [
       {
         "name": "Amazonas",
@@ -1655,27 +1655,27 @@
       },
       {
         "name": "Lima",
-        "pctActas": 95.227,
-        "vv": 5807395,
+        "pctActas": 95.234,
+        "vv": 5807754,
         "fujimori": {
           "pct": 17.873,
-          "v": 1037956
+          "v": 1038020
         },
         "rla": {
-          "pct": 19.935,
-          "v": 1157704
+          "pct": 19.934,
+          "v": 1157718
         },
         "nieto": {
           "pct": 15.117,
-          "v": 877904
+          "v": 877958
         },
         "belmont": {
           "pct": 9.123,
-          "v": 529809
+          "v": 529841
         },
         "sanchez": {
           "pct": 3.267,
-          "v": 189728
+          "v": 189739
         }
       },
       {
@@ -1930,27 +1930,27 @@
       },
       {
         "name": "Extranjero",
-        "pctActas": 70.35,
-        "vv": 214199,
+        "pctActas": 70.389,
+        "vv": 214292,
         "fujimori": {
-          "pct": 16.557,
-          "v": 35465
+          "pct": 16.559,
+          "v": 35485
         },
         "rla": {
-          "pct": 25.938,
-          "v": 55559
+          "pct": 25.946,
+          "v": 55600
         },
         "nieto": {
           "pct": 10.407,
-          "v": 22292
+          "v": 22301
         },
         "belmont": {
-          "pct": 10.171,
-          "v": 21786
+          "pct": 10.168,
+          "v": 21789
         },
         "sanchez": {
-          "pct": 2.497,
-          "v": 5349
+          "pct": 2.498,
+          "v": 5353
         }
       }
     ]
