@@ -1,7 +1,7 @@
 {
-  "capturedAt": "2026-04-19T16:31:47+00:00",
-  "sourceLastUpdate": "2026-04-19T16:31:47.382Z",
-  "nationalPct": 93.485,
+  "capturedAt": "2026-04-19T17:08:53+00:00",
+  "sourceLastUpdate": "2026-04-19T17:08:52.795Z",
+  "nationalPct": 93.486,
   "tracking": {
     "lastUpdate": "2026-04-17T10:00:38.789Z",
     "nationalPct": 93.23,
@@ -1298,10 +1298,10 @@
     "count": 117
   },
   "regional": {
-    "lastUpdate": "2026-04-19T16:31:47.382Z",
-    "nationalPct": 93.485,
+    "lastUpdate": "2026-04-19T17:08:52.795Z",
+    "nationalPct": 93.486,
     "totalActas": 92766,
-    "actasContabilizadas": 86722,
+    "actasContabilizadas": 86723,
     "regions": [
       {
         "name": "Amazonas",
