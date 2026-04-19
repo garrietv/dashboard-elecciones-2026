@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-19T22:48:16+00:00",
+  "generatedAt": "2026-04-19T23:23:33+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 93.522,
+  "nationalPct": 93.532,
   "canonicalMeta": {
-    "nationalPct": 93.522,
-    "trackingPct": 93.23,
-    "livePct": 93.522,
-    "trackingLastUpdate": "2026-04-17T10:00:38.789Z",
-    "liveLastUpdate": "2026-04-19T22:48:15.639Z"
+    "nationalPct": 93.532,
+    "trackingPct": 93.532,
+    "livePct": 93.532,
+    "trackingLastUpdate": "2026-04-19T23:09:02.224Z",
+    "liveLastUpdate": "2026-04-19T23:21:52.754Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -20,41 +20,41 @@
       "pos": 1,
       "key": "fuji",
       "candidate": "Fujimori",
-      "actual": 17.07,
-      "projected": 17.13,
-      "delta": 0.06
+      "actual": 17.06,
+      "projected": 17.14,
+      "delta": 0.08
     },
     {
       "pos": 2,
       "key": "rla",
       "candidate": "López Aliaga",
-      "actual": 11.93,
+      "actual": 11.92,
       "projected": 12.4,
-      "delta": 0.47
+      "delta": 0.48
     },
     {
       "pos": 3,
       "key": "sanch",
       "candidate": "Sánchez",
-      "actual": 11.97,
-      "projected": 11.64,
-      "delta": -0.33
+      "actual": 12.0,
+      "projected": 11.65,
+      "delta": -0.35
     },
     {
       "pos": 4,
       "key": "nieto",
       "candidate": "Nieto",
-      "actual": 11.07,
-      "projected": 10.96,
-      "delta": -0.11
+      "actual": 11.06,
+      "projected": 10.97,
+      "delta": -0.09
     },
     {
       "pos": 5,
       "key": "belm",
       "candidate": "Belmont",
-      "actual": 10.15,
+      "actual": 10.17,
       "projected": 10.06,
-      "delta": -0.09
+      "delta": -0.11
     }
   ],
   "projectionTable": [
@@ -62,41 +62,41 @@
       "pos": 1,
       "key": "fuji",
       "candidate": "Fujimori",
-      "actual": 17.07,
-      "projected": 17.14,
-      "delta": 0.07
+      "actual": 17.06,
+      "projected": 17.15,
+      "delta": 0.09
     },
     {
       "pos": 2,
       "key": "rla",
       "candidate": "López Aliaga",
-      "actual": 11.93,
+      "actual": 11.92,
       "projected": 12.42,
-      "delta": 0.49
+      "delta": 0.5
     },
     {
       "pos": 3,
       "key": "sanch",
       "candidate": "Sánchez",
-      "actual": 11.97,
-      "projected": 11.62,
-      "delta": -0.35
+      "actual": 12.0,
+      "projected": 11.63,
+      "delta": -0.37
     },
     {
       "pos": 4,
       "key": "nieto",
       "candidate": "Nieto",
-      "actual": 11.07,
-      "projected": 10.95,
-      "delta": -0.12
+      "actual": 11.06,
+      "projected": 10.96,
+      "delta": -0.1
     },
     {
       "pos": 5,
       "key": "belm",
       "candidate": "Belmont",
-      "actual": 10.15,
+      "actual": 10.17,
       "projected": 10.06,
-      "delta": -0.09
+      "delta": -0.11
     }
   ],
   "scenarios": [
@@ -112,7 +112,7 @@
       "ranking": [
         {
           "candidate": "Fujimori",
-          "pct": 17.13
+          "pct": 17.14
         },
         {
           "candidate": "López Aliaga",
@@ -120,11 +120,11 @@
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.64
+          "pct": 11.65
         },
         {
           "candidate": "Nieto",
-          "pct": 10.96
+          "pct": 10.97
         }
       ]
     },
@@ -140,11 +140,11 @@
       "ranking": [
         {
           "candidate": "Fujimori",
-          "pct": 17.18
+          "pct": 17.19
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.86
+          "pct": 11.87
         },
         {
           "candidate": "López Aliaga",
@@ -152,7 +152,7 @@
         },
         {
           "candidate": "Nieto",
-          "pct": 10.92
+          "pct": 10.93
         }
       ]
     },
@@ -168,7 +168,7 @@
       "ranking": [
         {
           "candidate": "Fujimori",
-          "pct": 17.13
+          "pct": 17.14
         },
         {
           "candidate": "López Aliaga",
@@ -176,18 +176,18 @@
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.48
+          "pct": 11.49
         },
         {
           "candidate": "Nieto",
-          "pct": 10.96
+          "pct": 10.97
         }
       ]
     }
   ],
   "insights": [
     "Sánchez ya aparece 2° en el conteo observado y el modelo entra en escenario de defensa del sorpasso con simulación regional del pendiente restante.",
-    "Pendiente reciente nacional: Sánchez -0.074 pp por punto vs RLA 0.063. A este nivel de avance pesa más el pendiente regional observado que la heurística fija de fase ~80%.",
+    "Pendiente reciente nacional: Sánchez -0.007 pp por punto vs RLA 0.025. A este nivel de avance pesa más el pendiente regional observado que la heurística fija de fase ~80%.",
     "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+18,852), Huánuco (+10,092), Cusco (+9,505), Puno (+8,854), San Martín (+6,468)"
   ],
   "probabilityHistory": [
@@ -995,17 +995,35 @@
       "nieto": 22,
       "sanchez": 43,
       "belmont": 0
+    },
+    {
+      "pct": 93.532,
+      "rla": 26,
+      "nieto": 13,
+      "sanchez": 60,
+      "belmont": 1
     }
   ],
   "debug": {
     "recentSlopes": {
-      "fujimori": 0.01724137931034327,
-      "rla": 0.06261343012704228,
-      "nieto": 0.013611615245007931,
-      "sanchez": -0.07350272232304991,
-      "belmont": 0.0
+      "fujimori": 0.0030706243602867406,
+      "rla": 0.024564994882293925,
+      "nieto": -0.0030706243602867406,
+      "sanchez": -0.0071647901740017885,
+      "belmont": 0.012282497441146963
     },
     "currentCut": {
+      "ts": "2026-04-19T23:09:02.224Z",
+      "pct": 93.532,
+      "fujimori": 17.057,
+      "rla": 11.922,
+      "nieto": 11.063,
+      "belmont": 10.167,
+      "sanchez": 12.004,
+      "jee": 5734,
+      "contabilizadas": 86766
+    },
+    "previousCut": {
       "ts": "2026-04-17T10:00:38.789Z",
       "pct": 93.23,
       "fujimori": 17.069,
@@ -1016,29 +1034,18 @@
       "jee": 5555,
       "contabilizadas": 86486
     },
-    "previousCut": {
-      "ts": "2026-04-16T09:58:54.317Z",
-      "pct": 92.909,
-      "fujimori": 17.058,
-      "rla": 11.915,
-      "nieto": 11.075,
-      "belmont": 10.155,
-      "sanchez": 11.987,
-      "jee": 4959,
-      "contabilizadas": 86188
-    },
     "currentPctRegionalized": {
       "fujimori": 27.393,
       "rla": 19.295,
-      "nieto": 17.78,
-      "sanchez": 19.209,
-      "belmont": 16.322
+      "nieto": 17.781,
+      "sanchez": 19.208,
+      "belmont": 16.323
     },
     "regionalProjectionPct": {
-      "fujimori": 17.13,
+      "fujimori": 17.14,
       "rla": 12.4,
-      "nieto": 10.96,
-      "sanchez": 11.64,
+      "nieto": 10.97,
+      "sanchez": 11.65,
       "belmont": 10.06
     },
     "monteCarloSecondPlace": {
@@ -1133,12 +1140,12 @@
       },
       {
         "region": "Extranjero",
-        "pendingVotes": 87259,
-        "vsRla": -31709,
-        "vsNieto": -10410,
-        "rawSanchez": 0.0254,
-        "rawRla": 0.25767,
-        "rawNieto": 0.10351
+        "pendingVotes": 86574,
+        "vsRla": -31328,
+        "vsNieto": -10285,
+        "rawSanchez": 0.02572,
+        "rawRla": 0.25684999999999997,
+        "rawNieto": 0.10343999999999999
       },
       {
         "region": "Callao",
@@ -1160,11 +1167,11 @@
       },
       {
         "region": "Arequipa",
-        "pendingVotes": 18389,
-        "vsRla": -228,
-        "vsNieto": -2791,
+        "pendingVotes": 17967,
+        "vsRla": -222,
+        "vsNieto": -2727,
         "rawSanchez": 0.10049,
-        "rawRla": 0.10632,
+        "rawRla": 0.10628,
         "rawNieto": 0.18664000000000003
       },
       {
