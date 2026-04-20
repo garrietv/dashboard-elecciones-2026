@@ -1317,10 +1317,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-20T21:08:22.369Z",
-    "nationalPct": 93.597,
+    "lastUpdate": "2026-04-20T22:02:07.155Z",
+    "nationalPct": 93.602,
     "totalActas": 92766,
-    "actasContabilizadas": 86826,
+    "actasContabilizadas": 86831,
     "regions": [
       {
         "name": "Amazonas",
@@ -1624,27 +1624,27 @@
       },
       {
         "name": "La Libertad",
-        "pctActas": 92.833,
-        "vv": 867528,
+        "pctActas": 92.927,
+        "vv": 868381,
         "fujimori": {
-          "pct": 20.261,
-          "v": 175770
+          "pct": 20.262,
+          "v": 175951
         },
         "rla": {
-          "pct": 8.223,
-          "v": 71337
+          "pct": 8.219,
+          "v": 71372
         },
         "nieto": {
-          "pct": 9.853,
-          "v": 85478
+          "pct": 9.852,
+          "v": 85553
         },
         "belmont": {
-          "pct": 7.086,
-          "v": 61473
+          "pct": 7.085,
+          "v": 61525
         },
         "sanchez": {
-          "pct": 9.396,
-          "v": 81513
+          "pct": 9.395,
+          "v": 81584
         }
       },
       {
@@ -1975,10 +1975,10 @@
     ]
   },
   "canonical": {
-    "nationalPct": 93.597,
+    "nationalPct": 93.602,
     "trackingPct": 93.532,
-    "livePct": 93.597,
+    "livePct": 93.602,
     "trackingLastUpdate": "2026-04-19T23:09:02.224Z",
-    "liveLastUpdate": "2026-04-20T21:08:22.369Z"
+    "liveLastUpdate": "2026-04-20T22:02:07.155Z"
   }
 }
