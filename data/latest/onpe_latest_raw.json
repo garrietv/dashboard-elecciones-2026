@@ -1,7 +1,7 @@
 {
-  "capturedAt": "2026-04-20T17:16:13+00:00",
-  "sourceLastUpdate": "2026-04-20T17:13:31.717Z",
-  "nationalPct": 93.58,
+  "capturedAt": "2026-04-20T18:11:14+00:00",
+  "sourceLastUpdate": "2026-04-20T18:09:19.766Z",
+  "nationalPct": 93.585,
   "tracking": {
     "lastUpdate": "2026-04-19T23:09:02.224Z",
     "nationalPct": 93.532,
@@ -1309,10 +1309,10 @@
     "count": 118
   },
   "regional": {
-    "lastUpdate": "2026-04-20T17:13:31.717Z",
-    "nationalPct": 93.58,
+    "lastUpdate": "2026-04-20T18:09:19.766Z",
+    "nationalPct": 93.585,
     "totalActas": 92766,
-    "actasContabilizadas": 86810,
+    "actasContabilizadas": 86815,
     "regions": [
       {
         "name": "Amazonas",
@@ -1391,27 +1391,27 @@
       },
       {
         "name": "Arequipa",
-        "pctActas": 98.363,
-        "vv": 866481,
+        "pctActas": 98.458,
+        "vv": 867320,
         "fujimori": {
-          "pct": 7.315,
-          "v": 63383
+          "pct": 7.314,
+          "v": 63436
         },
         "rla": {
-          "pct": 10.621,
-          "v": 92029
+          "pct": 10.619,
+          "v": 92101
         },
         "nieto": {
-          "pct": 18.67,
-          "v": 161772
+          "pct": 18.672,
+          "v": 161946
         },
         "belmont": {
-          "pct": 10.888,
-          "v": 94342
+          "pct": 10.89,
+          "v": 94451
         },
         "sanchez": {
-          "pct": 10.044,
-          "v": 87029
+          "pct": 10.043,
+          "v": 87105
         }
       },
       {
@@ -1666,27 +1666,27 @@
       },
       {
         "name": "Lima",
-        "pctActas": 95.251,
-        "vv": 5808739,
+        "pctActas": 95.254,
+        "vv": 5808873,
         "fujimori": {
           "pct": 17.874,
-          "v": 1038254
+          "v": 1038278
         },
         "rla": {
           "pct": 19.934,
-          "v": 1157914
+          "v": 1157941
         },
         "nieto": {
           "pct": 15.117,
-          "v": 878107
+          "v": 878127
         },
         "belmont": {
           "pct": 9.123,
-          "v": 529931
+          "v": 529943
         },
         "sanchez": {
           "pct": 3.267,
-          "v": 189772
+          "v": 189776
         }
       },
       {
