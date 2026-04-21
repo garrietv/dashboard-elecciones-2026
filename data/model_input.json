@@ -1328,10 +1328,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-21T14:24:00.192Z",
-    "nationalPct": 93.85,
+    "lastUpdate": "2026-04-21T15:49:59.414Z",
+    "nationalPct": 93.866,
     "totalActas": 92766,
-    "actasContabilizadas": 87061,
+    "actasContabilizadas": 87076,
     "regions": [
       {
         "name": "Amazonas",
@@ -1560,27 +1560,27 @@
       },
       {
         "name": "Huánuco",
-        "pctActas": 92.396,
-        "vv": 317251,
+        "pctActas": 92.738,
+        "vv": 318642,
         "fujimori": {
-          "pct": 15.397,
-          "v": 48847
+          "pct": 15.399,
+          "v": 49068
         },
         "rla": {
-          "pct": 5.952,
-          "v": 18883
+          "pct": 5.964,
+          "v": 19004
         },
         "nieto": {
-          "pct": 4.699,
-          "v": 14908
+          "pct": 4.706,
+          "v": 14995
         },
         "belmont": {
           "pct": 14.163,
-          "v": 44932
+          "v": 45129
         },
         "sanchez": {
-          "pct": 29.532,
-          "v": 93691
+          "pct": 29.48,
+          "v": 93936
         }
       },
       {
@@ -1635,27 +1635,27 @@
       },
       {
         "name": "La Libertad",
-        "pctActas": 94.04,
-        "vv": 879186,
+        "pctActas": 94.172,
+        "vv": 880358,
         "fujimori": {
-          "pct": 20.225,
-          "v": 177815
+          "pct": 20.217,
+          "v": 177982
         },
         "rla": {
-          "pct": 8.231,
-          "v": 72366
+          "pct": 8.225,
+          "v": 72409
         },
         "nieto": {
-          "pct": 9.867,
-          "v": 86749
+          "pct": 9.863,
+          "v": 86830
         },
         "belmont": {
-          "pct": 7.085,
-          "v": 62290
+          "pct": 7.095,
+          "v": 62461
         },
         "sanchez": {
-          "pct": 9.357,
-          "v": 82265
+          "pct": 9.363,
+          "v": 82428
         }
       },
       {
@@ -1986,10 +1986,10 @@
     ]
   },
   "canonical": {
-    "nationalPct": 93.85,
+    "nationalPct": 93.866,
     "trackingPct": 93.84,
-    "livePct": 93.85,
+    "livePct": 93.866,
     "trackingLastUpdate": "2026-04-21T02:41:24.244Z",
-    "liveLastUpdate": "2026-04-21T14:24:00.192Z"
+    "liveLastUpdate": "2026-04-21T15:49:59.414Z"
   }
 }
