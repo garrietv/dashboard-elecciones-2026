@@ -1,7 +1,7 @@
 {
-  "capturedAt": "2026-04-21T17:45:56+00:00",
-  "sourceLastUpdate": "2026-04-21T17:45:56.001Z",
-  "nationalPct": 93.872,
+  "capturedAt": "2026-04-21T18:47:51+00:00",
+  "sourceLastUpdate": "2026-04-21T18:44:55.888Z",
+  "nationalPct": 93.894,
   "tracking": {
     "lastUpdate": "2026-04-21T02:41:24.244Z",
     "nationalPct": 93.84,
@@ -1320,10 +1320,10 @@
     "count": 119
   },
   "regional": {
-    "lastUpdate": "2026-04-21T17:45:56.001Z",
-    "nationalPct": 93.872,
+    "lastUpdate": "2026-04-21T18:44:55.888Z",
+    "nationalPct": 93.894,
     "totalActas": 92766,
-    "actasContabilizadas": 87081,
+    "actasContabilizadas": 87102,
     "regions": [
       {
         "name": "Amazonas",
@@ -1427,27 +1427,27 @@
       },
       {
         "name": "Ayacucho",
-        "pctActas": 95.632,
-        "vv": 271953,
+        "pctActas": 96,
+        "vv": 272667,
         "fujimori": {
-          "pct": 8.086,
-          "v": 21990
+          "pct": 8.115,
+          "v": 22127
         },
         "rla": {
-          "pct": 2.735,
-          "v": 7438
+          "pct": 2.733,
+          "v": 7452
         },
         "nieto": {
-          "pct": 5.548,
-          "v": 15088
+          "pct": 5.539,
+          "v": 15103
         },
         "belmont": {
-          "pct": 14.479,
-          "v": 39376
+          "pct": 14.465,
+          "v": 39441
         },
         "sanchez": {
-          "pct": 31.343,
-          "v": 85238
+          "pct": 31.354,
+          "v": 85492
         }
       },
       {
@@ -1627,27 +1627,27 @@
       },
       {
         "name": "La Libertad",
-        "pctActas": 94.172,
-        "vv": 880358,
+        "pctActas": 94.323,
+        "vv": 881930,
         "fujimori": {
-          "pct": 20.217,
-          "v": 177982
+          "pct": 20.211,
+          "v": 178247
         },
         "rla": {
-          "pct": 8.225,
-          "v": 72409
+          "pct": 8.221,
+          "v": 72503
         },
         "nieto": {
-          "pct": 9.863,
-          "v": 86830
+          "pct": 9.855,
+          "v": 86914
         },
         "belmont": {
-          "pct": 7.095,
-          "v": 62461
+          "pct": 7.097,
+          "v": 62591
         },
         "sanchez": {
-          "pct": 9.363,
-          "v": 82428
+          "pct": 9.374,
+          "v": 82672
         }
       },
       {
@@ -1677,27 +1677,27 @@
       },
       {
         "name": "Lima",
-        "pctActas": 95.329,
-        "vv": 5813457,
+        "pctActas": 95.35,
+        "vv": 5814402,
         "fujimori": {
           "pct": 17.876,
-          "v": 1039214
+          "v": 1039383
         },
         "rla": {
-          "pct": 19.931,
-          "v": 1158680
+          "pct": 19.929,
+          "v": 1158752
         },
         "nieto": {
-          "pct": 15.115,
-          "v": 878704
+          "pct": 15.114,
+          "v": 878789
         },
         "belmont": {
-          "pct": 9.124,
-          "v": 530420
+          "pct": 9.125,
+          "v": 530564
         },
         "sanchez": {
-          "pct": 3.268,
-          "v": 189984
+          "pct": 3.269,
+          "v": 190073
         }
       },
       {
