@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-21T21:40:12+00:00",
+  "generatedAt": "2026-04-21T22:25:43+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 93.913,
+  "nationalPct": 93.949,
   "canonicalMeta": {
-    "nationalPct": 93.913,
+    "nationalPct": 93.949,
     "trackingPct": 93.84,
-    "livePct": 93.913,
+    "livePct": 93.949,
     "trackingLastUpdate": "2026-04-21T02:41:24.244Z",
-    "liveLastUpdate": "2026-04-21T21:40:11.380Z"
+    "liveLastUpdate": "2026-04-21T22:25:43.004Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -21,8 +21,8 @@
       "key": "fuji",
       "candidate": "Fujimori",
       "actual": 17.05,
-      "projected": 17.14,
-      "delta": 0.09
+      "projected": 17.13,
+      "delta": 0.08
     },
     {
       "pos": 2,
@@ -63,8 +63,8 @@
       "key": "fuji",
       "candidate": "Fujimori",
       "actual": 17.05,
-      "projected": 17.15,
-      "delta": 0.1
+      "projected": 17.14,
+      "delta": 0.09
     },
     {
       "pos": 2,
@@ -112,7 +112,7 @@
       "ranking": [
         {
           "candidate": "Fujimori",
-          "pct": 17.14
+          "pct": 17.13
         },
         {
           "candidate": "López Aliaga",
@@ -140,7 +140,7 @@
       "ranking": [
         {
           "candidate": "Fujimori",
-          "pct": 17.19
+          "pct": 17.18
         },
         {
           "candidate": "Sánchez",
@@ -168,7 +168,7 @@
       "ranking": [
         {
           "candidate": "Fujimori",
-          "pct": 17.14
+          "pct": 17.13
         },
         {
           "candidate": "López Aliaga",
@@ -1042,14 +1042,14 @@
       "contabilizadas": 86766
     },
     "currentPctRegionalized": {
-      "fujimori": 27.384,
-      "rla": 19.287,
-      "nieto": 17.773,
-      "sanchez": 19.225,
-      "belmont": 16.331
+      "fujimori": 27.385,
+      "rla": 19.286,
+      "nieto": 17.771,
+      "sanchez": 19.228,
+      "belmont": 16.33
     },
     "regionalProjectionPct": {
-      "fujimori": 17.14,
+      "fujimori": 17.13,
       "rla": 12.4,
       "nieto": 10.96,
       "sanchez": 11.65,
@@ -1147,12 +1147,12 @@
       },
       {
         "region": "Extranjero",
-        "pendingVotes": 78789,
-        "vsRla": -28434,
-        "vsNieto": -9351,
-        "rawSanchez": 0.025859999999999998,
-        "rawRla": 0.25619,
-        "rawNieto": 0.10345
+        "pendingVotes": 77904,
+        "vsRla": -28046,
+        "vsNieto": -9244,
+        "rawSanchez": 0.0259,
+        "rawRla": 0.25565,
+        "rawNieto": 0.10346
       },
       {
         "region": "Callao",
