@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-22T22:50:18+00:00",
+  "generatedAt": "2026-04-22T23:35:28+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 94.38,
+  "nationalPct": 94.404,
   "canonicalMeta": {
-    "nationalPct": 94.38,
+    "nationalPct": 94.404,
     "trackingPct": 94.177,
-    "livePct": 94.38,
+    "livePct": 94.404,
     "trackingLastUpdate": "2026-04-22T02:30:36.735Z",
-    "liveLastUpdate": "2026-04-22T22:50:17.326Z"
+    "liveLastUpdate": "2026-04-22T23:35:27.103Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -188,7 +188,7 @@
   "insights": [
     "Sánchez ya aparece 2° en el conteo observado y el modelo entra en escenario de defensa del sorpasso con simulación regional del pendiente restante.",
     "Pendiente reciente nacional: Sánchez 0.041 pp por punto vs RLA -0.019. A este nivel de avance pesa más el pendiente regional observado que la heurística fija de fase ~80%.",
-    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+13,561), Huánuco (+8,301), Cusco (+8,117), Puno (+7,675), San Martín (+6,468)"
+    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+13,399), Huánuco (+8,301), Cusco (+8,117), Puno (+7,675), San Martín (+6,468)"
   ],
   "probabilityHistory": [
     {
@@ -1049,10 +1049,10 @@
       "contabilizadas": 87052
     },
     "currentPctRegionalized": {
-      "fujimori": 27.392,
-      "rla": 19.275,
-      "nieto": 17.763,
-      "sanchez": 19.244,
+      "fujimori": 27.393,
+      "rla": 19.272,
+      "nieto": 17.76,
+      "sanchez": 19.249,
       "belmont": 16.326
     },
     "regionalProjectionPct": {
@@ -1071,11 +1071,11 @@
     "topRegionalEdgesSanchezVsRla": [
       {
         "region": "Cajamarca",
-        "pendingVotes": 26200,
-        "vsRla": 13561,
-        "vsNieto": 13089,
-        "rawSanchez": 0.41734000000000004,
-        "rawRla": 0.03232,
+        "pendingVotes": 25890,
+        "vsRla": 13399,
+        "vsNieto": 12933,
+        "rawSanchez": 0.41731999999999997,
+        "rawRla": 0.03233,
         "rawNieto": 0.04583
       },
       {
