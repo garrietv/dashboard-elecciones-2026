@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-22T16:40:51+00:00",
+  "generatedAt": "2026-04-22T17:42:07+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
   "nationalPct": 94.307,
   "canonicalMeta": {
@@ -7,7 +7,7 @@
     "trackingPct": 94.177,
     "livePct": 94.307,
     "trackingLastUpdate": "2026-04-22T02:30:36.735Z",
-    "liveLastUpdate": "2026-04-22T16:40:50.682Z"
+    "liveLastUpdate": "2026-04-22T17:42:06.433Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -1050,9 +1050,9 @@
     },
     "currentPctRegionalized": {
       "fujimori": 27.389,
-      "rla": 19.28,
+      "rla": 19.279,
       "nieto": 17.765,
-      "sanchez": 19.237,
+      "sanchez": 19.238,
       "belmont": 16.328
     },
     "regionalProjectionPct": {
@@ -1116,12 +1116,12 @@
       },
       {
         "region": "Áncash",
-        "pendingVotes": 38545,
-        "vsRla": 5905,
-        "vsNieto": 4974,
-        "rawSanchez": 0.1491,
+        "pendingVotes": 38063,
+        "vsRla": 5833,
+        "vsNieto": 4915,
+        "rawSanchez": 0.14914,
         "rawRla": 0.06027999999999999,
-        "rawNieto": 0.07423
+        "rawNieto": 0.07422
       },
       {
         "region": "Piura",
