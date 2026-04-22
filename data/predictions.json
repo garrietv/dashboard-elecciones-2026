@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-22T20:57:36+00:00",
+  "generatedAt": "2026-04-22T21:55:52+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 94.336,
+  "nationalPct": 94.355,
   "canonicalMeta": {
-    "nationalPct": 94.336,
+    "nationalPct": 94.355,
     "trackingPct": 94.177,
-    "livePct": 94.336,
+    "livePct": 94.355,
     "trackingLastUpdate": "2026-04-22T02:30:36.735Z",
-    "liveLastUpdate": "2026-04-22T20:55:51.425Z"
+    "liveLastUpdate": "2026-04-22T21:53:31.016Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -21,8 +21,8 @@
       "key": "fuji",
       "candidate": "Fujimori",
       "actual": 17.05,
-      "projected": 17.13,
-      "delta": 0.08
+      "projected": 17.12,
+      "delta": 0.07
     },
     {
       "pos": 2,
@@ -63,8 +63,8 @@
       "key": "fuji",
       "candidate": "Fujimori",
       "actual": 17.05,
-      "projected": 17.14,
-      "delta": 0.09
+      "projected": 17.13,
+      "delta": 0.08
     },
     {
       "pos": 2,
@@ -112,7 +112,7 @@
       "ranking": [
         {
           "candidate": "Fujimori",
-          "pct": 17.13
+          "pct": 17.12
         },
         {
           "candidate": "López Aliaga",
@@ -140,7 +140,7 @@
       "ranking": [
         {
           "candidate": "Fujimori",
-          "pct": 17.18
+          "pct": 17.17
         },
         {
           "candidate": "Sánchez",
@@ -168,7 +168,7 @@
       "ranking": [
         {
           "candidate": "Fujimori",
-          "pct": 17.13
+          "pct": 17.12
         },
         {
           "candidate": "López Aliaga",
@@ -1049,14 +1049,14 @@
       "contabilizadas": 87052
     },
     "currentPctRegionalized": {
-      "fujimori": 27.389,
-      "rla": 19.278,
-      "nieto": 17.764,
-      "sanchez": 19.24,
-      "belmont": 16.329
+      "fujimori": 27.39,
+      "rla": 19.276,
+      "nieto": 17.763,
+      "sanchez": 19.244,
+      "belmont": 16.328
     },
     "regionalProjectionPct": {
-      "fujimori": 17.13,
+      "fujimori": 17.12,
       "rla": 12.4,
       "nieto": 10.96,
       "sanchez": 11.64,
