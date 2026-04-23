@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-23T14:13:00+00:00",
+  "generatedAt": "2026-04-23T16:10:47+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 94.632,
+  "nationalPct": 94.645,
   "canonicalMeta": {
-    "nationalPct": 94.632,
+    "nationalPct": 94.645,
     "trackingPct": 94.554,
-    "livePct": 94.632,
+    "livePct": 94.645,
     "trackingLastUpdate": "2026-04-23T02:59:49.320Z",
-    "liveLastUpdate": "2026-04-23T14:12:59.903Z"
+    "liveLastUpdate": "2026-04-23T16:10:46.379Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -188,7 +188,7 @@
   "insights": [
     "Sánchez ya aparece 2° en el conteo observado y el modelo entra en escenario de defensa del sorpasso con simulación regional del pendiente restante.",
     "Pendiente reciente nacional: Sánchez 0.026 pp por punto vs RLA -0.020. A este nivel de avance pesa más el pendiente regional observado que la heurística fija de fase ~80%.",
-    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+9,508), Huánuco (+8,301), Cusco (+8,117), San Martín (+6,468), Puno (+6,172)"
+    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+9,508), Cusco (+8,117), Huánuco (+7,988), San Martín (+6,468), Puno (+6,172)"
   ],
   "probabilityHistory": [
     {
@@ -1056,10 +1056,10 @@
       "contabilizadas": 87364
     },
     "currentPctRegionalized": {
-      "fujimori": 27.382,
-      "rla": 19.274,
+      "fujimori": 27.384,
+      "rla": 19.273,
       "nieto": 17.753,
-      "sanchez": 19.263,
+      "sanchez": 19.262,
       "belmont": 16.328
     },
     "regionalProjectionPct": {
@@ -1086,15 +1086,6 @@
         "rawNieto": 0.04605000000000001
       },
       {
-        "region": "Huánuco",
-        "pendingVotes": 24644,
-        "vsRla": 8301,
-        "vsNieto": 8754,
-        "rawSanchez": 0.2949,
-        "rawRla": 0.05962,
-        "rawNieto": 0.04704
-      },
-      {
         "region": "Cusco",
         "pendingVotes": 26343,
         "vsRla": 8117,
@@ -1102,6 +1093,15 @@
         "rawSanchez": 0.22741,
         "rawRla": 0.04761,
         "rawNieto": 0.08927
+      },
+      {
+        "region": "Huánuco",
+        "pendingVotes": 23776,
+        "vsRla": 7988,
+        "vsNieto": 8423,
+        "rawSanchez": 0.29439,
+        "rawRla": 0.05965,
+        "rawNieto": 0.047119999999999995
       },
       {
         "region": "San Martín",
