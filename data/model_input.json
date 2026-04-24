@@ -1372,10 +1372,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-24T20:25:04.933Z",
-    "nationalPct": 95.191,
+    "lastUpdate": "2026-04-24T21:12:59.001Z",
+    "nationalPct": 95.203,
     "totalActas": 92766,
-    "actasContabilizadas": 88305,
+    "actasContabilizadas": 88316,
     "regions": [
       {
         "name": "Amazonas",
@@ -1654,77 +1654,77 @@
       },
       {
         "name": "Junín",
-        "pctActas": 95.774,
-        "vv": 610178,
+        "pctActas": 95.936,
+        "vv": 610813,
         "fujimori": {
-          "pct": 17.031,
-          "v": 103919
+          "pct": 17.037,
+          "v": 104064
         },
         "rla": {
-          "pct": 7.599,
-          "v": 46367
+          "pct": 7.596,
+          "v": 46397
         },
         "nieto": {
-          "pct": 8.006,
-          "v": 48851
+          "pct": 8,
+          "v": 48865
         },
         "belmont": {
-          "pct": 11.133,
-          "v": 67931
+          "pct": 11.135,
+          "v": 68014
         },
         "sanchez": {
-          "pct": 12.265,
-          "v": 74838
+          "pct": 12.275,
+          "v": 74977
         }
       },
       {
         "name": "La Libertad",
-        "pctActas": 97.114,
-        "vv": 907426,
+        "pctActas": 97.171,
+        "vv": 908011,
         "fujimori": {
-          "pct": 20.228,
-          "v": 183554
+          "pct": 20.23,
+          "v": 183691
         },
         "rla": {
           "pct": 8.257,
-          "v": 74926
+          "v": 74974
         },
         "nieto": {
           "pct": 9.871,
-          "v": 89572
+          "v": 89630
         },
         "belmont": {
-          "pct": 7.084,
-          "v": 64282
+          "pct": 7.085,
+          "v": 64333
         },
         "sanchez": {
-          "pct": 9.393,
-          "v": 85235
+          "pct": 9.39,
+          "v": 85262
         }
       },
       {
         "name": "Lambayeque",
-        "pctActas": 97.855,
-        "vv": 655007,
+        "pctActas": 97.883,
+        "vv": 655193,
         "fujimori": {
-          "pct": 26.398,
-          "v": 172909
+          "pct": 26.399,
+          "v": 172964
         },
         "rla": {
-          "pct": 8.614,
-          "v": 56422
+          "pct": 8.612,
+          "v": 56425
         },
         "nieto": {
-          "pct": 10.359,
-          "v": 67852
+          "pct": 10.36,
+          "v": 67878
         },
         "belmont": {
           "pct": 7.492,
-          "v": 49073
+          "v": 49087
         },
         "sanchez": {
-          "pct": 10.643,
-          "v": 69712
+          "pct": 10.64,
+          "v": 69713
         }
       },
       {
@@ -1879,27 +1879,27 @@
       },
       {
         "name": "Puno",
-        "pctActas": 98.764,
-        "vv": 643238,
+        "pctActas": 98.793,
+        "vv": 643373,
         "fujimori": {
-          "pct": 3.906,
-          "v": 25125
+          "pct": 3.905,
+          "v": 25124
         },
         "rla": {
           "pct": 1.918,
-          "v": 12337
+          "v": 12340
         },
         "nieto": {
           "pct": 4.151,
-          "v": 26701
+          "v": 26706
         },
         "belmont": {
-          "pct": 17.682,
-          "v": 113737
+          "pct": 17.683,
+          "v": 113768
         },
         "sanchez": {
-          "pct": 24.907,
-          "v": 160211
+          "pct": 24.909,
+          "v": 160258
         }
       },
       {
@@ -2030,10 +2030,10 @@
     ]
   },
   "canonical": {
-    "nationalPct": 95.191,
+    "nationalPct": 95.203,
     "trackingPct": 95.191,
-    "livePct": 95.191,
+    "livePct": 95.203,
     "trackingLastUpdate": "2026-04-24T20:20:38.133Z",
-    "liveLastUpdate": "2026-04-24T20:25:04.933Z"
+    "liveLastUpdate": "2026-04-24T21:12:59.001Z"
   }
 }
