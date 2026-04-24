@@ -1361,10 +1361,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-24T04:28:03.080Z",
-    "nationalPct": 95.04,
+    "lastUpdate": "2026-04-24T06:27:12.581Z",
+    "nationalPct": 95.08,
     "totalActas": 92766,
-    "actasContabilizadas": 88165,
+    "actasContabilizadas": 88202,
     "regions": [
       {
         "name": "Amazonas",
@@ -1993,36 +1993,36 @@
       },
       {
         "name": "Extranjero",
-        "pctActas": 82.816,
-        "vv": 255205,
+        "pctActas": 84.271,
+        "vv": 260007,
         "fujimori": {
           "pct": 16.709,
-          "v": 42642
+          "v": 43445
         },
         "rla": {
-          "pct": 25.549,
-          "v": 65202
+          "pct": 25.579,
+          "v": 66507
         },
         "nieto": {
           "pct": 10.293,
-          "v": 26268
+          "v": 26763
         },
         "belmont": {
-          "pct": 10.258,
-          "v": 26179
+          "pct": 10.25,
+          "v": 26651
         },
         "sanchez": {
-          "pct": 2.544,
-          "v": 6492
+          "pct": 2.53,
+          "v": 6578
         }
       }
     ]
   },
   "canonical": {
-    "nationalPct": 95.04,
+    "nationalPct": 95.08,
     "trackingPct": 94.868,
-    "livePct": 95.04,
+    "livePct": 95.08,
     "trackingLastUpdate": "2026-04-23T23:00:33.955Z",
-    "liveLastUpdate": "2026-04-24T04:28:03.080Z"
+    "liveLastUpdate": "2026-04-24T06:27:12.581Z"
   }
 }
