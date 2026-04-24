@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-04-24T06:27:12.581Z",
-  "nationalPct": 95.08,
+  "lastUpdate": "2026-04-24T08:32:18.760Z",
+  "nationalPct": 95.081,
   "totalActas": 92766,
-  "actasContabilizadas": 88202,
+  "actasContabilizadas": 88203,
   "regions": [
     {
       "name": "Amazonas",
@@ -256,27 +256,27 @@
     },
     {
       "name": "Ica",
-      "pctActas": 90.585,
-      "vv": 438072,
+      "pctActas": 90.626,
+      "vv": 438309,
       "fujimori": {
-        "pct": 20.328,
-        "v": 89051
+        "pct": 20.326,
+        "v": 89091
       },
       "rla": {
-        "pct": 9.414,
-        "v": 41240
+        "pct": 9.416,
+        "v": 41271
       },
       "nieto": {
-        "pct": 9.861,
-        "v": 43198
+        "pct": 9.867,
+        "v": 43248
       },
       "belmont": {
-        "pct": 10.722,
-        "v": 46970
+        "pct": 10.721,
+        "v": 46991
       },
       "sanchez": {
-        "pct": 7.706,
-        "v": 33758
+        "pct": 7.703,
+        "v": 33763
       }
     },
     {

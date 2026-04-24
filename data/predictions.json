@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-24T06:27:13+00:00",
+  "generatedAt": "2026-04-24T08:32:20+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 95.08,
+  "nationalPct": 95.081,
   "canonicalMeta": {
-    "nationalPct": 95.08,
+    "nationalPct": 95.081,
     "trackingPct": 94.868,
-    "livePct": 95.08,
+    "livePct": 95.081,
     "trackingLastUpdate": "2026-04-23T23:00:33.955Z",
-    "liveLastUpdate": "2026-04-24T06:27:12.581Z"
+    "liveLastUpdate": "2026-04-24T08:32:18.760Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -1186,12 +1186,12 @@
       },
       {
         "region": "Ica",
-        "pendingVotes": 45531,
-        "vsRla": -1622,
-        "vsNieto": -1850,
-        "rawSanchez": 0.07706,
-        "rawRla": 0.09414,
-        "rawNieto": 0.09861
+        "pendingVotes": 45337,
+        "vsRla": -1618,
+        "vsNieto": -1849,
+        "rawSanchez": 0.07703,
+        "rawRla": 0.09416000000000001,
+        "rawNieto": 0.09867000000000001
       },
       {
         "region": "Arequipa",
