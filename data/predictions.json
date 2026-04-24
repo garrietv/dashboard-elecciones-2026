@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-24T21:13:00+00:00",
+  "generatedAt": "2026-04-24T22:04:03+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 95.203,
+  "nationalPct": 95.204,
   "canonicalMeta": {
-    "nationalPct": 95.203,
+    "nationalPct": 95.204,
     "trackingPct": 95.191,
-    "livePct": 95.203,
+    "livePct": 95.204,
     "trackingLastUpdate": "2026-04-24T20:20:38.133Z",
-    "liveLastUpdate": "2026-04-24T21:12:59.001Z"
+    "liveLastUpdate": "2026-04-24T22:04:00.923Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -1137,10 +1137,10 @@
       },
       {
         "region": "Áncash",
-        "pendingVotes": 28419,
-        "vsRla": 4368,
-        "vsNieto": 3669,
-        "rawSanchez": 0.14845,
+        "pendingVotes": 28257,
+        "vsRla": 4342,
+        "vsNieto": 3648,
+        "rawSanchez": 0.14844,
         "rawRla": 0.06048,
         "rawNieto": 0.07456
       },
