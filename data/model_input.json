@@ -1361,7 +1361,7 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-24T18:28:20.252Z",
+    "lastUpdate": "2026-04-24T19:31:53.952Z",
     "nationalPct": 95.146,
     "totalActas": 92766,
     "actasContabilizadas": 88263,
@@ -1669,26 +1669,26 @@
       {
         "name": "La Libertad",
         "pctActas": 97.077,
-        "vv": 907060,
+        "vv": 907062,
         "fujimori": {
-          "pct": 20.224,
-          "v": 183444
+          "pct": 20.226,
+          "v": 183462
         },
         "rla": {
           "pct": 8.258,
           "v": 74905
         },
         "nieto": {
-          "pct": 9.872,
-          "v": 89545
+          "pct": 9.868,
+          "v": 89509
         },
         "belmont": {
           "pct": 7.082,
           "v": 64238
         },
         "sanchez": {
-          "pct": 9.393,
-          "v": 85200
+          "pct": 9.395,
+          "v": 85218
         }
       },
       {
@@ -2023,6 +2023,6 @@
     "trackingPct": 94.868,
     "livePct": 95.146,
     "trackingLastUpdate": "2026-04-23T23:00:33.955Z",
-    "liveLastUpdate": "2026-04-24T18:28:20.252Z"
+    "liveLastUpdate": "2026-04-24T19:31:53.952Z"
   }
 }
