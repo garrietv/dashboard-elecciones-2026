@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-04-24T15:42:41.088Z",
-  "nationalPct": 95.132,
+  "lastUpdate": "2026-04-24T16:40:37.103Z",
+  "nationalPct": 95.145,
   "totalActas": 92766,
-  "actasContabilizadas": 88250,
+  "actasContabilizadas": 88262,
   "regions": [
     {
       "name": "Amazonas",
@@ -306,27 +306,27 @@
     },
     {
       "name": "La Libertad",
-      "pctActas": 96.85,
-      "vv": 905030,
+      "pctActas": 97.058,
+      "vv": 906962,
       "fujimori": {
-        "pct": 20.21,
-        "v": 182907
+        "pct": 20.223,
+        "v": 183415
       },
       "rla": {
-        "pct": 8.263,
-        "v": 74783
+        "pct": 8.259,
+        "v": 74906
       },
       "nieto": {
-        "pct": 9.881,
-        "v": 89426
+        "pct": 9.873,
+        "v": 89544
       },
       "belmont": {
-        "pct": 7.08,
-        "v": 64076
+        "pct": 7.083,
+        "v": 64240
       },
       "sanchez": {
-        "pct": 9.392,
-        "v": 85000
+        "pct": 9.393,
+        "v": 85191
       }
     },
     {
@@ -381,27 +381,27 @@
     },
     {
       "name": "Loreto",
-      "pctActas": 86.986,
-      "vv": 298113,
+      "pctActas": 87.023,
+      "vv": 298256,
       "fujimori": {
-        "pct": 27.865,
-        "v": 83069
+        "pct": 27.86,
+        "v": 83094
       },
       "rla": {
-        "pct": 6.715,
-        "v": 20018
+        "pct": 6.713,
+        "v": 20022
       },
       "nieto": {
-        "pct": 3.614,
-        "v": 10774
+        "pct": 3.615,
+        "v": 10782
       },
       "belmont": {
-        "pct": 4.235,
-        "v": 12625
+        "pct": 4.239,
+        "v": 12643
       },
       "sanchez": {
-        "pct": 10.321,
-        "v": 30768
+        "pct": 10.324,
+        "v": 30792
       }
     },
     {
