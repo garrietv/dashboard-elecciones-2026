@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-25T22:53:49+00:00",
+  "generatedAt": "2026-04-25T23:33:24+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 95.645,
+  "nationalPct": 95.724,
   "canonicalMeta": {
-    "nationalPct": 95.645,
+    "nationalPct": 95.724,
     "trackingPct": 95.518,
-    "livePct": 95.645,
+    "livePct": 95.724,
     "trackingLastUpdate": "2026-04-25T15:42:56.498Z",
-    "liveLastUpdate": "2026-04-25T22:53:47.695Z"
+    "liveLastUpdate": "2026-04-25T23:33:23.467Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -37,8 +37,8 @@
       "key": "sanch",
       "candidate": "Sánchez",
       "actual": 12.05,
-      "projected": 11.65,
-      "delta": -0.4
+      "projected": 11.66,
+      "delta": -0.39
     },
     {
       "pos": 4,
@@ -53,8 +53,8 @@
       "key": "belm",
       "candidate": "Belmont",
       "actual": 10.17,
-      "projected": 10.06,
-      "delta": -0.11
+      "projected": 10.05,
+      "delta": -0.12
     }
   ],
   "projectionTable": [
@@ -79,8 +79,8 @@
       "key": "sanch",
       "candidate": "Sánchez",
       "actual": 12.05,
-      "projected": 11.63,
-      "delta": -0.42
+      "projected": 11.64,
+      "delta": -0.41
     },
     {
       "pos": 4,
@@ -95,8 +95,8 @@
       "key": "belm",
       "candidate": "Belmont",
       "actual": 10.17,
-      "projected": 10.06,
-      "delta": -0.11
+      "projected": 10.05,
+      "delta": -0.12
     }
   ],
   "scenarios": [
@@ -120,7 +120,7 @@
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.65
+          "pct": 11.66
         },
         {
           "candidate": "Nieto",
@@ -144,7 +144,7 @@
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.87
+          "pct": 11.88
         },
         {
           "candidate": "López Aliaga",
@@ -176,7 +176,7 @@
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.49
+          "pct": 11.5
         },
         {
           "candidate": "Nieto",
@@ -188,7 +188,7 @@
   "insights": [
     "Sánchez ya aparece 2° en el conteo observado y el modelo entra en escenario de defensa del sorpasso con simulación regional del pendiente restante.",
     "Pendiente reciente nacional: Sánchez 0.017 pp por punto vs RLA -0.005. A este nivel de avance pesa más el pendiente regional observado que la heurística fija de fase ~80%.",
-    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+9,508), Cusco (+8,063), San Martín (+6,468), Huánuco (+6,063), Huancavelica (+4,818)"
+    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+9,508), Cusco (+7,852), San Martín (+6,468), Huánuco (+6,063), Huancavelica (+4,818)"
   ],
   "probabilityHistory": [
     {
@@ -1077,18 +1077,18 @@
       "contabilizadas": 88305
     },
     "currentPctRegionalized": {
-      "fujimori": 27.406,
-      "rla": 19.262,
-      "nieto": 17.721,
-      "sanchez": 19.282,
-      "belmont": 16.329
+      "fujimori": 27.411,
+      "rla": 19.255,
+      "nieto": 17.715,
+      "sanchez": 19.291,
+      "belmont": 16.328
     },
     "regionalProjectionPct": {
       "fujimori": 17.12,
       "rla": 12.4,
       "nieto": 10.97,
-      "sanchez": 11.65,
-      "belmont": 10.06
+      "sanchez": 11.66,
+      "belmont": 10.05
     },
     "monteCarloSecondPlace": {
       "rla": 55,
@@ -1108,12 +1108,12 @@
       },
       {
         "region": "Cusco",
-        "pendingVotes": 26168,
-        "vsRla": 8063,
-        "vsNieto": 6202,
-        "rawSanchez": 0.22743,
-        "rawRla": 0.047599999999999996,
-        "rawNieto": 0.08926
+        "pendingVotes": 25472,
+        "vsRla": 7852,
+        "vsNieto": 6040,
+        "rawSanchez": 0.22754000000000002,
+        "rawRla": 0.047569999999999994,
+        "rawNieto": 0.08923
       },
       {
         "region": "San Martín",
@@ -1144,21 +1144,21 @@
       },
       {
         "region": "Piura",
-        "pendingVotes": 58426,
-        "vsRla": 4038,
-        "vsNieto": 2131,
-        "rawSanchez": 0.11271,
-        "rawRla": 0.0677,
-        "rawNieto": 0.08837
+        "pendingVotes": 52843,
+        "vsRla": 3800,
+        "vsNieto": 2076,
+        "rawSanchez": 0.11346,
+        "rawRla": 0.06755,
+        "rawNieto": 0.08811
       },
       {
         "region": "Áncash",
-        "pendingVotes": 25078,
-        "vsRla": 3882,
-        "vsNieto": 3268,
-        "rawSanchez": 0.149,
-        "rawRla": 0.06036,
-        "rawNieto": 0.07438
+        "pendingVotes": 24456,
+        "vsRla": 3786,
+        "vsNieto": 3188,
+        "rawSanchez": 0.14906,
+        "rawRla": 0.06039,
+        "rawNieto": 0.07441
       },
       {
         "region": "Puno",
