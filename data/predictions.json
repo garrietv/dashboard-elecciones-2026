@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-25T18:29:14+00:00",
+  "generatedAt": "2026-04-25T19:29:03+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 95.552,
+  "nationalPct": 95.573,
   "canonicalMeta": {
-    "nationalPct": 95.552,
+    "nationalPct": 95.573,
     "trackingPct": 95.518,
-    "livePct": 95.552,
+    "livePct": 95.573,
     "trackingLastUpdate": "2026-04-25T15:42:56.498Z",
-    "liveLastUpdate": "2026-04-25T18:29:13.125Z"
+    "liveLastUpdate": "2026-04-25T19:29:02.966Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -1077,11 +1077,11 @@
       "contabilizadas": 88305
     },
     "currentPctRegionalized": {
-      "fujimori": 27.407,
-      "rla": 19.258,
-      "nieto": 17.719,
-      "sanchez": 19.284,
-      "belmont": 16.331
+      "fujimori": 27.405,
+      "rla": 19.262,
+      "nieto": 17.721,
+      "sanchez": 19.282,
+      "belmont": 16.33
     },
     "regionalProjectionPct": {
       "fujimori": 17.12,
@@ -1153,32 +1153,32 @@
       },
       {
         "region": "Áncash",
-        "pendingVotes": 25869,
-        "vsRla": 4001,
-        "vsNieto": 3368,
-        "rawSanchez": 0.14896,
-        "rawRla": 0.06039,
-        "rawNieto": 0.07442
+        "pendingVotes": 25078,
+        "vsRla": 3882,
+        "vsNieto": 3268,
+        "rawSanchez": 0.149,
+        "rawRla": 0.06036,
+        "rawNieto": 0.07438
       },
       {
         "region": "Puno",
-        "pendingVotes": 7671,
-        "vsRla": 3342,
-        "vsNieto": 3016,
-        "rawSanchez": 0.24905000000000002,
+        "pendingVotes": 7092,
+        "vsRla": 3089,
+        "vsNieto": 2788,
+        "rawSanchez": 0.24897,
         "rawRla": 0.01918,
-        "rawNieto": 0.04151
+        "rawNieto": 0.04153
       }
     ],
     "topRegionalEdgesRlaVsSanchez": [
       {
         "region": "Lima",
-        "pendingVotes": 262054,
-        "vsRla": -67530,
-        "vsNieto": -47572,
-        "rawSanchez": 0.032709999999999996,
-        "rawRla": 0.19916,
-        "rawNieto": 0.15108
+        "pendingVotes": 259743,
+        "vsRla": -66954,
+        "vsNieto": -47168,
+        "rawSanchez": 0.0327,
+        "rawRla": 0.19921,
+        "rawNieto": 0.15111
       },
       {
         "region": "Extranjero",
