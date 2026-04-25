@@ -1383,10 +1383,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-25T17:46:43.012Z",
-    "nationalPct": 95.54,
+    "lastUpdate": "2026-04-25T18:29:13.125Z",
+    "nationalPct": 95.552,
     "totalActas": 92766,
-    "actasContabilizadas": 88629,
+    "actasContabilizadas": 88640,
     "regions": [
       {
         "name": "Amazonas",
@@ -2041,10 +2041,10 @@
     ]
   },
   "canonical": {
-    "nationalPct": 95.54,
+    "nationalPct": 95.552,
     "trackingPct": 95.518,
-    "livePct": 95.54,
+    "livePct": 95.552,
     "trackingLastUpdate": "2026-04-25T15:42:56.498Z",
-    "liveLastUpdate": "2026-04-25T17:46:43.012Z"
+    "liveLastUpdate": "2026-04-25T18:29:13.125Z"
   }
 }
