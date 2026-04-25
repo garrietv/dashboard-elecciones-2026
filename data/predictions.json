@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T16:58:03+00:00",
+  "generatedAt": "2026-04-25T17:46:43+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
   "nationalPct": 95.54,
   "canonicalMeta": {
@@ -7,7 +7,7 @@
     "trackingPct": 95.518,
     "livePct": 95.54,
     "trackingLastUpdate": "2026-04-25T15:42:56.498Z",
-    "liveLastUpdate": "2026-04-25T16:58:02.410Z"
+    "liveLastUpdate": "2026-04-25T17:46:43.012Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -1077,10 +1077,10 @@
       "contabilizadas": 88305
     },
     "currentPctRegionalized": {
-      "fujimori": 27.408,
+      "fujimori": 27.407,
       "rla": 19.258,
-      "nieto": 17.72,
-      "sanchez": 19.283,
+      "nieto": 17.719,
+      "sanchez": 19.284,
       "belmont": 16.331
     },
     "regionalProjectionPct": {
@@ -1153,12 +1153,12 @@
       },
       {
         "region": "Áncash",
-        "pendingVotes": 26503,
-        "vsRla": 4090,
-        "vsNieto": 3441,
-        "rawSanchez": 0.14878,
-        "rawRla": 0.060430000000000005,
-        "rawNieto": 0.07448
+        "pendingVotes": 25869,
+        "vsRla": 4001,
+        "vsNieto": 3368,
+        "rawSanchez": 0.14896,
+        "rawRla": 0.06039,
+        "rawNieto": 0.07442
       },
       {
         "region": "Puno",
@@ -1173,11 +1173,11 @@
     "topRegionalEdgesRlaVsSanchez": [
       {
         "region": "Lima",
-        "pendingVotes": 262660,
-        "vsRla": -67684,
-        "vsNieto": -47683,
+        "pendingVotes": 262054,
+        "vsRla": -67530,
+        "vsNieto": -47572,
         "rawSanchez": 0.032709999999999996,
-        "rawRla": 0.19915,
+        "rawRla": 0.19916,
         "rawNieto": 0.15108
       },
       {
@@ -1209,11 +1209,11 @@
       },
       {
         "region": "Arequipa",
-        "pendingVotes": 8148,
-        "vsRla": -94,
-        "vsNieto": -1232,
-        "rawSanchez": 0.10064000000000001,
-        "rawRla": 0.10602,
+        "pendingVotes": 7945,
+        "vsRla": -92,
+        "vsNieto": -1202,
+        "rawSanchez": 0.10063000000000001,
+        "rawRla": 0.10601000000000001,
         "rawNieto": 0.18661000000000003
       },
       {
@@ -1236,12 +1236,12 @@
       },
       {
         "region": "Tacna",
-        "pendingVotes": 3819,
-        "vsRla": 411,
+        "pendingVotes": 3395,
+        "vsRla": 367,
         "vsNieto": 17,
-        "rawSanchez": 0.11839000000000001,
-        "rawRla": 0.062279999999999995,
-        "rawNieto": 0.11491
+        "rawSanchez": 0.11857,
+        "rawRla": 0.06225,
+        "rawNieto": 0.1148
       }
     ]
   }
