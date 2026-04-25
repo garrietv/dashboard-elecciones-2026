@@ -1372,10 +1372,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-25T09:12:59.089Z",
-    "nationalPct": 95.455,
+    "lastUpdate": "2026-04-25T10:07:28.515Z",
+    "nationalPct": 95.481,
     "totalActas": 92766,
-    "actasContabilizadas": 88550,
+    "actasContabilizadas": 88574,
     "regions": [
       {
         "name": "Amazonas",
@@ -1629,27 +1629,27 @@
       },
       {
         "name": "Ica",
-        "pctActas": 94.269,
-        "vv": 455292,
+        "pctActas": 95.252,
+        "vv": 460072,
         "fujimori": {
-          "pct": 20.312,
-          "v": 92479
+          "pct": 20.303,
+          "v": 93408
         },
         "rla": {
-          "pct": 9.392,
-          "v": 42761
+          "pct": 9.408,
+          "v": 43284
         },
         "nieto": {
           "pct": 9.861,
-          "v": 44896
+          "v": 45368
         },
         "belmont": {
-          "pct": 10.713,
-          "v": 48775
+          "pct": 10.702,
+          "v": 49237
         },
         "sanchez": {
-          "pct": 7.713,
-          "v": 35117
+          "pct": 7.719,
+          "v": 35513
         }
       },
       {
@@ -2030,10 +2030,10 @@
     ]
   },
   "canonical": {
-    "nationalPct": 95.455,
+    "nationalPct": 95.481,
     "trackingPct": 95.191,
-    "livePct": 95.455,
+    "livePct": 95.481,
     "trackingLastUpdate": "2026-04-24T20:20:38.133Z",
-    "liveLastUpdate": "2026-04-25T09:12:59.089Z"
+    "liveLastUpdate": "2026-04-25T10:07:28.515Z"
   }
 }

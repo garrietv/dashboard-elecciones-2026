@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-25T09:13:00+00:00",
+  "generatedAt": "2026-04-25T10:07:29+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 95.455,
+  "nationalPct": 95.481,
   "canonicalMeta": {
-    "nationalPct": 95.455,
+    "nationalPct": 95.481,
     "trackingPct": 95.191,
-    "livePct": 95.455,
+    "livePct": 95.481,
     "trackingLastUpdate": "2026-04-24T20:20:38.133Z",
-    "liveLastUpdate": "2026-04-25T09:12:59.089Z"
+    "liveLastUpdate": "2026-04-25T10:07:28.515Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -37,8 +37,8 @@
       "key": "sanch",
       "candidate": "Sánchez",
       "actual": 12.03,
-      "projected": 11.64,
-      "delta": -0.39
+      "projected": 11.65,
+      "delta": -0.38
     },
     {
       "pos": 4,
@@ -79,8 +79,8 @@
       "key": "sanch",
       "candidate": "Sánchez",
       "actual": 12.03,
-      "projected": 11.62,
-      "delta": -0.41
+      "projected": 11.63,
+      "delta": -0.4
     },
     {
       "pos": 4,
@@ -120,7 +120,7 @@
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.64
+          "pct": 11.65
         },
         {
           "candidate": "Nieto",
@@ -144,7 +144,7 @@
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.86
+          "pct": 11.87
         },
         {
           "candidate": "López Aliaga",
@@ -176,7 +176,7 @@
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.48
+          "pct": 11.49
         },
         {
           "candidate": "Nieto",
@@ -1070,17 +1070,17 @@
       "contabilizadas": 88005
     },
     "currentPctRegionalized": {
-      "fujimori": 27.409,
+      "fujimori": 27.411,
       "rla": 19.261,
       "nieto": 17.72,
-      "sanchez": 19.278,
+      "sanchez": 19.276,
       "belmont": 16.331
     },
     "regionalProjectionPct": {
       "fujimori": 17.12,
       "rla": 12.4,
       "nieto": 10.97,
-      "sanchez": 11.64,
+      "sanchez": 11.65,
       "belmont": 10.06
     },
     "monteCarloSecondPlace": {
@@ -1193,11 +1193,11 @@
       },
       {
         "region": "Ica",
-        "pendingVotes": 27679,
-        "vsRla": -903,
-        "vsNieto": -1080,
-        "rawSanchez": 0.07713,
-        "rawRla": 0.09391999999999999,
+        "pendingVotes": 22933,
+        "vsRla": -745,
+        "vsNieto": -889,
+        "rawSanchez": 0.07719000000000001,
+        "rawRla": 0.09408,
         "rawNieto": 0.09861
       },
       {
