@@ -1383,10 +1383,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-25T20:53:48.291Z",
-    "nationalPct": 95.585,
+    "lastUpdate": "2026-04-25T21:33:07.502Z",
+    "nationalPct": 95.598,
     "totalActas": 92766,
-    "actasContabilizadas": 88670,
+    "actasContabilizadas": 88682,
     "regions": [
       {
         "name": "Amazonas",
@@ -1465,27 +1465,27 @@
       },
       {
         "name": "Arequipa",
-        "pctActas": 99.098,
-        "vv": 872929,
+        "pctActas": 99.122,
+        "vv": 873132,
         "fujimori": {
-          "pct": 7.308,
-          "v": 63794
+          "pct": 7.309,
+          "v": 63817
         },
         "rla": {
-          "pct": 10.601,
-          "v": 92539
+          "pct": 10.6,
+          "v": 92552
         },
         "nieto": {
-          "pct": 18.661,
-          "v": 162897
+          "pct": 18.659,
+          "v": 162918
         },
         "belmont": {
           "pct": 10.91,
-          "v": 95237
+          "v": 95259
         },
         "sanchez": {
-          "pct": 10.063,
-          "v": 87843
+          "pct": 10.065,
+          "v": 87881
         }
       },
       {
@@ -1740,27 +1740,27 @@
       },
       {
         "name": "Lima",
-        "pctActas": 95.777,
-        "vv": 5839803,
+        "pctActas": 95.815,
+        "vv": 5841999,
         "fujimori": {
           "pct": 17.879,
-          "v": 1044098
+          "v": 1044491
         },
         "rla": {
-          "pct": 19.921,
-          "v": 1163347
+          "pct": 19.922,
+          "v": 1163843
         },
         "nieto": {
           "pct": 15.112,
-          "v": 882511
+          "v": 882843
         },
         "belmont": {
-          "pct": 9.127,
-          "v": 532999
+          "pct": 9.126,
+          "v": 533141
         },
         "sanchez": {
           "pct": 3.269,
-          "v": 190903
+          "v": 190975
         }
       },
       {
@@ -2041,10 +2041,10 @@
     ]
   },
   "canonical": {
-    "nationalPct": 95.585,
+    "nationalPct": 95.598,
     "trackingPct": 95.518,
-    "livePct": 95.585,
+    "livePct": 95.598,
     "trackingLastUpdate": "2026-04-25T15:42:56.498Z",
-    "liveLastUpdate": "2026-04-25T20:53:48.291Z"
+    "liveLastUpdate": "2026-04-25T21:33:07.502Z"
   }
 }
