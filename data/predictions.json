@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T15:58:03+00:00",
+  "generatedAt": "2026-04-26T16:54:38+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
   "nationalPct": 95.881,
   "canonicalMeta": {
@@ -7,7 +7,7 @@
     "trackingPct": 95.823,
     "livePct": 95.881,
     "trackingLastUpdate": "2026-04-26T02:53:56.747Z",
-    "liveLastUpdate": "2026-04-26T15:58:02.537Z"
+    "liveLastUpdate": "2026-04-26T16:53:42.898Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
