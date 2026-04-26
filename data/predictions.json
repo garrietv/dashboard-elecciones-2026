@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-26T21:37:26+00:00",
+  "generatedAt": "2026-04-26T22:19:32+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 95.892,
+  "nationalPct": 95.966,
   "canonicalMeta": {
-    "nationalPct": 95.892,
+    "nationalPct": 95.966,
     "trackingPct": 95.823,
-    "livePct": 95.892,
+    "livePct": 95.966,
     "trackingLastUpdate": "2026-04-26T02:53:56.747Z",
-    "liveLastUpdate": "2026-04-26T21:37:25.533Z"
+    "liveLastUpdate": "2026-04-26T22:19:31.545Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -29,16 +29,16 @@
       "key": "rla",
       "candidate": "López Aliaga",
       "actual": 11.89,
-      "projected": 12.4,
-      "delta": 0.51
+      "projected": 12.39,
+      "delta": 0.5
     },
     {
       "pos": 3,
       "key": "sanch",
       "candidate": "Sánchez",
       "actual": 12.05,
-      "projected": 11.66,
-      "delta": -0.39
+      "projected": 11.67,
+      "delta": -0.38
     },
     {
       "pos": 4,
@@ -71,16 +71,16 @@
       "key": "rla",
       "candidate": "López Aliaga",
       "actual": 11.89,
-      "projected": 12.42,
-      "delta": 0.53
+      "projected": 12.41,
+      "delta": 0.52
     },
     {
       "pos": 3,
       "key": "sanch",
       "candidate": "Sánchez",
       "actual": 12.05,
-      "projected": 11.64,
-      "delta": -0.41
+      "projected": 11.65,
+      "delta": -0.4
     },
     {
       "pos": 4,
@@ -116,11 +116,11 @@
         },
         {
           "candidate": "López Aliaga",
-          "pct": 12.4
+          "pct": 12.39
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.66
+          "pct": 11.67
         },
         {
           "candidate": "Nieto",
@@ -144,11 +144,11 @@
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.88
+          "pct": 11.89
         },
         {
           "candidate": "López Aliaga",
-          "pct": 12.22
+          "pct": 12.21
         },
         {
           "candidate": "Nieto",
@@ -172,11 +172,11 @@
         },
         {
           "candidate": "López Aliaga",
-          "pct": 12.54
+          "pct": 12.53
         },
         {
           "candidate": "Sánchez",
-          "pct": 11.5
+          "pct": 11.51
         },
         {
           "candidate": "Nieto",
@@ -1084,17 +1084,17 @@
       "contabilizadas": 88608
     },
     "currentPctRegionalized": {
-      "fujimori": 27.411,
-      "rla": 19.26,
-      "nieto": 17.713,
-      "sanchez": 19.285,
-      "belmont": 16.331
+      "fujimori": 27.42,
+      "rla": 19.256,
+      "nieto": 17.712,
+      "sanchez": 19.279,
+      "belmont": 16.333
     },
     "regionalProjectionPct": {
       "fujimori": 17.12,
-      "rla": 12.4,
+      "rla": 12.39,
       "nieto": 10.97,
-      "sanchez": 11.66,
+      "sanchez": 11.67,
       "belmont": 10.06
     },
     "monteCarloSecondPlace": {
@@ -1180,12 +1180,12 @@
     "topRegionalEdgesRlaVsSanchez": [
       {
         "region": "Lima",
-        "pendingVotes": 246617,
-        "vsRla": -63548,
-        "vsNieto": -44787,
-        "rawSanchez": 0.0327,
-        "rawRla": 0.19920000000000002,
-        "rawNieto": 0.15112
+        "pendingVotes": 232163,
+        "vsRla": -59693,
+        "vsNieto": -42098,
+        "rawSanchez": 0.03279,
+        "rawRla": 0.19896,
+        "rawNieto": 0.15102000000000002
       },
       {
         "region": "Extranjero",
