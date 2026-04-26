@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-26T20:04:42+00:00",
+  "generatedAt": "2026-04-26T20:55:13+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 95.889,
+  "nationalPct": 95.892,
   "canonicalMeta": {
-    "nationalPct": 95.889,
+    "nationalPct": 95.892,
     "trackingPct": 95.823,
-    "livePct": 95.889,
+    "livePct": 95.892,
     "trackingLastUpdate": "2026-04-26T02:53:56.747Z",
-    "liveLastUpdate": "2026-04-26T20:04:41.066Z"
+    "liveLastUpdate": "2026-04-26T20:55:12.311Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -1180,12 +1180,12 @@
     "topRegionalEdgesRlaVsSanchez": [
       {
         "region": "Lima",
-        "pendingVotes": 247232,
-        "vsRla": -63716,
-        "vsNieto": -44907,
-        "rawSanchez": 0.032690000000000004,
-        "rawRla": 0.19921,
-        "rawNieto": 0.15113
+        "pendingVotes": 246617,
+        "vsRla": -63548,
+        "vsNieto": -44787,
+        "rawSanchez": 0.0327,
+        "rawRla": 0.19920000000000002,
+        "rawNieto": 0.15112
       },
       {
         "region": "Extranjero",
