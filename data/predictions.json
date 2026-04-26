@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-26T19:29:06+00:00",
+  "generatedAt": "2026-04-26T20:04:42+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 95.882,
+  "nationalPct": 95.889,
   "canonicalMeta": {
-    "nationalPct": 95.882,
+    "nationalPct": 95.889,
     "trackingPct": 95.823,
-    "livePct": 95.882,
+    "livePct": 95.889,
     "trackingLastUpdate": "2026-04-26T02:53:56.747Z",
-    "liveLastUpdate": "2026-04-26T19:29:05.187Z"
+    "liveLastUpdate": "2026-04-26T20:04:41.066Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -1084,8 +1084,8 @@
       "contabilizadas": 88608
     },
     "currentPctRegionalized": {
-      "fujimori": 27.41,
-      "rla": 19.261,
+      "fujimori": 27.411,
+      "rla": 19.26,
       "nieto": 17.713,
       "sanchez": 19.285,
       "belmont": 16.331
@@ -1234,12 +1234,12 @@
       },
       {
         "region": "Lambayeque",
-        "pendingVotes": 7433,
-        "vsRla": 240,
-        "vsNieto": 40,
-        "rawSanchez": 0.10747999999999999,
-        "rawRla": 0.08573,
-        "rawNieto": 0.10317
+        "pendingVotes": 7059,
+        "vsRla": 229,
+        "vsNieto": 39,
+        "rawSanchez": 0.1075,
+        "rawRla": 0.0857,
+        "rawNieto": 0.10313
       },
       {
         "region": "Tacna",
