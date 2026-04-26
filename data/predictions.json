@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-26T22:19:32+00:00",
+  "generatedAt": "2026-04-26T23:02:12+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 95.966,
+  "nationalPct": 95.982,
   "canonicalMeta": {
-    "nationalPct": 95.966,
+    "nationalPct": 95.982,
     "trackingPct": 95.823,
-    "livePct": 95.966,
+    "livePct": 95.982,
     "trackingLastUpdate": "2026-04-26T02:53:56.747Z",
-    "liveLastUpdate": "2026-04-26T22:19:31.545Z"
+    "liveLastUpdate": "2026-04-26T23:02:10.949Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -188,7 +188,7 @@
   "insights": [
     "Sánchez ya aparece 2° en el conteo observado y el modelo entra en escenario de defensa del sorpasso con simulación regional del pendiente restante.",
     "Pendiente reciente nacional: Sánchez 0.020 pp por punto vs RLA -0.009. A este nivel de avance pesa más el pendiente regional observado que la heurística fija de fase ~80%.",
-    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+9,508), Cusco (+7,476), San Martín (+6,468), Huánuco (+5,970), Huancavelica (+4,818)"
+    "Bastiones netos pro-Sánchez vs RLA: Cajamarca (+9,508), Cusco (+7,476), San Martín (+6,468), Huánuco (+5,462), Huancavelica (+4,818)"
   ],
   "probabilityHistory": [
     {
@@ -1084,10 +1084,10 @@
       "contabilizadas": 88608
     },
     "currentPctRegionalized": {
-      "fujimori": 27.42,
-      "rla": 19.256,
-      "nieto": 17.712,
-      "sanchez": 19.279,
+      "fujimori": 27.421,
+      "rla": 19.254,
+      "nieto": 17.71,
+      "sanchez": 19.281,
       "belmont": 16.333
     },
     "regionalProjectionPct": {
@@ -1133,12 +1133,12 @@
       },
       {
         "region": "Huánuco",
-        "pendingVotes": 17624,
-        "vsRla": 5970,
-        "vsNieto": 6288,
+        "pendingVotes": 16136,
+        "vsRla": 5462,
+        "vsNieto": 5755,
         "rawSanchez": 0.29549,
-        "rawRla": 0.05934999999999999,
-        "rawNieto": 0.04688
+        "rawRla": 0.05929,
+        "rawNieto": 0.04676
       },
       {
         "region": "Huancavelica",
@@ -1181,9 +1181,9 @@
       {
         "region": "Lima",
         "pendingVotes": 232163,
-        "vsRla": -59693,
-        "vsNieto": -42098,
-        "rawSanchez": 0.03279,
+        "vsRla": -59689,
+        "vsNieto": -42094,
+        "rawSanchez": 0.032799999999999996,
         "rawRla": 0.19896,
         "rawNieto": 0.15102000000000002
       },
@@ -1198,12 +1198,12 @@
       },
       {
         "region": "Callao",
-        "pendingVotes": 22585,
-        "vsRla": -4431,
-        "vsNieto": -4395,
-        "rawSanchez": 0.03005,
-        "rawRla": 0.14993,
-        "rawNieto": 0.1502
+        "pendingVotes": 21987,
+        "vsRla": -4309,
+        "vsNieto": -4275,
+        "rawSanchez": 0.0301,
+        "rawRla": 0.14984999999999998,
+        "rawNieto": 0.15012999999999999
       },
       {
         "region": "Ica",
