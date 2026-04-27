@@ -1394,10 +1394,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-27T02:01:52.408Z",
-    "nationalPct": 95.982,
+    "lastUpdate": "2026-04-27T05:31:54.977Z",
+    "nationalPct": 96.054,
     "totalActas": 92766,
-    "actasContabilizadas": 89039,
+    "actasContabilizadas": 89105,
     "regions": [
       {
         "name": "Amazonas",
@@ -1751,27 +1751,27 @@
       },
       {
         "name": "Lima",
-        "pctActas": 96.198,
-        "vv": 5863325,
+        "pctActas": 96.273,
+        "vv": 5867545,
         "fujimori": {
-          "pct": 17.893,
-          "v": 1049125
+          "pct": 17.894,
+          "v": 1049939
         },
         "rla": {
-          "pct": 19.896,
-          "v": 1166567
+          "pct": 19.891,
+          "v": 1167113
         },
         "nieto": {
-          "pct": 15.102,
-          "v": 885479
+          "pct": 15.1,
+          "v": 885999
         },
         "belmont": {
-          "pct": 9.135,
-          "v": 535615
+          "pct": 9.139,
+          "v": 536235
         },
         "sanchez": {
-          "pct": 3.28,
-          "v": 192317
+          "pct": 3.282,
+          "v": 192573
         }
       },
       {
@@ -2026,36 +2026,36 @@
       },
       {
         "name": "Extranjero",
-        "pctActas": 89.815,
-        "vv": 278014,
+        "pctActas": 91.545,
+        "vv": 283634,
         "fujimori": {
-          "pct": 16.866,
-          "v": 46890
+          "pct": 16.859,
+          "v": 47818
         },
         "rla": {
-          "pct": 25.172,
-          "v": 69982
+          "pct": 25.162,
+          "v": 71368
         },
         "nieto": {
-          "pct": 10.17,
-          "v": 28274
+          "pct": 10.161,
+          "v": 28820
         },
         "belmont": {
-          "pct": 10.369,
-          "v": 28827
+          "pct": 10.395,
+          "v": 29484
         },
         "sanchez": {
-          "pct": 2.576,
-          "v": 7162
+          "pct": 2.588,
+          "v": 7340
         }
       }
     ]
   },
   "canonical": {
-    "nationalPct": 95.982,
+    "nationalPct": 96.054,
     "trackingPct": 95.823,
-    "livePct": 95.982,
+    "livePct": 96.054,
     "trackingLastUpdate": "2026-04-26T02:53:56.747Z",
-    "liveLastUpdate": "2026-04-27T02:01:52.408Z"
+    "liveLastUpdate": "2026-04-27T05:31:54.977Z"
   }
 }
