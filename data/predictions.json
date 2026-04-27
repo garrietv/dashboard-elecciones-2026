@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-27T22:09:59+00:00",
+  "generatedAt": "2026-04-27T23:10:17+00:00",
   "source": "Modelo regionalizado Hannah v4 (simulación del pendiente regional restante, live + tracking + Extranjero)",
-  "nationalPct": 96.18,
+  "nationalPct": 96.193,
   "canonicalMeta": {
-    "nationalPct": 96.18,
+    "nationalPct": 96.193,
     "trackingPct": 96.139,
-    "livePct": 96.18,
+    "livePct": 96.193,
     "trackingLastUpdate": "2026-04-27T17:01:09.905Z",
-    "liveLastUpdate": "2026-04-27T22:09:58.127Z"
+    "liveLastUpdate": "2026-04-27T23:10:15.147Z"
   },
   "secondRoundProbabilities": {
     "rla": 55,
@@ -1091,11 +1091,11 @@
       "contabilizadas": 88891
     },
     "currentPctRegionalized": {
-      "fujimori": 27.426,
+      "fujimori": 27.425,
       "rla": 19.258,
       "nieto": 17.711,
       "sanchez": 19.27,
-      "belmont": 16.335
+      "belmont": 16.336
     },
     "regionalProjectionPct": {
       "fujimori": 17.12,
@@ -1167,12 +1167,12 @@
       },
       {
         "region": "Áncash",
-        "pendingVotes": 24143,
-        "vsRla": 3736,
-        "vsNieto": 3144,
-        "rawSanchez": 0.149,
-        "rawRla": 0.06038,
-        "rawNieto": 0.07444
+        "pendingVotes": 23826,
+        "vsRla": 3688,
+        "vsNieto": 3105,
+        "rawSanchez": 0.14904,
+        "rawRla": 0.06039,
+        "rawNieto": 0.07442
       },
       {
         "region": "Puno",
@@ -1241,21 +1241,21 @@
       },
       {
         "region": "Lambayeque",
-        "pendingVotes": 6319,
-        "vsRla": 206,
-        "vsNieto": 36,
-        "rawSanchez": 0.10754,
-        "rawRla": 0.08567,
-        "rawNieto": 0.10308999999999999
+        "pendingVotes": 5579,
+        "vsRla": 180,
+        "vsNieto": 31,
+        "rawSanchez": 0.10747,
+        "rawRla": 0.08574,
+        "rawNieto": 0.10313
       },
       {
-        "region": "La Libertad",
-        "pendingVotes": 17453,
-        "vsRla": 325,
-        "vsNieto": -177,
-        "rawSanchez": 0.09394,
-        "rawRla": 0.08227999999999999,
-        "rawNieto": 0.09852
+        "region": "Moquegua",
+        "pendingVotes": 1382,
+        "vsRla": 199,
+        "vsNieto": 66,
+        "rawSanchez": 0.12845,
+        "rawRla": 0.05808,
+        "rawNieto": 0.10427
       }
     ]
   }
