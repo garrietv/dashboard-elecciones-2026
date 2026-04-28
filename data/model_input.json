@@ -1405,10 +1405,10 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-28T15:29:16.876Z",
-    "nationalPct": 96.343,
+    "lastUpdate": "2026-04-28T17:14:54.410Z",
+    "nationalPct": 96.355,
     "totalActas": 92766,
-    "actasContabilizadas": 89374,
+    "actasContabilizadas": 89385,
     "regions": [
       {
         "name": "Amazonas",
@@ -1812,27 +1812,27 @@
       },
       {
         "name": "Madre de Dios",
-        "pctActas": 95.266,
-        "vv": 77046,
+        "pctActas": 95.464,
+        "vv": 77215,
         "fujimori": {
-          "pct": 13.543,
-          "v": 10434
+          "pct": 13.544,
+          "v": 10458
         },
         "rla": {
-          "pct": 3.386,
-          "v": 2609
+          "pct": 3.394,
+          "v": 2621
         },
         "nieto": {
           "pct": 5.211,
-          "v": 4015
+          "v": 4024
         },
         "belmont": {
-          "pct": 14.574,
-          "v": 11229
+          "pct": 14.575,
+          "v": 11254
         },
         "sanchez": {
-          "pct": 23.322,
-          "v": 17969
+          "pct": 23.308,
+          "v": 17997
         }
       },
       {
@@ -2063,10 +2063,10 @@
     ]
   },
   "canonical": {
-    "nationalPct": 96.343,
+    "nationalPct": 96.355,
     "trackingPct": 96.139,
-    "livePct": 96.343,
+    "livePct": 96.355,
     "trackingLastUpdate": "2026-04-27T17:01:09.905Z",
-    "liveLastUpdate": "2026-04-28T15:29:16.876Z"
+    "liveLastUpdate": "2026-04-28T17:14:54.410Z"
   }
 }
