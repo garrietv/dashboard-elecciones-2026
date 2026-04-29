@@ -1416,7 +1416,7 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-29T15:17:32.826Z",
+    "lastUpdate": "2026-04-29T16:56:13.456Z",
     "nationalPct": 96.735,
     "totalActas": 92766,
     "actasContabilizadas": 89737,
@@ -2051,20 +2051,20 @@
         "pctActas": 91.821,
         "vv": 284440,
         "fujimori": {
-          "pct": 16.866,
-          "v": 47974
+          "pct": 16.871,
+          "v": 47988
         },
         "rla": {
-          "pct": 25.152,
-          "v": 71542
+          "pct": 25.155,
+          "v": 71551
         },
         "nieto": {
-          "pct": 10.156,
-          "v": 28888
+          "pct": 10.155,
+          "v": 28885
         },
         "belmont": {
-          "pct": 10.392,
-          "v": 29559
+          "pct": 10.39,
+          "v": 29553
         },
         "sanchez": {
           "pct": 2.591,
@@ -2078,6 +2078,6 @@
     "trackingPct": 96.498,
     "livePct": 96.735,
     "trackingLastUpdate": "2026-04-28T23:49:26.414Z",
-    "liveLastUpdate": "2026-04-29T15:17:32.826Z"
+    "liveLastUpdate": "2026-04-29T16:56:13.456Z"
   }
 }
