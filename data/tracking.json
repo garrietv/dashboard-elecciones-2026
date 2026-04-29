@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-04-27T17:01:09.905Z",
-  "nationalPct": 96.139,
+  "lastUpdate": "2026-04-28T23:49:26.414Z",
+  "nationalPct": 96.498,
   "cuts": [
     {
       "ts": "2026-04-14T17:10:54.080Z",
@@ -1388,7 +1388,18 @@
       "sanchez": 12.038,
       "jee": 3581,
       "contabilizadas": 89184
+    },
+    {
+      "ts": "2026-04-28T23:49:26.414Z",
+      "pct": 96.498,
+      "fujimori": 17.074,
+      "rla": 11.889,
+      "nieto": 11.01,
+      "belmont": 10.172,
+      "sanchez": 12.041,
+      "jee": 3249,
+      "contabilizadas": 89517
     }
   ],
-  "count": 126
+  "count": 127
 }
