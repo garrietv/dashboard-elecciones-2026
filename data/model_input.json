@@ -1416,7 +1416,7 @@
     ]
   },
   "onpeLive": {
-    "lastUpdate": "2026-04-29T11:14:24.948Z",
+    "lastUpdate": "2026-04-29T12:56:40.788Z",
     "nationalPct": 96.728,
     "totalActas": 92766,
     "actasContabilizadas": 89731,
@@ -2078,6 +2078,6 @@
     "trackingPct": 96.498,
     "livePct": 96.728,
     "trackingLastUpdate": "2026-04-28T23:49:26.414Z",
-    "liveLastUpdate": "2026-04-29T11:14:24.948Z"
+    "liveLastUpdate": "2026-04-29T12:56:40.788Z"
   }
 }
